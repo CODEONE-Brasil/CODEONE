@@ -10,21 +10,16 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="application-name" content="CODEONE">
-  <meta name="apple-mobile-web-app-title" content="CODEONE">
   <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- SEO -->
-  <meta name="description" content="CODEONE | Music and Dreams - Web rádio brasileira de música eletrônica, techno, pop, rock e muito mais. Ouça agora!">
+  <link rel="apple-touch-icon" href="/icon-192x192.png">
   
   <!-- Fontes e reCAPTCHA -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
   <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-SEU_ID_DO_ADSENSE" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-SEU_ID_DO_ADSENSE"
+          crossorigin="anonymous"></script>
   
   <style>
     /* RESET & BASE STYLES */
@@ -134,6 +129,7 @@
       font-weight: 600;
       margin: 0;
     }
+
     /* TEXTO DESCRITIVO */
     .about-text {
       max-width: 700px;
@@ -271,7 +267,8 @@
       background: rgba(0,0,0,0.5);
       z-index: 999;
     }
-    /* POPUP DE TERMOS */
+
+    /* POPUP DE TERMOS (NOVO) */
     .terms-popup {
       display: none;
       position: fixed;
@@ -286,7 +283,7 @@
       width: 90%;
       max-width: 700px;
       max-height: 80vh;
-      overflow-y: auto;
+      overflow: hidden;
       font-family: 'Montserrat', sans-serif;
     }
     .terms-popup h3 {
@@ -375,6 +372,12 @@
     }
     .footer-email:hover {
       color: #fffc00;
+    }
+    .footer-website {
+      color: #fffc00;
+      text-decoration: none;
+      font-size: 14px;
+      display: block;
     }
     .clockview-logo {
       width: 120px;
@@ -484,22 +487,6 @@
         padding: 20px;
       }
     }
-    @media (max-width: 480px) {
-      .player-controls {
-        flex-wrap: wrap;
-      }
-      .volume-control {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-      }
-      .footer-social a {
-        font-size: 13px;
-      }
-      .events-banner p {
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -520,7 +507,7 @@
   <div class="container">
     <!-- LOGO PRINCIPAL (acima do player) -->
     <div class="logo">
-      <img src="/CODE1.jpg" alt="CODEONE">
+      <img src="/codeonemusicanddreams.png" alt="CODEONE">
     </div>
 
     <!-- PLAYER -->
@@ -553,11 +540,6 @@
       <script>
            (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-    </div>
-
-    <!-- NOVA LOGOMARCA (SUBSTITUI O TÍTULO) -->
-    <div class="logo-title">
-      <img src="/CODEONE%20LOGO.jpg" alt="CODEONE">
     </div>
 
     <!-- TEXTO DESCRITIVO -->
@@ -656,136 +638,96 @@
          data-ad-slot="SEU_SLOT_ACIMA_RODAPE"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
-  <!-- Rodapé -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="/LOGOMARCA%20CODEONE%20TECHNOLOGIES.png" alt="CODEONE" class="footer-logo">
-        <div class="footer-brand-text">
-          <p><strong>CODEONE Brasil ®</strong></p>
-          <p>Studios Broadcast, Podcast & Streaming</p>
-          <p>CODESTORE ®</p>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Acesse nossas redes sociais</h4>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/codeonebrasil" target="_blank">Facebook</a>
-          <a href="https://www.instagram.com/codeonebrasil" target="_blank">Instagram</a>
-          <a href="https://twitter.com/codeonebrasil" target="_blank">Twitter/X</a>
-          <a href="#" target="_blank">YouTube</a>
-          <!-- WHATSAPP ADICIONADO AQUI -->
-          <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Fale com a gente</h4>
-        <a href="#" class="footer-email" id="open-contact">Clique aqui para nos enviar uma mensagem</a>
-        <h4 class="footer-access-title">Acesse também</h4>
-        <a href="https://www.clockview.online" target="_blank">
-          <img src="/CLOCKVIEWLG.jpg" alt="ClockView" class="clockview-logo">
-        </a>
-      </div>
-    </div>
-    <div class="footer-legal">
-      <p>Programas, concepção, marcas e nomes protegidos pela lei de direitos autorais e propriedade intelectual.</p>
-      <p class="footer-copyright">
-        <a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Termos de uso e Privacidade</a> | 
-        CODEONE Brasil©2023-2025 | Music and Dreams | Todos os direitos reservados
-      </p>
-      <p>www.codeonebrasil.com.br</p>
-    </div>
-  </footer>
 
-  <!-- Popup de Termos -->
+  <!-- Popup de Termos (NOVO) -->
   <div class="overlay" id="terms-overlay"></div>
   <div class="terms-popup" id="terms-popup">
     <div class="header-border" style="margin-bottom: 15px;"></div>
-    <h2 style="color: #2a5298; margin-bottom: 20px;">TERMOS E CONDIÇÕES E POLÍTICA DE PRIVACIDADE</h2>
-    <div style="text-align: right; margin-bottom: 10px; font-size: 12px; color: #555;">Última atualização: Maio de 2016</div>
+    <h2 style="color: #2a5298; margin-bottom: 20px;">TERMS AND CONDITIONS AND PRIVACY POLICY</h2>
+    <div style="text-align: right; margin-bottom: 10px; font-size: 12px; color: #555;">Last Updated: May 2016</div>
     
     <div style="max-height: 60vh; overflow-y: auto; padding-right: 10px; text-align: left;">
-      <p>Os seguintes termos (doravante denominados "Termos e Condições") - que incluem a Política de Privacidade deste site (doravante denominado "Site") - constituem um acordo contratual legalmente vinculativo entre você (doravante denominado "Usuário", "você", "seu") e a Comfort Software Group (doravante denominada "CSG").</p>
+      <p>The following terms (hereinafter referred to as "Terms and Conditions") - which include the Privacy Policy of this website (hereinafter referred to as "Website") - are a legally binding contractual agreement between you (hereinafter referred to as "User," "you," "your") and Comfort Software Group (hereinafter referred to as "CSG").</p>
 
-      <h3 style="color: #1e3c72; margin: 20px 0 10px;">TERMOS E CONDIÇÕES PARA USO DESTE SITE</h3>
+      <h3 style="color: #1e3c72; margin: 20px 0 10px;">TERMS AND CONDITIONS TO USE THIS WEBSITE</h3>
       <ol style="padding-left: 20px; margin-bottom: 20px;">
-        <li>Os conteúdos deste Site podem ser compartilhados, redistribuídos, incorporados e copiados. Tudo o que pedimos é que você inclua um link de volta para este Site.</li>
-        <li>Os conteúdos deste Site não podem ser modificados ou vendidos sem a permissão expressa por escrito da CSG.</li>
-        <li>A CSG não é responsável de forma alguma pelos conteúdos de sites de terceiros mencionados ou anunciados neste Site.</li>
-        <li>A CSG não é responsável por efeitos adversos resultantes do uso deste Site.</li>
-        <li>A CSG não é responsável pelos conteúdos de sites que possuem um link para este Site, ou por sites que usam os conteúdos deste Site.</li>
-        <li>Ao usar este Site, de qualquer forma, você concorda com estes Termos e Condições.</li>
-        <li>A CSG não garante que este Site estará ou estará sempre livre de erros, interrupções, omissões ou defeitos, ou que a CSG corrigirá quaisquer erros, interrupções, omissões ou defeitos. Você assume todos os custos que possam decorrer do uso deste Site.</li>
-        <li>Em nenhuma circunstância a CSG ou qualquer de suas afiliadas, diretores, funcionários, licenciadores, fornecedores ou distribuidores serão responsáveis por quaisquer danos diretos, indiretos, especiais, incidentais, econômicos ou consequenciais decorrentes do uso deste Site, mesmo que a CSG tenha sido avisada da possibilidade de tais danos. Além disso, em nenhuma circunstância a responsabilidade da CSG ou de qualquer de suas afiliadas, diretores, funcionários, licenciadores, fornecedores ou distribuidores excederá o valor pago por você, se aplicável, para adquirir produtos ou serviços da CSG.</li>
-        <li>A CSG reserva-se o direito de modificar estes Termos e Condições a qualquer momento, por qualquer motivo e sem aviso prévio. Nesse caso, os Termos e Condições modificados entrarão em vigor quando forem publicados.</li>
+        <li>The contents of this Website can be shared, redistributed, embedded, and copied. All we ask is that you include a link back to this Website.</li>
+        <li>The contents of this Website cannot be modified or sold without the express written permission of CSG.</li>
+        <li>CSG is not responsible in any way for the contents of third party websites mentioned or advertised in this Website.</li>
+        <li>CSG is not liable or responsible for adverse effects resulting from the use of this Website.</li>
+        <li>CSG is not liable or responsible for the contents of websites that have a link to this Website, or for websites that use the contents of this Website.</li>
+        <li>By using this Website, in any way, you agree to these Terms and Conditions.</li>
+        <li>CSG does not warrant that this Website is or will always be free from errors, interruptions, omissions or defects, or that CSG will correct any errors, interruptions, omissions or defects. You assume all costs that may arise out of the use of this Website.</li>
+        <li>In no situation will CSG or any of its affiliates, officers, directors, employees, licensors, suppliers or distributors be liable for any direct, indirect, special, incidental, economic or consequential damages arising out of the use of this Website, even if CSG has been advised of the possibility of such damages. Furthermore, in no situation will liability of CSG or any of its affiliates, officers, directors, employees, licensors, suppliers or distributors exceed the amount paid by you, if any, to purchase products or services from CSG.</li>
+        <li>CSG reserves the right to modify these Terms and Conditions at any time, for any reason and without prior notice. In such case, the modified Terms and Conditions will take effect when they are published.</li>
       </ol>
 
-      <h3 style="color: #1e3c72; margin: 20px 0 10px;">POLÍTICA DE PRIVACIDADE</h3>
-      <p>Este site é de propriedade e operado pela Comfort Software Group (doravante denominada "CSG"). Sua privacidade na Internet é de extrema importância para nós. Na CSG, queremos que sua experiência online seja satisfatória e segura.</p>
+      <h3 style="color: #1e3c72; margin: 20px 0 10px;">PRIVACY POLICY</h3>
+      <p>This site is owned and operated by Comfort Software Group (hereinafter referred to as "CSG"). Your privacy on the Internet is of the utmost importance to us. At CSG, we want to make your experience online satisfying and safe.</p>
       
-      <p>Como coletamos certos tipos de informações sobre nossos usuários, sentimos que você deve entender plenamente os termos e condições que cercam a captura e o uso dessas informações. Esta declaração de privacidade divulga quais informações coletamos e como as usamos.</p>
+      <p>Because we gather certain types of information about our users, we feel you should fully understand the terms and conditions surrounding the capture and use of that information. This privacy statement discloses what information we gather and how we use it.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">INFORMAÇÕES COLETADAS E RASTREADAS PELA CSG</h4>
-      <p>A CSG coleta dois tipos de informações sobre os usuários:</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">INFORMATION CSG GATHERS AND TRACKS</h4>
+      <p>CSG gathers two types of information about users:</p>
       <ul style="padding-left: 20px; margin-bottom: 15px;">
-        <li>Informações que os usuários fornecem por meio de envios opcionais e voluntários. Estes são envios voluntários para receber nossos boletins eletrônicos, participar de nossos quadros de mensagens ou fóruns, enviar e-mail para um amigo e da participação em pesquisas e enquetes.</li>
-        <li>Informações que a CSG coleta por meio de informações de rastreamento agregadas derivadas principalmente da contagem de visualizações de página em nossos sites. Essas informações nos permitem adaptar melhor nosso conteúdo às necessidades dos leitores e ajudar nossos anunciantes e patrocinadores a entender melhor a demografia de nosso público. Como a CSG obtém sua receita principalmente de patrocínios e publicidade, fornecer esses dados demográficos agregados é essencial para manter nosso serviço gratuito para os usuários. Sob nenhuma circunstância a CSG divulga qualquer informação sobre um usuário individual a terceiros.</li>
+        <li>Information that users provide through optional, voluntary submissions. These are voluntary submissions to receive our electronic newsletters, to participate in our message boards or forums, to email a friend, and from participation in polls and surveys.</li>
+        <li>Information CSG gathers through aggregated tracking information derived mainly by tallying page views throughout our sites. This information allows us to better tailor our content to readers' needs and to help our advertisers and sponsors better understand the demographics of our audience. Because CSG derives its revenue mainly from sponsorships and advertising, providing such aggregated demographic data is essential to keeping our service free to users. Under no circumstances does CSG divulge any information about an individual user to a third party.</li>
       </ul>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">A CSG coleta informações do usuário nos seguintes processos:</h4>
-      <p><strong>Informações Voluntárias Opcionais</strong></p>
-      <p>Oferecemos os seguintes serviços gratuitos, que exigem algum tipo de envio voluntário de informações pessoais pelos usuários:</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">CSG Gathers User Information In The Following Processes:</h4>
+      <p><strong>Optional Voluntary Information</strong></p>
+      <p>We offer the following free services, which require some type of voluntary submission of personal information by users:</p>
       
-      <p><strong>1. Boletins eletrônicos (Despachos)</strong><br>
-      Ofereceremos um boletim eletrônico gratuito aos usuários. A CSG coleta os endereços de e-mail dos usuários que se inscrevem voluntariamente. Os usuários podem se remover desta lista de e-mail seguindo o link fornecido em cada boletim que direciona os usuários para a página de gerenciamento de assinaturas. Os usuários também podem se inscrever nos boletins no momento do registro.</p>
+      <p><strong>1. Electronic newsletters (Dispatches)</strong><br>
+      We will offer a free electronic newsletter to users. CSG gathers the email addresses of users who voluntarily subscribe. Users may remove themselves from this mailing list by following the link provided in every newsletter that points users to the subscription management page. Users can also subscribe to the newsletters at the time of registration.</p>
       
-      <p><strong>2. Quadros de mensagens/fóruns</strong><br>
-      Os usuários dos Quadros de Mensagens e Fóruns do site devem se registrar separadamente para esses serviços (ambos são gratuitos) para postar mensagens, embora não precisem se registrar para visitar o site. Durante o registro, o usuário deve fornecer um nome de usuário, senha e endereço de e-mail.</p>
+      <p><strong>2. Message boards/forums</strong><br>
+      Users of the site's Message Boards and Forums must register separately for these services (both are free of charge) in order to post messages, although they needn't register to visit the site. During registration the user is required to supply a username, password, and email address.</p>
       
-      <p><strong>3. Serviço "Envie isto por e-mail para um amigo"</strong><br>
-      Os usuários do nosso site podem optar por encaminhar eletronicamente um link, página ou documentos para outra pessoa clicando em "envie isto por e-mail para um amigo". O usuário deve fornecer seu endereço de e-mail, bem como o do destinatário. Essas informações são usadas apenas no caso de erros de transmiss e, é claro, para informar o destinatário quem enviou o e-mail. As informações não são usadas para nenhum outro propósito.</p>
+      <p><strong>3. "E-mail this to a friend" Service</strong><br>
+      Our site users can choose to electronically forward a link, page, or documents to someone else by clicking "e-mail this to a friend". The user must provide their email address, as well as that of the recipient. This information is used only in the case of transmission errors and, of course, to let the recipient know who sent the email. The information is not used for any other purpose.</p>
       
-      <p><strong>4. Enquetes</strong><br>
-      Podemos oferecer enquetes interativas aos usuários para que eles possam compartilhar facilmente suas opiniões com outros usuários e ver o que nosso público pensa sobre questões importantes. Opiniões ou outras respostas às enquetes são agregadas e não identificáveis para nenhum usuário em particular. A CSG pode usar um sistema para "marcar" usuários depois que eles votam, para que possam votar apenas uma vez em uma determinada pergunta. Esta tag não está correlacionada com informações sobre usuários individuais.</p>
+      <p><strong>4. Polling</strong><br>
+      We may offer interactive polls to users so they can easily share their opinions with other users and see what our audience thinks about important issues. Opinions or other responses to polls are aggregated and are not identifiable to any particular user. CSG may use a system to "tag" users after they have voted, so they can vote only once on a particular question. This tag is not correlated with information about individual users.</p>
       
-      <p><strong>5. Pesquisas</strong><br>
-      A CSG pode ocasionalmente conduzir pesquisas com usuários para melhor direcionar nosso conteúdo ao nosso público. Às vezes compartilhamos as informações demográficas agregadas nessas pesquisas com nossos patrocinadores, anunciantes e parceiros. Nunca compartilhamos nenhuma dessas informações sobre indivíduos específicos com terceiros.</p>
+      <p><strong>5. Surveys</strong><br>
+      CSG may occasionally conduct user surveys to better target our content to our audience. We sometimes share the aggregated demographic information in these surveys with our sponsors, advertisers and partners. We never share any of this information about specific individuals with any third party.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">Crianças</h4>
-      <p>De acordo com a Lei Federal de Proteção à Privacidade Online das Crianças de 1998 (COPPA), nunca solicitaremos intencionalmente informações pessoalmente identificáveis de qualquer pessoa com menos de 13 anos sem solicitar o consentimento dos pais.</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">Children</h4>
+      <p>Consistent with the Federal Children's Online Privacy Protection Act of 1998 (COPPA), we will never knowingly request personally identifiable information from anyone under the age of 13 without requesting parental consent.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">Rastreamento de uso</h4>
-      <p>A CSG rastreia padrões de tráfego de usuários em todos os nossos sites. No entanto, não correlacionamos essas informações com dados sobre usuários individuais. A CSG decompõe estatísticas gerais de uso de acordo com o nome de domínio de um usuário, tipo de navegador e tipo MIME, lendo essas informações na string do navegador (informações contidas em todos os navegadores de usuários).</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">Usage tracking</h4>
+      <p>CSG tracks user traffic patterns throughout all of our sites. However, we do not correlate this information with data about individual users. CSG does break down overall usage statistics according to a user's domain name, browser type, and MIME type by reading this information from the browser string (information contained in every user's browser).</p>
       
-      <p>A CSG às vezes rastreia e cataloga os termos de pesquisa que os usuários inserem em nossa função de Pesquisa, mas esse rastreamento nunca está associado a usuários individuais. Usamos informações de rastreamento para determinar quais áreas de nossos sites os usuários mais e menos gostam com base no tráfego para essas áreas. Não rastreamos o que os usuários individuais leem, mas sim o desempenho geral de cada página. Isso nos ajuda a continuar construindo um serviço melhor para você.</p>
+      <p>CSG sometimes tracks and catalogs the search terms that users enter in our Search function, but this tracking is never associated with individual users. We use tracking information to determine which areas of our sites users like and don't like based on traffic to those areas. We do not track what individual users read, but rather how well each page performs overall. This helps us continue to build a better service for you.</p>
       
       <h4 style="color: #2a5298; margin: 15px 0 5px;">Cookies</h4>
-      <p>Podemos colocar um arquivo de texto chamado "cookie" nos arquivos do navegador do seu computador. O cookie em si não contém Informações Pessoais, embora nos permita relacionar seu uso deste site a informações que você forneceu especificamente e conscientemente. Mas a única informação pessoal que um cookie pode conter é informação que você mesmo fornece. Um cookie não pode ler dados do seu disco rígido ou ler arquivos de cookie criados por outros sites. A CSG usa cookies para rastrear padrões de tráfego de usuários (conforme descrito acima). Nosso sistema de publicidade entrega um cookie único para melhor rastrear impressões e taxas de clique.</p>
+      <p>We may place a text file called a "cookie" in the browser files of your computer. The cookie itself does not contain Personal Information although it will enable us to relate your use of this site to information that you have specifically and knowingly provided. But the only personal information a cookie can contain is information you supply yourself. A cookie can't read data off your hard disk or read cookie files created by other sites. CSG uses cookies to track user traffic patterns (as described above). Our advertising system delivers a one-time cookie to better track ad impressions and click rates.</p>
       
-      <p>Você pode recusar cookies desativando-os no seu navegador. Se você configurou seu navegador para avisá-lo antes de aceitar cookies, receberá a mensagem de aviso com cada cookie. Você não precisa ter cookies ativados para usar este site. No entanto, você precisa de cookies para participar ativamente de quadros de mensagens, fóruns, enquetes e pesquisas.</p>
+      <p>You can refuse cookies by turning them off in your browser. If you've set your browser to warn you before accepting cookies, you will receive the warning message with each cookie. You do not need to have cookies turned on to use this site. However, you do need cookies to participate actively in message boards, forums, polling and surveys.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">USO DAS INFORMAÇÕES</h4>
-      <p>A CSG usa qualquer informação fornecida voluntariamente por nossos usuários para aprimorar sua experiência em nossa rede de sites, seja para fornecer elementos interativos ou personalizados nos sites ou para melhor preparar conteúdo futuro com base nos interesses de nossos usuários.</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">USE OF INFORMATION</h4>
+      <p>CSG uses any information voluntarily given by our users to enhance their experience in our network of sites, whether to provide interactive or personalized elements on the sites or to better prepare future content based on the interests of our users.</p>
       
-      <p>Conforme declarado acima, usamos informações que os usuários fornecem voluntariamente para enviar boletins eletrônicos e para permitir que os usuários participem de enquetes, pesquisas, quadros de mensagens e fóruns. Enviamos boletins para assinantes em uma programação regular (dependendo do boletim) e ocasionalmente enviamos edições especiais quando achamos que os assinantes podem estar particularmente interessados em algo que estamos fazendo. A CSG nunca compartilha listas de e-mail de boletins com terceiros, incluindo anunciantes, patrocinadores ou parceiros.</p>
+      <p>As stated above, we use information that users voluntarily provide in order to send out electronic newsletters and to enable users to participate in polls, surveys, message boards, and forums. We send out newsletters to subscribers on a regular schedule (depending on the newsletter), and occasionally send out special editions when we think subscribers might be particularly interested in something we are doing. CSG never shares newsletter mailing lists with any third parties, including advertisers, sponsors or partners.</p>
       
-      <p>Quando usamos informações de rastreamento para determinar quais áreas de nossos sites os usuários mais e menos gostam com base no tráfego para essas áreas. Não rastreamos o que os usuários individuais leem, mas sim o desempenho geral de cada página. Isso nos ajuda a continuar construindo um serviço melhor para você. Rastreamos os termos de pesquisa inseridos em nossa função de Pesquisa como uma das muitas medidas do que interessa aos nossos usuários. Mas não rastreamos quais termos um usuário específico insere.</p>
+      <p>When we use tracking information to determine which areas of our sites users like and don't like based on traffic to those areas. We do not track what individual users read, but rather how well each page performs overall. This helps us continue to build a better service for you. We track search terms entered in Search function as one of many measures of what interests our users. But we don't track which terms a particular user enters.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">COMPARTILHAMENTO DAS INFORMAÇÕES</h4>
-      <p>A CSG usa as informações descritas acima para adaptar nosso conteúdo às suas necessidades e ajudar nossos anunciantes a entender melhor a demografia do nosso público. Isso é essencial para manter nosso serviço gratuito. Não compartilharemos informações sobre usuários individuais com terceiros, exceto para cumprir leis aplicáveis ou processos legais válidos ou para proteger a segurança pessoal de nossos usuários ou do público.</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">SHARING OF THE INFORMATION</h4>
+      <p>CSG uses the above-described information to tailor our content to suit your needs and help our advertisers better understand our audience's demographics. This is essential to keeping our service free. We will not share information about individual users with any third party, except to comply with applicable law or valid legal process or to protect the personal safety of our users or the public.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">SEGURANÇA</h4>
-      <p>A CSG opera redes de dados seguras protegidas por firewalls padrão do setor e sistemas de proteção por senha. Nossas políticas de segurança e privacidade são periodicamente revisadas e aprimoradas conforme necessário e apenas indivíduos autorizados têm acesso às informações fornecidas por nossos clientes.</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">SECURITY</h4>
+      <p>CSG operates secure data networks protected by industry standard firewall and password protection systems. Our security and privacy policies are periodically reviewed and enhanced as necessary and only authorized individuals have access to the information provided by our customers.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">POLÍTICA DE OPÇÃO DE NÃO PARTICIPAÇÃO</h4>
-      <p>Oferecemos aos usuários opções sempre que necessário e prático. Tais escolhas incluem:</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">OPT-OUT POLICY</h4>
+      <p>We give users options wherever necessary and practical. Such choices include:</p>
       <ul style="padding-left: 20px;">
-        <li>Optar por não se registrar para receber nossos boletins eletrônicos.</li>
-        <li>Optar por não participar de certas áreas interativas, o que elimina completamente a necessidade de coletar qualquer informação pessoalmente identificável de nossos usuários</li>
+        <li>Opting not to register to receive our electronic newsletters.</li>
+        <li>Opting not to participate in certain interactive areas, which completely alleviates the need to gather any personally identifiable information from our users</li>
       </ul>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">SEU CONSENTIMENTO</h4>
-      <p>Ao usar este site, você consente com a coleta e uso dessas informações pela CSG. Se decidirmos alterar nossa política de privacidade, publicaremos essas alterações nesta página para que você sempre esteja ciente de quais informações coletamos, como as usamos e sob quais circunstâncias as divulgamos.</p>
+      <h4 style="color: #2a5298; margin: 15px 0 5px;">YOUR CONSENT</h4>
+      <p>By using this site, you consent to the collection and use of this information by CSG. If we decide to change our privacy policy, we will post those changes on this page so that you are always aware of what information we collect, how we use it, and under what circumstances we disclose it.</p>
     </div>
 
     <button onclick="closeTermsPopup()" style="
@@ -817,6 +759,44 @@
     ">Fechar</button>
   </div>
 
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="/novo-logo-codeone.png" alt="CODEONE" class="footer-logo">
+        <div class="footer-brand-text">
+          <p><strong>CODEONE Brasil ®</strong></p>
+          <p>Studios Broadcast, Podcast & Streaming</p>
+          <p>CODESTORE ®</p>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Acesse nossas redes sociais</h4>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/codeonebrasil" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/codeonebrasil" target="_blank">Instagram</a>
+          <a href="https://twitter.com/codeonebrasil" target="_blank">Twitter/X</a>
+          <a href="#" target="_blank">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Fale com a gente</h4>
+        <a href="#" class="footer-email" id="open-contact">Clique aqui para nos enviar uma mensagem</a>
+        <h4 class="footer-access-title">Acesse também</h4>
+        <a href="https://www.clockview.online" target="_blank">
+          <img src="/CLOCKVIEWLG.jpg" alt="ClockView" class="clockview-logo">
+        </a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Programas, concepção, marcas e nomes protegidos pela lei de direitos autorais e propriedade intelectual.</p>
+      <p class="footer-copyright">
+        <a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Termos de uso e Privacidade</a> | 
+        CODEONE Brasil©2023-2025 | Music and Dreams | Todos os direitos reservados
+      </p>
+      <p>www.codeonebrasil.com.br</p>
+    </div>
+  </footer>
   <!-- Popup de Contato -->
   <div class="overlay" id="contact-overlay"></div>
   <div class="contact-popup" id="contact-popup">
@@ -899,7 +879,7 @@
 
     document.getElementById('contact-overlay').addEventListener('click', closeContactPopup);
 
-    // Popup de Termos
+    // Popup de Termos (NOVO)
     function openTermsPopup() {
       document.getElementById('terms-overlay').style.display = 'block';
       document.getElementById('terms-popup').style.display = 'block';
@@ -1087,36 +1067,16 @@
       });
     });
 
-    // Registra o Service Worker
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(reg => console.log('Service Worker registrado:', reg.scope))
-          .catch(err => console.log('Falha no Service Worker:', err));
-      });
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('Service Worker registrado:', reg.scope))
+        .catch(err => console.log('Erro:', err));
     }
 
     // Inicialização
     window.onload = function() {
       stream.volume = 0.7;
       setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 2000);
-      
-      // Tratamento de erros para o player de áudio
-      stream.addEventListener('error', (e) => {
-        console.error('Erro no player de áudio:', e);
-        alert('Ocorreu um erro ao carregar a transmissão. Por favor, tente recarregar a página.');
-      });
-
-      // Verificação de conexão
-      window.addEventListener('offline', () => {
-        alert('Você está offline. Algumas funcionalidades podem não estar disponíveis.');
-      });
-
-      // Verificação de suporte a PWA
-      if (!('serviceWorker' in navigator)) {
-        console.warn('Service Worker não suportado');
-        document.getElementById('installBtn').style.display = 'none';
-      }
     };
   </script>
 </body>
