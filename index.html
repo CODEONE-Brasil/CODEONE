@@ -24,6 +24,12 @@
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Font Awesome for player buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pIVpG+BkPlFXJyGwZ8o5OeTxgY+bbE+MvUqk7EFZKFo2c/kFOqjlQ4AoRfFpyPtu/2vM19m4S2QvTcGP7hViUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
     /* RESET & BASE STYLES */
     * {
@@ -83,34 +89,55 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border: 1px solid #eee;
     }
-    .player-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      margin-top: 15px;
+    
+    /* New Compact Player */
+    .compact-player {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      max-width: 320px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
     }
-    .player-btn {
-      background: #555;
+
+    .compact-player h3 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    .compact-player .controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .compact-player .controls button {
+      background: none;
       border: none;
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      color: #666;
+      font-size: 1.6rem;
       cursor: pointer;
-      font-size: 16px;
-      transition: all 0.3s;
+      transition: color 0.2s;
     }
-    .player-btn:hover {
-      background: #333;
+
+    .compact-player .controls button:hover {
+      color: #000;
     }
-    .volume-control {
+
+    .compact-player .volume-container {
+      margin-top: 1rem;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.5rem;
     }
-    #volume {
-      width: 80px;
+
+    .compact-player .volume-container input[type="range"] {
+      flex: 1;
     }
 
     /* BANNER DE EVENTOS */
@@ -407,10 +434,9 @@
     }
     .footer-legal {
       text-align: center;
-      font-size: 10px;
+      font-size: 11px;
       padding-top: 15px;
       margin-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.2);
       max-width: 1000px;
       margin: 20px auto 0;
     }
@@ -418,13 +444,14 @@
       margin: 5px 0;
     }
     .footer-copyright {
-      font-size: 11px;
+      font-size: 12px;
       margin: 8px 0;
     }
     .footer-legal-link {
       color: #fffc00;
       text-decoration: none;
       transition: all 0.3s;
+      font-size: 12px;
     }
     .footer-legal-link:hover {
       text-decoration: underline;
@@ -458,14 +485,17 @@
       text-align: center;
       overflow: hidden;
     }
-    .ad-top {
-      margin-bottom: 10px;
-    }
     .ad-above-title {
       margin: 15px 0;
     }
     .ad-above-footer {
       margin: 20px 0 15px;
+    }
+    .ad-below-programs {
+      margin: 30px 0;
+    }
+    .ad-above-services {
+      margin: 30px 0 0;
     }
 
     /* RESPONSIVO */
@@ -504,14 +534,17 @@
         width: 95%;
         padding: 20px;
       }
-      .ad-top {
-        margin-bottom: 5px;
-      }
       .ad-above-title {
         margin: 10px 0;
       }
       .ad-above-footer {
         margin: 15px 0 10px;
+      }
+      .ad-below-programs {
+        margin: 20px 0;
+      }
+      .ad-above-services {
+        margin: 20px 0 0;
       }
     }
   </style>
@@ -519,17 +552,6 @@
 <body>
   <!-- Faixa decorativa no cabeçalho -->
   <div class="header-border"></div>
-
-  <!-- Espaço 1: Topo do site (acima da logomarca) - Banner grande (728x90) -->
-  <div class="ad-container ad-top">
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:728px;height:90px"
-         data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
-         data-ad-slot="SEU_SLOT_DO_TOPO"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
 
   <div class="container">
     <!-- LOGO PRINCIPAL (acima do player) -->
@@ -539,34 +561,27 @@
 
     <!-- PLAYER -->
     <div class="player-container">
-      <h2>AO VIVO</h2>
-      <audio id="radio-stream" src="http://stream.zeno.fm/hp8pymswhrhvv"></audio>
-      <div class="player-controls">
-        <button class="player-btn" id="play-btn">▶</button>
-        <button class="player-btn" id="pause-btn">❚❚</button>
-        <button class="player-btn" id="stop-btn">■</button>
-        <button class="player-btn" id="share-btn" title="Compartilhar">≡↗</button>
-        <div class="volume-control">
-          <span>🔊</span>
-          <input type="range" id="volume" min="0" max="1" step="0.1" value="0.7">
+      <div class="compact-player">
+        <h3>AO VIVO</h3>
+        <div class="controls">
+          <button onclick="playAudio()" title="Play"><i class="ri-play-circle-line"></i></button>
+          <button onclick="pauseAudio()" title="Pause"><i class="ri-pause-circle-line"></i></button>
+          <button onclick="stopAudio()" title="Stop"><i class="ri-stop-circle-line"></i></button>
+          <button onclick="reloadAudio()" title="Atualizar"><i class="ri-refresh-line"></i></button>
+          <button onclick="shareAudio()" title="Compartilhar"><i class="ri-share-line"></i></button>
         </div>
+        <div class="volume-container">
+          <i class="ri-volume-down-line"></i>
+          <input type="range" min="0" max="1" step="0.01" value="1" onchange="setVolume(this.value)">
+          <i class="ri-volume-up-line"></i>
+        </div>
+        <audio id="radioPlayer" src="https://stream.zeno.fm/hp8pymswhrhvv" type="audio/mpeg"></audio>
       </div>
     </div>
 
     <!-- BANNER DE EVENTOS -->
     <div class="events-banner">
       <p><strong>CODEONE | Music and Dreams |</strong> Transmitindo em caráter experimental</p>
-    </div>
-
-    <!-- ESPAÇO PARA ADSENSE (970x90) -->
-    <div class="ad-container ad-above-title">
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:970px;height:90px"
-           data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
-           data-ad-slot="SEU_SLOT_ACIMA_TITULO"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
     </div>
 
     <!-- TEXTO DESCRITIVO -->
@@ -614,8 +629,8 @@
       <div class="program-box">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODENEWS</h3>
-          <p>Tudo o que você precisa saber em tempo real</p>
+          <h3>CODEPOP</h3>
+          <p>Os maiores nomes da música estão aqui</p>
         </div>
       </div>
       <div class="program-box">
@@ -625,7 +640,72 @@
           <p>Som pesado e cheio de estilo</p>
         </div>
       </div>
+
+      <!-- Linha 3 -->
+      <div class="program-box">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODE80&90</h3>
+          <p>De volta no tempo pra matar saudade</p>
+        </div>
+      </div>
+      <div class="program-box">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODELOVE</h3>
+          <p>O amor está no ar!</p>
+        </div>
+      </div>
+      <div class="program-box">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODEDANCE</h3>
+          <p>Duvido você ficar parado</p>
+        </div>
+      </div>
     </div>
+
+    <!-- TAGLINE -->
+    <div class="tagline">
+      Conteúdo selecionado para ouvintes e leitores exigentes
+    </div>
+
+    <!-- NOVA GRADE DE PROGRAMAS -->
+    <div class="programs-grid">
+      <div class="program-box">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODENEWS</h3>
+          <p>Tudo o que você precisa saber em tempo real</p>
+        </div>
+      </div>
+      <div class="program-box">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODECAST</h3>
+          <p>Convidados especiais em entrevistas exclusivas</p>
+        </div>
+      </div>
+      <div class="program-box">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODECLUB</h3>
+          <p>O clube de conteúdo exclusivo da CODEONE</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Espaço para publicidade acima dos serviços -->
+    <div class="ad-container ad-above-services">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
+           data-ad-slot="SEU_SLOT_ACIMA_SERVICOS"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
     <!-- DIVISÃO ENTRE PROGRAMAS E SERVIÇOS -->
     <div class="services-divider">
       Programação personalizada para a sua empresa, para você ou para quem você ama
@@ -654,6 +734,17 @@
           <p>Celebre momentos únicos com um programa só seu!</p>
         </div>
       </div>
+    </div>
+
+    <!-- Espaço para publicidade abaixo dos boxes de programas -->
+    <div class="ad-container ad-below-programs">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
+           data-ad-slot="SEU_SLOT_ABAIXO_PROGRAMAS"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
   </div>
 
@@ -814,8 +905,8 @@
     </div>
     <div class="footer-legal">
       <p><a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Terms of Use and Privacy</a> | <a href="#" class="footer-legal-link">Contact</a></p>
-      <p class="footer-copyright">© 2025 CODEONE Music and Dreams | All rights reserved</p>
-      <p>CODEMEDIA COMUNICAÇÃO</p>
+      <p class="footer-copyright">© 2025 CODEONE Music and Dreams</p>
+      <p>CODEMEDIA COMUNICAÇÃO | All rights reserved</p>
       <p>by SPDTECH Digital Asset Management</p>
     </div>
   </footer>
@@ -841,49 +932,46 @@
 
   <!-- Scripts -->
   <script>
-    // Player de Rádio
-    const stream = document.getElementById('radio-stream');
-    const playBtn = document.getElementById('play-btn');
-    const pauseBtn = document.getElementById('pause-btn');
-    const stopBtn = document.getElementById('stop-btn');
-    const shareBtn = document.getElementById('share-btn');
-    const volumeControl = document.getElementById('volume');
+    // New Compact Player Functions
+    const player = document.getElementById('radioPlayer');
 
-    playBtn.addEventListener('click', () => {
-      stream.play();
-      playBtn.style.backgroundColor = '#333';
-      pauseBtn.style.backgroundColor = '#555';
-    });
+    function playAudio() {
+      player.play();
+    }
 
-    pauseBtn.addEventListener('click', () => {
-      stream.pause();
-      pauseBtn.style.backgroundColor = '#333';
-      playBtn.style.backgroundColor = '#555';
-    });
+    function pauseAudio() {
+      player.pause();
+    }
 
-    stopBtn.addEventListener('click', () => {
-      stream.pause();
-      stream.currentTime = 0;
-      playBtn.style.backgroundColor = '#555';
-      pauseBtn.style.backgroundColor = '#555';
-    });
+    function stopAudio() {
+      player.pause();
+      player.currentTime = 0;
+    }
 
-    volumeControl.addEventListener('input', (e) => {
-      stream.volume = e.target.value;
-    });
+    function reloadAudio() {
+      player.pause();
+      player.src = player.src;
+      player.load();
+      player.play();
+    }
 
-    // Compartilhar
-    shareBtn.addEventListener('click', () => {
+    function shareAudio() {
+      const shareData = {
+        title: 'CODEONE AO VIVO',
+        text: 'Ouça a CODEONE ao vivo agora mesmo!',
+        url: 'https://codeonebrasil.com.br'
+      };
       if (navigator.share) {
-        navigator.share({
-          title: 'Ouça CODEONE - Music and Dreams',
-          text: 'Curta as melhores mixagens eletrônicas!',
-          url: 'https://www.codeonebrasil.com.br'
-        });
+        navigator.share(shareData).catch(err => console.error('Erro ao compartilhar:', err));
       } else {
-        alert('Copie o link: https://www.codeonebrasil.com.br');
+        navigator.clipboard.writeText(shareData.url);
+        alert('Link copiado: ' + shareData.url);
       }
-    });
+    }
+
+    function setVolume(value) {
+      player.volume = value;
+    }
 
     // Popup de Contato
     document.getElementById('open-contact').addEventListener('click', function(e) {
@@ -1097,7 +1185,7 @@
 
     // Inicialização
     window.onload = function() {
-      stream.volume = 0.7;
+      player.volume = 1;
       setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 2000);
     };
   </script>
