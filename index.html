@@ -1160,7 +1160,7 @@
 
     document.getElementById('service-overlay').addEventListener('click', closeServicePopup);
 
-    // PWA
+    // PWA Implementation
     let deferredPrompt;
     const installBtn = document.getElementById('installBtn');
 
@@ -1168,25 +1168,43 @@
       e.preventDefault();
       deferredPrompt = e;
       installBtn.style.display = 'block';
+      
       installBtn.addEventListener('click', async () => {
         installBtn.style.display = 'none';
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
-        console.log(outcome === 'accepted' ? 'App instalado!' : 'Usuário recusou');
+        console.log(`User response to the install prompt: ${outcome}`);
         deferredPrompt = null;
       });
     });
 
+    window.addEventListener('appinstalled', () => {
+      installBtn.style.display = 'none';
+      deferredPrompt = null;
+      console.log('CODEONE foi instalado com sucesso!');
+    });
+
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registrado:', reg.scope))
-        .catch(err => console.log('Erro:', err));
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+          })
+          .catch(err => {
+            console.log('Falha no registro do ServiceWorker: ', err);
+          });
+      });
     }
 
     // Inicialização
     window.onload = function() {
-      player.volume = 1;
+      player.volume = 0.7;
       setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 2000);
+      
+      // Verifica se já está instalado
+      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+        installBtn.style.display = 'none';
+      }
     };
   </script>
 </body>
