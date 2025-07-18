@@ -56,7 +56,7 @@
     .header-border, .footer-border {
       width: 100%;
       height: 8px;
-      background: linear-gradient(90deg, #1e3c72, #2a5298, #7db9e8, #76b852);
+      background: linear-gradient(90deg, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
     }
     .header-border {
       margin-bottom: 10px;
@@ -144,11 +144,34 @@
 
     .compact-player .volume-container input[type="range"] {
       flex: 1;
+      -webkit-appearance: none;
+      height: 5px;
+      background: #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .compact-player .volume-container input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #1e4a7e;
+      cursor: pointer;
+    }
+
+    .compact-player .volume-container input[type="range"]::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #1e4a7e;
+      cursor: pointer;
     }
 
     /* BANNER DE EVENTOS */
     .events-banner {
-      background: linear-gradient(90deg, #1e3c72, #2a5298, #7db9e8, #a1c4fd, #76b852, #8DC26F);
+      background: linear-gradient(90deg, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
       color: white;
       padding: 15px;
       border-radius: 8px;
@@ -220,18 +243,19 @@
       top: 0;
       bottom: 0;
       width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #3a9a4a);
     }
     .program-box[data-program="codebusiness"] .program-color-strip {
-      background: linear-gradient(to bottom, #2a5298, #76b852);
+      background: linear-gradient(to bottom, #1a3a6a, #2a7a62);
     }
     .program-box[data-program="codelist"] .program-color-strip {
-      background: linear-gradient(to bottom, #7db9e8, #76b852);
+      background: linear-gradient(to bottom, #1e4a7e, #3a9a4a);
     }
     .program-box[data-program="codeparty"] .program-color-strip {
-      background: linear-gradient(to bottom, #1e3c72, #7db9e8);
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e);
     }
     .program-box:not([data-program]) .program-color-strip {
-      background: linear-gradient(to bottom, #1e3c72, #2a5298, #76b852);
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #3a9a4a);
     }
     .program-box h3 {
       color: #333;
@@ -280,7 +304,7 @@
       font-family: 'Montserrat', sans-serif;
     }
     .contact-form button {
-      background: #2a5298;
+      background: #1e4a7e;
       color: white;
       border: none;
       padding: 12px 20px;
@@ -291,7 +315,7 @@
       transition: background 0.3s;
     }
     .contact-form button:hover {
-      background: #1e3c72;
+      background: #1a3a6a;
     }
     .overlay {
       display: none;
@@ -324,7 +348,7 @@
     }
     .terms-popup h3 {
       font-size: 18px;
-      color: #1e3c72;
+      color: #1a3a6a;
     }
     .terms-popup p, .terms-popup li {
       font-size: 14px;
@@ -349,7 +373,7 @@
 
     /* RODAPÉ */
     .site-footer {
-      background: linear-gradient(90deg, rgba(30,60,114,0.8), rgba(42,82,152,0.8), rgba(118,184,82,0.8));
+      background: linear-gradient(90deg, rgba(26,58,106,0.8), rgba(30,74,126,0.8), rgba(58,154,74,0.8));
       padding: 25px 20px 15px;
       color: white;
     }
@@ -387,6 +411,7 @@
       font-size: 16px;
       margin-bottom: 12px;
       letter-spacing: 0.5px;
+      font-weight: normal;
     }
     .footer-access-title {
       font-size: 16px;
@@ -468,7 +493,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #2a5298;
+      background: #1e4a7e;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -481,7 +506,7 @@
       display: none;
     }
     #installBtn:hover {
-      background: #1e3c72;
+      background: #1a3a6a;
     }
 
     /* ANÚNCIOS */
@@ -502,6 +527,84 @@
     }
     .ad-above-services {
       margin: 30px 0 0;
+    }
+    .ad-above-boxes {
+      margin: 30px 0;
+    }
+    .ad-above-description {
+      margin: 20px 0;
+    }
+
+    /* NEW BOXES BEFORE FOOTER */
+    .footer-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+    .footer-box {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      min-height: 120px;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .footer-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    .footer-box-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #3a9a4a);
+    }
+    .footer-box h3 {
+      color: #333;
+      margin-left: 15px;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .footer-box p {
+      color: #555;
+      margin-left: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* NEW STYLES FOR REQUESTED CHANGES */
+    .access-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      margin: 20px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .learn-more-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      margin: 20px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .audio-experience {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
 
     /* RESPONSIVO */
@@ -552,6 +655,14 @@
       .ad-above-services {
         margin: 20px 0 0;
       }
+      .footer-boxes {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+      }
+      .access-text,
+      .learn-more-text {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -583,6 +694,7 @@
         </div>
         <audio id="radioPlayer" src="https://stream.zeno.fm/hp8pymswhrhvv" type="audio/mpeg"></audio>
       </div>
+      <p class="audio-experience">Potencialize sua experiência. Use fones de ouvidos. <i class="ri-headphone-line"></i></p>
     </div>
 
     <!-- BANNER DE EVENTOS -->
@@ -595,86 +707,60 @@
       <p>Web rádio brasileira de música eletrônica, techno, pop, rock, anos 80 & 90 e o que há de melhor nas pistas das maiores casas dançantes do Brasil e do mundo. As mixagens de grandes DJs também tocam aqui na CODEONE; sequências alucinantes marcam a programação da rádio que toca as melhores baladas 24h por dia, 7 dias por semana, sem parar!</p>
     </div>
 
+    <!-- Espaço para publicidade acima da tagline -->
+    <div class="ad-container ad-above-description">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
+           data-ad-slot="SEU_SLOT_ACIMA_TAGLINE"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
     <!-- TAGLINE -->
     <div class="tagline">
       Aumente o volume, você está na CODEONE
     </div>
+
     <!-- GRADE DE PROGRAMAS -->
     <div class="programs-grid">
       <!-- Linha 1 -->
       <div class="program-box">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODEMIX</h3>
-          <p>Mixagens alucinantes pra você não parar nem um segundo</p>
+          <h3>PROGRAMAS</h3>
+          <p>Conheça a programação completa e os canais da CODEONE</p>
         </div>
       </div>
       <div class="program-box">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODEMAX</h3>
-          <p>Sequências eletrizantes sem intervalos comerciais</p>
+          <h3>OUVINTES</h3>
+          <p>Cadastre-se, peça sua música e concorra a prêmios exclusivos</p>
         </div>
       </div>
       <div class="program-box">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODELIVE</h3>
-          <p>Transmissões ao vivo de shows e eventos especiais</p>
-        </div>
-      </div>
-      
-      <!-- Linha 2 -->
-      <div class="program-box">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODECONCERT</h3>
-          <p>Shows históricos dos maiores nomes da música mundial</p>
-        </div>
-      </div>
-      <div class="program-box">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODEPOP</h3>
-          <p>Os maiores nomes da música estão aqui</p>
-        </div>
-      </div>
-      <div class="program-box">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODEROCK</h3>
-          <p>Som pesado e cheio de estilo</p>
-        </div>
-      </div>
-
-      <!-- Linha 3 -->
-      <div class="program-box">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODE80&90</h3>
-          <p>De volta no tempo pra matar saudade</p>
-        </div>
-      </div>
-      <div class="program-box">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODELOVE</h3>
-          <p>O amor está no ar!</p>
-        </div>
-      </div>
-      <div class="program-box">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODEDANCE</h3>
-          <p>Duvido você ficar parado</p>
+          <h3>CODECLUB</h3>
+          <p>Assine nosso APP e tenha acesso a conteúdos exclusivos. Saiba mais.</p>
         </div>
       </div>
     </div>
 
-    <!-- TAGLINE -->
-    <div class="tagline">
-      Conteúdo selecionado para ouvintes e leitores exigentes
+    <!-- Espaço para publicidade acima da segunda tagline -->
+    <div class="ad-container ad-above-description">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
+           data-ad-slot="SEU_SLOT_ACIMA_TAGLINE"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
+
+    <div class="access-text">Acesse e conheça nossa rede de ativos digitais.</div>
 
     <!-- NOVA GRADE DE PROGRAMAS -->
     <div class="programs-grid">
@@ -688,15 +774,15 @@
       <div class="program-box">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODECAST</h3>
-          <p>Convidados especiais em entrevistas exclusivas</p>
+          <h3>CODETV</h3>
+          <p>Streaming & Broadcast com conteúdo imperdível.</p>
         </div>
       </div>
       <div class="program-box">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODECLUB</h3>
-          <p>O clube de conteúdo exclusivo da CODEONE</p>
+          <h3>CODESTORE</h3>
+          <p>Nossa loja com produtos e descontos especiais para membros.</p>
         </div>
       </div>
     </div>
@@ -752,6 +838,44 @@
            (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
+
+    <!-- Espaço para publicidade acima dos novos boxes -->
+    <div class="ad-container ad-above-boxes">
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-SEU_ID_DO_ADSENSE"
+           data-ad-slot="SEU_SLOT_ACIMA_BOXES"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <div class="learn-more-text">Saiba mais sobre a CODEONE</div>
+
+    <!-- NOVOS BOXES ANTES DO RODAPÉ -->
+    <div class="footer-boxes">
+      <div class="footer-box">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>QUEM SOMOS</h3>
+          <p>Conheça-nos melhor, nossos planos e visões.</p>
+        </div>
+      </div>
+      <div class="footer-box">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>AFILIADAS</h3>
+          <p>Conheça a nossa de rede de emissoras e afiliadas parceiras.</p>
+        </div>
+      </div>
+      <div class="footer-box">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>ANUNCIE</h3>
+          <p>Conheça todas as possibilidades comerciais que nossa rede de ativos oferece.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Espaço 3: Acima do rodapé (728x90) -->
@@ -768,13 +892,13 @@
   <div class="terms-popup" id="terms-popup">
     <button class="close-terms-btn" onclick="closeTermsPopup()">×</button>
     <div class="header-border" style="margin-bottom: 15px;"></div>
-    <h2 style="color: #2a5298; margin-bottom: 20px;">TERMS AND CONDITIONS AND PRIVACY POLICY</h2>
+    <h2 style="color: #1e4a7e; margin-bottom: 20px;">TERMS AND CONDITIONS AND PRIVACY POLICY</h2>
     <div style="text-align: right; margin-bottom: 10px; font-size: 12px; color: #555;">Last Updated: May 2016</div>
     
     <div style="max-height: 60vh; overflow-y: auto; padding-right: 10px; text-align: left;">
       <p>The following terms (hereinafter referred to as "Terms and Conditions") - which include the Privacy Policy of this website (hereinafter referred to as "Website") - are a legally binding contractual agreement between you (hereinafter referred to as "User," "you," "your") and Comfort Software Group (hereinafter referred to as "CSG").</p>
 
-      <h3 style="color: #1e3c72; margin: 20px 0 10px;">TERMS AND CONDITIONS TO USE THIS WEBSITE</h3>
+      <h3 style="color: #1a3a6a; margin: 20px 0 10px;">TERMS AND CONDITIONS TO USE THIS WEBSITE</h3>
       <ol style="padding-left: 20px; margin-bottom: 20px;">
         <li>The contents of this Website can be shared, redistributed, embedded, and copied. All we ask is that you include a link back to this Website.</li>
         <li>The contents of this Website cannot be modified or sold without the express written permission of CSG.</li>
@@ -787,19 +911,19 @@
         <li>CSG reserves the right to modify these Terms and Conditions at any time, for any reason and without prior notice. In such case, the modified Terms and Conditions will take effect when they are published.</li>
       </ol>
 
-      <h3 style="color: #1e3c72; margin: 20px 0 10px;">PRIVACY POLICY</h3>
+      <h3 style="color: #1a3a6a; margin: 20px 0 10px;">PRIVACY POLICY</h3>
       <p>This site is owned and operated by Comfort Software Group (hereinafter referred to as "CSG"). Your privacy on the Internet is of the utmost importance to us. At CSG, we want to make your experience online satisfying and safe.</p>
       
       <p>Because we gather certain types of information about our users, we feel you should fully understand the terms and conditions surrounding the capture and use of that information. This privacy statement discloses what information we gather and how we use it.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">INFORMATION CSG GATHERS AND TRACKS</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">INFORMATION CSG GATHERS AND TRACKS</h4>
       <p>CSG gathers two types of information about users:</p>
       <ul style="padding-left: 20px; margin-bottom: 15px;">
         <li>Information that users provide through optional, voluntary submissions. These are voluntary submissions to receive our electronic newsletters, to participate in our message boards or forums, to email a friend, and from participation in polls and surveys.</li>
         <li>Information CSG gathers through aggregated tracking information derived mainly by tallying page views throughout our sites. This information allows us to better tailor our content to readers' needs and to help our advertisers and sponsors better understand the demographics of our audience. Because CSG derives its revenue mainly from sponsorships and advertising, providing such aggregated demographic data is essential to keeping our service free to users. Under no circumstances does CSG divulge any information about an individual user to a third party.</li>
       </ul>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">CSG Gathers User Information In The Following Processes:</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">CSG Gathers User Information In The Following Processes:</h4>
       <p><strong>Optional Voluntary Information</strong></p>
       <p>We offer the following free services, which require some type of voluntary submission of personal information by users:</p>
       
@@ -818,45 +942,45 @@
       <p><strong>5. Surveys</strong><br>
       CSG may occasionally conduct user surveys to better target our content to our audience. We sometimes share the aggregated demographic information in these surveys with our sponsors, advertisers and partners. We never share any of this information about specific individuals with any third party.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">Children</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">Children</h4>
       <p>Consistent with the Federal Children's Online Privacy Protection Act of 1998 (COPPA), we will never knowingly request personally identifiable information from anyone under the age of 13 without requesting parental consent.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">Usage tracking</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">Usage tracking</h4>
       <p>CSG tracks user traffic patterns throughout all of our sites. However, we do not correlate this information with data about individual users. CSG does break down overall usage statistics according to a user's domain name, browser type, and MIME type by reading this information from the browser string (information contained in every user's browser).</p>
       
       <p>CSG sometimes tracks and catalogs the search terms that users enter in our Search function, but this tracking is never associated with individual users. We use tracking information to determine which areas of our sites users like and don't like based on traffic to those areas. We do not track what individual users read, but rather how well each page performs overall. This helps us continue to build a better service for you.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">Cookies</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">Cookies</h4>
       <p>We may place a text file called a "cookie" in the browser files of your computer. The cookie itself does not contain Personal Information although it will enable us to relate your use of this site to information that you have specifically and knowingly provided. But the only personal information a cookie can contain is information you supply yourself. A cookie can't read data off your hard disk or read cookie files created by other sites. CSG uses cookies to track user traffic patterns (as described above). Our advertising system delivers a one-time cookie to better track ad impressions and click rates.</p>
       
       <p>You can refuse cookies by turning them off in your browser. If you've set your browser to warn you before accepting cookies, you will receive the warning message with each cookie. You do not need to have cookies turned on to use this site. However, you do need cookies to participate actively in message boards, forums, polling and surveys.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">USE OF INFORMATION</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">USE OF INFORMATION</h4>
       <p>CSG uses any information voluntarily given by our users to enhance their experience in our network of sites, whether to provide interactive or personalized elements on the sites or to better prepare future content based on the interests of our users.</p>
       
       <p>As stated above, we use information that users voluntarily provide in order to send out electronic newsletters and to enable users to participate in polls, surveys, message boards, and forums. We send out newsletters to subscribers on a regular schedule (depending on the newsletter), and occasionally send out special editions when we think subscribers might be particularly interested in something we are doing. CSG never shares newsletter mailing lists with any third parties, including advertisers, sponsors or partners.</p>
       
       <p>When we use tracking information to determine which areas of our sites users like and don't like based on traffic to those areas. We do not track what individual users read, but rather how well each page performs overall. This helps us continue to build a better service for you. We track search terms entered in Search function as one of many measures of what interests our users. But we don't track which terms a particular user enters.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">SHARING OF THE INFORMATION</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">SHARING OF THE INFORMATION</h4>
       <p>CSG uses the above-described information to tailor our content to suit your needs and help our advertisers better understand our audience's demographics. This is essential to keeping our service free. We will not share information about individual users with any third party, except to comply with applicable law or valid legal process or to protect the personal safety of our users or the public.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">SECURITY</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">SECURITY</h4>
       <p>CSG operates secure data networks protected by industry standard firewall and password protection systems. Our security and privacy policies are periodically reviewed and enhanced as necessary and only authorized individuals have access to the information provided by our customers.</p>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">OPT-OUT POLICY</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">OPT-OUT POLICY</h4>
       <p>We give users options wherever necessary and practical. Such choices include:</p>
       <ul style="padding-left: 20px;">
         <li>Opting not to register to receive our electronic newsletters.</li>
         <li>Opting not to participate in certain interactive areas, which completely alleviates the need to gather any personally identifiable information from our users</li>
       </ul>
       
-      <h4 style="color: #2a5298; margin: 15px 0 5px;">YOUR CONSENT</h4>
+      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">YOUR CONSENT</h4>
       <p>By using this site, you consent to the collection and use of this information by CSG. If we decide to change our privacy policy, we will post those changes on this page so that you are always aware of what information we collect, how we use it, and under what circumstances we disclose it.</p>
     </div>
 
     <button onclick="closeTermsPopup()" style="
-      background: #2a5298;
+      background: #1e4a7e;
       color: white;
       border: none;
       padding: 10px 20px;
@@ -873,7 +997,7 @@
     <div class="header-border" style="margin-bottom: 15px;"></div>
     <div id="service-content" style="max-height: 60vh; overflow-y: auto; padding-right: 10px; text-align: left;"></div>
     <button onclick="closeServicePopup()" style="
-      background: #2a5298;
+      background: #1e4a7e;
       color: white;
       border: none;
       padding: 10px 20px;
@@ -888,38 +1012,41 @@
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <img src="/codeonemusicanddreams.png" alt="CODEONE" class="footer-logo" style="max-width: 200px;">
+        <img src="/codemedia-logo.png" alt="CODEMEDIA" class="footer-logo" style="max-width: 200px;">
       </div>
       <div class="footer-section">
-        <h4>Visit our social networks</h4>
+        <h4>Acesse nossas redes sociais</h4>
         <div class="footer-social-icons">
           <a href="https://www.facebook.com/codeonebrasil" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/codeonebrasil" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com/codeonebrasil" target="_blank"><i class="fab fa-x-twitter"></i></a>
           <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-section">
-        <h4>Visit also</h4>
-        <a href="https://www.clockview.online" target="_blank">
-          <img src="/clockview-logo.png" alt="ClockView" class="clockview-logo" style="width: 100px; margin: 5px 0;">
-        </a>
-        <a href="https://www.spinmix.online" target="_blank">
-          <img src="/spinmix-logo.png" alt="SpinMix" class="clockview-logo" style="width: 100px;">
-        </a>
+        <h4>Acesse também</h4>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <a href="https://www.clockview.online" target="_blank">
+            <img src="/clockview-logo.png" alt="ClockView" class="clockview-logo" style="width: 100px; margin: 5px 0;">
+          </a>
+          <a href="https://www.spinmix.online" target="_blank">
+            <img src="/spinmix-logo.png" alt="SpinMix" class="clockview-logo" style="width: 100px; margin-top: 10px;">
+          </a>
+        </div>
       </div>
     </div>
     <div class="footer-legal">
       <p><a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Terms of Use and Privacy</a> | <a href="#" class="footer-legal-link">Contact</a></p>
       <p class="footer-copyright">© 2025 CODEONE Music and Dreams</p>
-      <p>CODEMEDIA COMUNICAÇÃO | All rights reserved</p>
+      <p>CODEMEDIA Comunicação | Todos os direitos reservados</p>
       <p>by SPDTECH Digital Asset Management</p>
     </div>
   </footer>
   <!-- Popup de Contato -->
   <div class="overlay" id="contact-overlay"></div>
   <div class="contact-popup" id="contact-popup">
-    <h3 style="margin-bottom:20px; color:#2a5298;">Envie sua mensagem</h3>
+    <h3 style="margin-bottom:20px; color:#1e4a7e;">Envie sua mensagem</h3>
     <form class="contact-form" id="contact-form" action="enviar-contato.php" method="POST">
       <input type="text" name="nome" placeholder="Seu nome" required>
       <input type="email" name="email" placeholder="Seu e-mail" required>
@@ -934,7 +1061,7 @@
   </div>
 
   <!-- Botão Instalar PWA -->
-  <button id="installBtn" style="display:none; position:fixed; bottom:20px; right:20px; background:#2a5298; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-family:'Montserrat',sans-serif; font-weight:600; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:100;">
+  <button id="installBtn" style="display:none; position:fixed; bottom:20px; right:20px; background:#1e4a7e; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-family:'Montserrat',sans-serif; font-weight:600; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:100;">
     Instalar CODEONE
   </button>
 
@@ -1018,11 +1145,11 @@
       
       if (service === 'codeparty') {
         content = `
-          <h2 style="color: #2a5298; margin-bottom: 20px;">🎉 CODEPARTY | A festa nunca termina na CODEONE</h2>
+          <h2 style="color: #1e4a7e; margin-bottom: 20px;">🎉 CODEPARTY | A festa nunca termina na CODEONE</h2>
           <p>Já imaginou homenagear alguém especial com um programa de rádio ao vivo, totalmente personalizado com as músicas que marcaram sua história e mensagens de voz gravadas por amigos e familiares?</p>
           <p>Com o CODEPARTY, isso é possível.</p>
           <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1e3c72; margin: 20px 0 10px;">💡 O que é o CODEPARTY?</h3>
+          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">💡 O que é o CODEPARTY?</h3>
           <p>Um programa de rádio exclusivo, transmitido ao vivo pela internet, criado para celebrar pessoas e momentos inesquecíveis. Ideal para aniversários, bodas, promoções, despedidas, reencontros e datas comemorativas em geral.</p>
           <p>Você escolhe:</p>
           <ul style="padding-left: 20px; margin-bottom: 15px;">
@@ -1032,7 +1159,7 @@
           </ul>
           <p>A locução fica por conta de um locutor profissional com experiência nas maiores rádios do Brasil, como Rede Transamérica e Metropolitana FM.</p>
           <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1e3c72; margin: 20px 0 10px;">🎙️ Como funciona?</h3>
+          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">🎙️ Como funciona?</h3>
           <ol style="padding-left: 20px; margin-bottom: 15px;">
             <li><strong>Agendamento personalizado</strong><br>Você entra em contato com a nossa equipe e agendamos um bate-papo para entender sua ideia, a ocasião e a melhor data/horário para transmissão.</li>
             <li><strong>Definição do conteúdo</strong><br>Você seleciona as músicas e envia mensagens de voz (via WhatsApp) de amigos e familiares. Nós cuidamos da montagem e da emoção.</li>
@@ -1040,7 +1167,7 @@
             <li><strong>Programa gravado como recordação</strong><br>Após a transmissão, você recebe o programa completo em formato MP3 para guardar, compartilhar ou reviver quando quiser.</li>
           </ol>
           <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1e3c72; margin: 20px 0 10px;">🌍 Para quem é o CODEPARTY?</h3>
+          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">🌍 Para quem é o CODEPARTY?</h3>
           <ul style="padding-left: 20px; margin-bottom: 15px;">
             <li>Casais apaixonados (Dia dos Namorados, aniversários de namoro ou casamento)</li>
             <li>Pais e mães em datas comemorativas</li>
@@ -1049,7 +1176,7 @@
             <li>Empresas que desejam homenagear colaboradores ou celebrar conquistas</li>
           </ul>
           <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1e3c72; margin: 20px 0 10px;">🎁 Pacotes disponíveis</h3>
+          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">🎁 Pacotes disponíveis</h3>
           <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
             <h4 style="color: #cd7f32; margin-bottom: 10px;">🥉 PACOTE BRONZE</h4>
             <p><strong>💵 R$ 347,00 à vista ou 12x de R$ 34,70</strong></p>
@@ -1099,7 +1226,7 @@
         `;
       } else if (service === 'codelist') {
         content = `
-          <h2 style="color: #2a5298; margin-bottom: 20px;">🎵 CODELIST | A trilha sonora da sua vida, sem interrupções</h2>
+          <h2 style="color: #1e4a7e; margin-bottom: 20px;">🎵 CODELIST | A trilha sonora da sua vida, sem interrupções</h2>
           <p>Já imaginou ter uma playlist exclusiva, com as músicas que marcaram sua história — sem propagandas, sem interrupções e disponível para ouvir onde e quando quiser?</p>
           <p>Com a CODELIST, isso é possível. Você escolhe:</p>
           <ul style="padding-left: 20px; margin-bottom: 15px;">
@@ -1110,7 +1237,7 @@
           <p>🎧 Nós organizamos tudo para você!</p>
           <p>Sua CODELIST fica armazenada em nossos servidores, em pastas personalizadas de acordo com suas preferências.</p>
           <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1e3c72; margin: 20px 0 10px;">💝 Presente ideal para:</h3>
+          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">💝 Presente ideal para:</h3>
           <ul style="padding-left: 20px; margin-bottom: 15px;">
             <li>Datas especiais</li>
             <li>Surpreender quem você ama</li>
@@ -1125,7 +1252,7 @@
         `;
       } else if (service === 'codebusiness') {
         content = `
-          <h2 style="color: #2a5298; margin-bottom: 20px;">📢 CODEBUSINESS | A trilha sonora da sua marca</h2>
+          <h2 style="color: #1e4a7e; margin-bottom: 20px;">📢 CODEBUSINESS | A trilha sonora da sua marca</h2>
           <p>Transforme o ambiente da sua empresa com uma rádio online sob demanda, criada exclusivamente para fortalecer sua marca e envolver colaboradores e clientes.</p>
           <p>Com o CODEBUSINESS, você terá:</p>
           <ul style="padding-left: 20px; margin-bottom: 15px;">
@@ -1137,7 +1264,7 @@
           </ul>
           <p>🚀 Um canal moderno de comunicação interna e externa, simples de implementar e com impacto direto na percepção da sua marca.</p>
           <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1e3c72; margin: 20px 0 10px;">💼 Excelente para:</h3>
+          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">💼 Excelente para:</h3>
           <ul style="padding-left: 20px; margin-bottom: 15px;">
             <li>Lojas físicas e franquias</li>
             <li>Escritórios e ambientes corporativos</li>
