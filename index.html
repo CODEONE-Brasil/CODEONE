@@ -112,6 +112,16 @@
       margin-bottom: 1rem;
       color: #333;
       font-size: 1.1rem;
+      animation: liveColorChange 2s infinite alternate;
+    }
+
+    @keyframes liveColorChange {
+      0% {
+        color: #333;
+      }
+      100% {
+        color: #ff0000;
+      }
     }
 
     .compact-player .controls {
@@ -157,7 +167,7 @@
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background: #1e4a7e;
+      background: #666;
       cursor: pointer;
     }
 
@@ -165,7 +175,7 @@
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      background: #1e4a7e;
+      background: #666;
       cursor: pointer;
     }
 
@@ -371,11 +381,215 @@
       color: #555;
     }
 
+    /* POPUP QUEM SOMOS */
+    .about-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .about-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .about-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .about-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .about-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .about-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .about-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-about-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .about-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP AFILIADAS */
+    .affiliates-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .affiliates-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .affiliates-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .affiliates-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .affiliates-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .affiliates-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .affiliates-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-affiliates-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .affiliates-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP ANUNCIE */
+    .advertise-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .advertise-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .advertise-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .advertise-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .advertise-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .advertise-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .advertise-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-advertise-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .advertise-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
     /* RODAPÉ */
     .site-footer {
-      background: linear-gradient(90deg, rgba(26,58,106,0.8), rgba(30,74,126,0.8), rgba(58,154,74,0.8));
+      background: white;
       padding: 25px 20px 15px;
-      color: white;
+      color: #1a3a6a;
     }
     .footer-content {
       display: flex;
@@ -401,6 +615,7 @@
       font-size: 14px;
       line-height: 1.4;
       margin: 3px 0;
+      color: #1a3a6a;
     }
     .footer-section {
       flex: 1;
@@ -412,11 +627,13 @@
       margin-bottom: 12px;
       letter-spacing: 0.5px;
       font-weight: normal;
+      color: #1a3a6a;
     }
     .footer-access-title {
       font-size: 16px;
       margin: 15px 0 5px;
       letter-spacing: 0.5px;
+      color: #1a3a6a;
     }
     .footer-social {
       display: flex;
@@ -430,16 +647,16 @@
       margin-top: 10px;
     }
     .footer-social-icons a {
-      color: white;
+      color: #1a3a6a;
       font-size: 24px;
       transition: transform 0.3s;
     }
     .footer-social-icons a:hover {
       transform: scale(1.2);
-      color: #fffc00;
+      color: #1e4a7e;
     }
     .footer-email {
-      color: white;
+      color: #1a3a6a;
       text-decoration: none;
       font-size: 14px;
       transition: all 0.3s;
@@ -447,10 +664,10 @@
       margin-bottom: 10px;
     }
     .footer-email:hover {
-      color: #fffc00;
+      color: #1e4a7e;
     }
     .footer-website {
-      color: #fffc00;
+      color: #1e4a7e;
       text-decoration: none;
       font-size: 14px;
       display: block;
@@ -470,16 +687,18 @@
       margin-top: 20px;
       max-width: 1000px;
       margin: 20px auto 0;
+      color: #1a3a6a;
     }
     .footer-legal p {
       margin: 5px 0;
+      font-size: 11px;
     }
     .footer-copyright {
       font-size: 12px;
       margin: 8px 0;
     }
     .footer-legal-link {
-      color: #fffc00;
+      color: #1e4a7e;
       text-decoration: none;
       transition: all 0.3s;
       font-size: 12px;
@@ -554,6 +773,7 @@
       min-height: 120px;
       text-align: left;
       transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
     .footer-box:hover {
       transform: translateY(-5px);
@@ -639,7 +859,10 @@
         align-items: center;
       }
       .contact-popup,
-      .terms-popup {
+      .terms-popup,
+      .about-popup,
+      .affiliates-popup,
+      .advertise-popup {
         width: 95%;
         padding: 20px;
       }
@@ -694,7 +917,7 @@
         </div>
         <audio id="radioPlayer" src="https://stream.zeno.fm/hp8pymswhrhvv" type="audio/mpeg"></audio>
       </div>
-      <p class="audio-experience">Potencialize sua experiência. Use fones de ouvidos. <i class="ri-headphone-line"></i></p>
+      <p class="audio-experience">Use fones de ouvidos. <i class="ri-headphone-line"></i></p>
     </div>
 
     <!-- BANNER DE EVENTOS -->
@@ -704,7 +927,7 @@
 
     <!-- TEXTO DESCRITIVO -->
     <div class="about-text">
-      <p>Web rádio brasileira de música eletrônica, techno, pop, rock, anos 80 & 90 e o que há de melhor nas pistas das maiores casas dançantes do Brasil e do mundo. As mixagens de grandes DJs também tocam aqui na CODEONE; sequências alucinantes marcam a programação da rádio que toca as melhores baladas 24h por dia, 7 dias por semana, sem parar!</p>
+      <p>A CODEONE é uma webradio brasileira que respira música de verdade. No ar 24 horas por dia, 7 dias por semana, sem parar, nossa programação traz o melhor da música eletrônica, techno, pop, rock, além dos grandes sucessos dos anos 80 e 90 — tudo isso com a energia das pistas mais quentes do Brasil e do mundo. Aqui, as mixagens exclusivas de grandes DJs e as sequências mais alucinantes embalam uma experiência sonora única, feita para quem vive e sente a música. CODEONE. Music and Dreams.</p>
     </div>
 
     <!-- Espaço para publicidade acima da tagline -->
@@ -854,21 +1077,21 @@
 
     <!-- NOVOS BOXES ANTES DO RODAPÉ -->
     <div class="footer-boxes">
-      <div class="footer-box">
+      <div class="footer-box" onclick="openAboutPopup()">
         <div class="footer-box-color-strip"></div>
         <div>
           <h3>QUEM SOMOS</h3>
           <p>Conheça-nos melhor, nossos planos e visões.</p>
         </div>
       </div>
-      <div class="footer-box">
+      <div class="footer-box" onclick="openAffiliatesPopup()">
         <div class="footer-box-color-strip"></div>
         <div>
           <h3>AFILIADAS</h3>
           <p>Conheça a nossa de rede de emissoras e afiliadas parceiras.</p>
         </div>
       </div>
-      <div class="footer-box">
+      <div class="footer-box" onclick="openAdvertisePopup()">
         <div class="footer-box-color-strip"></div>
         <div>
           <h3>ANUNCIE</h3>
@@ -886,6 +1109,45 @@
          data-ad-slot="SEU_SLOT_ACIMA_RODAPE"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="/codemedia-logo.png" alt="CODEMEDIA" class="footer-logo" style="max-width: 200px;">
+      </div>
+      <div class="footer-section">
+        <h4>Acesse nossas redes sociais</h4>
+        <div class="footer-social-icons">
+          <a href="https://www.facebook.com/codeonebrasil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/codeonebrasil" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/codeonebrasil" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Acesse também</h4>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <a href="https://www.clockview.online" target="_blank">
+            <img src="/clockview-logo.png" alt="ClockView" class="clockview-logo" style="width: 100px; margin: 5px 0;">
+          </a>
+          <a href="https://www.spinmix.online" target="_blank">
+            <img src="/spinmix-logo.png" alt="SpinMix" class="clockview-logo" style="width: 100px; margin-top: 10px;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Terms of Use and Privacy</a> | <a href="#" class="footer-legal-link">Contact</a></p>
+      <p class="footer-copyright">© 2025 CODEONE Music and Dreams</p>
+      <p style="font-size: 11px;">CODEMEDIA Comunicação | Todos os direitos reservados</p>
+      <p>by SPDTECH Digital Asset Management</p>
+    </div>
+  </footer>
+
+  <!-- Faixa decorativa abaixo do rodapé -->
+  <div class="footer-border"></div>
 
   <!-- Popup de Termos (NOVO) -->
   <div class="overlay" id="terms-overlay"></div>
@@ -1008,41 +1270,366 @@
     ">Fechar</button>
   </div>
 
-  <!-- Rodapé -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="/codemedia-logo.png" alt="CODEMEDIA" class="footer-logo" style="max-width: 200px;">
-      </div>
-      <div class="footer-section">
-        <h4>Acesse nossas redes sociais</h4>
-        <div class="footer-social-icons">
-          <a href="https://www.facebook.com/codeonebrasil" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/codeonebrasil" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/codeonebrasil" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Acesse também</h4>
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <a href="https://www.clockview.online" target="_blank">
-            <img src="/clockview-logo.png" alt="ClockView" class="clockview-logo" style="width: 100px; margin: 5px 0;">
-          </a>
-          <a href="https://www.spinmix.online" target="_blank">
-            <img src="/spinmix-logo.png" alt="SpinMix" class="clockview-logo" style="width: 100px; margin-top: 10px;">
-          </a>
-        </div>
-      </div>
+  <!-- Popup Quem Somos -->
+  <div class="overlay" id="about-overlay"></div>
+  <div class="about-popup" id="about-popup">
+    <button class="close-about-btn" onclick="closeAboutPopup()">×</button>
+    <div class="about-color-strip"></div>
+    <div class="about-popup-content">
+      <h2>QUEM SOMOS</h2>
+      <p>A CODEONE é uma webradio diferente, dinâmica, viva. Mais do que tocar música ou informar, ela conecta pessoas, histórias e experiências. Gerida pela CODEMEDIA e pela SPDTECH Digital Asset Management, a CODEONE é a primeira marca de um ecossistema que não para de crescer — um verdadeiro ponto de partida para tudo que estamos construindo.</p>
+      
+      <p>Com o selo CODEONE Music and Dreams, nossa rádio vai além da programação musical: oferece uma curadoria sonora envolvente e conteúdos que tocam, informam e inspiram.</p>
+      
+      <p>Ao mesmo tempo, agregamos força a outras marcas, produtos e serviços da nossa rede de ativos, expandindo nossa presença e consolidando uma visão integrada de mídia e inovação.</p>
+      
+      <p>Projetos como CODENEWS e CODETV somam-se em possibilidades e experiências multiplataforma, levando a você o melhor do entretenimento, da informação clara e segura, com a credibilidade de quem entende que comunicar é, antes de tudo, respeitar.</p>
+      
+      <p>A CODEONE é só o começo. Estamos construindo um novo jeito de consumir conteúdo, de ouvir, ver e viver.</p>
+      <p>E o mais importante: estamos fazendo isso pra você, por você.</p>
+      
+      <p>CODEONE | Music and Dreams.</p>
+      
+      <h3>Missão</h3>
+      <p>Oferecer entretenimento inteligente, informação segura e experiências sonoras marcantes, por meio de uma webradio inovadora e conectada com o seu tempo, agregando valor à vida das pessoas e fortalecendo o ecossistema de marcas, produtos e serviços que compõem a nossa rede.</p>
+      
+      <h3>Valores</h3>
+      <p><strong>Inovação com Propósito</strong><br>
+      Criamos e evoluímos com responsabilidade, sempre buscando novas formas de conectar e encantar.</p>
+      
+      <p><strong>Clareza e Credibilidade</strong><br>
+      Nosso compromisso com a verdade e a informação segura é inegociável. Comunicar é respeitar.</p>
+      
+      <p><strong>Conexão Humana</strong><br>
+      Tecnologia sem empatia não nos serve. Valorizamos as pessoas, seus sonhos e suas histórias.</p>
+      
+      <p><strong>Integração e Colaboração</strong><br>
+      A CODEONE faz parte de uma rede. Acreditamos na força da união entre marcas, projetos e talentos.</p>
+      
+      <p><strong>Respeito ao Tempo</strong><br>
+      Nosso conteúdo é para ser consumido no tempo de cada um. Sem pressão, sem ruído. Com significado.</p>
+      
+      <p><strong>Criatividade com Identidade</strong><br>
+      Somos originais, mas com raízes sólidas. Criamos experiências únicas, com a nossa cara e essência.</p>
+      
+      <button onclick="closeAboutPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
     </div>
-    <div class="footer-legal">
-      <p><a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Terms of Use and Privacy</a> | <a href="#" class="footer-legal-link">Contact</a></p>
-      <p class="footer-copyright">© 2025 CODEONE Music and Dreams</p>
-      <p>CODEMEDIA Comunicação | Todos os direitos reservados</p>
-      <p>by SPDTECH Digital Asset Management</p>
+  </div>
+
+  <!-- Popup Afiliadas -->
+  <div class="overlay" id="affiliates-overlay"></div>
+  <div class="affiliates-popup" id="affiliates-popup">
+    <button class="close-affiliates-btn" onclick="closeAffiliatesPopup()">×</button>
+    <div class="affiliates-color-strip"></div>
+    <div class="affiliates-popup-content">
+      <h2>AFILIADAS</h2>
+      <p>A CODEONE acredita na força da conexão. Por isso, abrimos espaço para emissoras afiliadas que compartilham da nossa visão de conteúdo inteligente, musicalmente relevante e tecnicamente impecável.</p>
+      
+      <p>Ser uma afiliada CODEONE é fazer parte de um ecossistema vibrante, inovador e em constante expansão, com acesso a conteúdos exclusivos, programação de alta qualidade e suporte técnico e criativo para fortalecer sua presença local — com uma identidade nacional.</p>
+      
+      <h3>O que é uma Emissora Afiliada CODEONE?</h3>
+      <p>Uma emissora afiliada à CODEONE mantém sua autonomia local, mas passa a integrar nossa rede de distribuição de conteúdo, podendo:</p>
+      <ul>
+        <li>Reproduzir partes da programação oficial da CODEONE (parcial ou integral);</li>
+        <li>Ter acesso a playlists, programas, vinhetas e blocos temáticos prontos para transmissão;</li>
+        <li>Participar de campanhas, eventos e ações promocionais conjuntas;</li>
+        <li>Receber suporte editorial, artístico e técnico;</li>
+        <li>Integrar seus próprios conteúdos à rede, desde que aprovados pela curadoria da CODEMEDIA.</li>
+      </ul>
+      
+      <h3>Para quem é?</h3>
+      <p>Ideal para:</p>
+      <ul>
+        <li>Web rádios regionais que desejam fortalecer sua programação;</li>
+        <li>Emissoras FM ou AM que buscam digitalização e atualização sonora;</li>
+        <li>Projetos locais que desejam manter sua identidade, mas com um "upgrade" de qualidade, padrão e suporte.</li>
+      </ul>
+      
+      <h3>Benefícios em ser uma Afiliada CODEONE:</h3>
+      <ul>
+        <li>Conteúdo de alta qualidade musical e editorial</li>
+        <li>Acesso à identidade CODEONE (vinhetas, visuais, marca)</li>
+        <li>Possibilidade de monetização conjunta via publicidade cooperada</li>
+        <li>Participação em projetos e lançamentos em rede</li>
+        <li>Parceria com uma marca que valoriza a inovação e o respeito ao tempo de cada ouvinte</li>
+      </ul>
+      
+      <h3>Como se tornar uma Afiliada CODEONE?</h3>
+      <p>Interessados podem entrar em contato diretamente com nossa equipe através do formulário de afiliação.</p>
+      <p>Vamos juntos construir uma rede forte, sonora e conectada.</p>
+      
+      <p>CODEONE | Music and Dreams</p>
+      
+      <button onclick="closeAffiliatesPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
     </div>
-  </footer>
+  </div>
+
+  <!-- Popup Anuncie -->
+  <div class="overlay" id="advertise-overlay"></div>
+  <div class="advertise-popup" id="advertise-popup">
+    <button class="close-advertise-btn" onclick="closeAdvertisePopup()">×</button>
+    <div class="advertise-color-strip"></div>
+    <div class="advertise-popup-content">
+      <h2>ANUNCIE</h2>
+      <p>Sua marca no ritmo certo.</p>
+      
+      <p>A CODEONE é muito mais que uma webrádio. Somos uma plataforma viva de entretenimento e informação, que conecta milhares de ouvintes apaixonados por música, conteúdo de qualidade e experiências sonoras intensas.</p>
+      
+      <p>Anunciar na CODEONE é colocar sua marca em sintonia com um público segmentado, engajado e pronto para consumir. Aqui, sua mensagem toca — literalmente.</p>
+      
+      <h3>Por que anunciar na CODEONE?</h3>
+      <ul>
+        <li><strong>Alcance qualificado:</strong> ouvintes fiéis, conectados e com alto tempo de permanência.</li>
+        <li><strong>Segmentação inteligente:</strong> entregamos sua campanha de forma estratégica e eficiente.</li>
+        <li><strong>Formatos variados:</strong> spots comerciais, vinhetas personalizadas, inserções em programas, banners no site e muito mais.</li>
+        <li><strong>Conteúdo 24/7:</strong> sua marca presente o tempo todo.</li>
+        <li><strong>Ambiente moderno e confiável,</strong> com curadoria musical e editorial de alto padrão.</li>
+      </ul>
+      
+      <h3>Para quem é?</h3>
+      <ul>
+        <li>Marcas que desejam falar com um público conectado e de bom gosto;</li>
+        <li>Negócios locais que querem ampliar seu alcance;</li>
+        <li>Agências que buscam veículos digitais com credibilidade e impacto real.</li>
+      </ul>
+      
+      <h3>Fale com a gente!</h3>
+      <p>Entre em contato com nosso time comercial e descubra como levar sua marca para o universo CODEONE:</p>
+      <p>📧 comercial@codemedia.online</p>
+      <p>📞 (00) 0000-0000</p>
+      <p>📍 Ou preencha nosso formulário:</p>
+      
+      <button onclick="closeAdvertisePopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODEBUSINESS -->
+  <div class="overlay" id="codebusiness-overlay"></div>
+  <div class="about-popup" id="codebusiness-popup">
+    <button class="close-about-btn" onclick="closeCodeBusinessPopup()">×</button>
+    <div class="about-color-strip"></div>
+    <div class="about-popup-content">
+      <h2>CODEBUSINESS</h2>
+      <p>A trilha sonora da sua marca. Dê voz à sua empresa com uma rádio exclusiva, criada sob medida para fortalecer sua marca, engajar colaboradores e encantar seus clientes.</p>
+      
+      <p>O CODEBUSINESS transforma o ambiente da sua empresa com uma experiência sonora personalizada e profissional, disponível online, 24 horas por dia, 7 dias por semana.</p>
+      
+      <h3>Com o CODEBUSINESS, você conta com:</h3>
+      <ul>
+        <li>Narrações profissionais e vinhetas com a identidade da sua marca</li>
+        <li>Programação musical personalizada, alinhada ao perfil do seu público e ambiente</li>
+        <li>Espaços para divulgar campanhas, treinamentos, metas e promoções</li>
+        <li>Transmissão contínua, via streaming, sem complicação técnica</li>
+        <li>Perfeito para: lojas, franquias, escritórios, eventos, feiras e ações corporativas</li>
+      </ul>
+      
+      <p>Um canal moderno de comunicação interna e externa, fácil de implementar e com alto impacto na percepção da sua marca</p>
+      
+      <h3>Ideal para:</h3>
+      <ul>
+        <li>Lojas físicas e redes de franquia</li>
+        <li>Ambientes corporativos e escritórios</li>
+        <li>Treinamentos, metas e campanhas internas</li>
+        <li>Divulgação institucional, lançamentos e novidades</li>
+      </ul>
+      
+      <h3>Tudo com a sua identidade sonora</h3>
+      <p>Cada detalhe é personalizado: da escolha musical às vinhetas, do tom da locução à frequência das mensagens. Sua marca com som próprio, profissional e memorável.</p>
+      
+      <p>Entre em contato com a gente e saiba mais:<br>
+      📧 comercial@codemedia.online<br>
+      📞 (00) 0000-0000<br>
+      📍 Ou preencha nosso formulário:</p>
+      
+      <p>CODEBUSINESS. Sua marca merece ser ouvida.</p>
+      
+      <button onclick="closeCodeBusinessPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODELIST -->
+  <div class="overlay" id="codelist-overlay"></div>
+  <div class="about-popup" id="codelist-popup">
+    <button class="close-about-btn" onclick="closeCodeListPopup()">×</button>
+    <div class="about-color-strip"></div>
+    <div class="about-popup-content">
+      <h2>CODELIST</h2>
+      <p>A trilha sonora da sua vida, sem interrupções. Já imaginou ter uma playlist exclusiva, com as músicas que marcaram sua história — sem propagandas, sem interrupções e disponível para ouvir onde e quando quiser?</p>
+      
+      <p>Com a CODELIST, isso é possível. Você escolhe:</p>
+      <ul>
+        <li>Seus estilos e artistas favoritos</li>
+        <li>Quantas músicas quiser</li>
+        <li>E até pode criar playlists temáticas (ex: romântica, motivacional, clássicos da infância...)</li>
+      </ul>
+      
+      <p>Nós organizamos tudo para você!</p>
+      
+      <p>Você acessa sua CODELIST pelo nosso APP exclusivo e pode ouvir suas músicas preferidas na ordem que quiser, podendo adicionar ou excluir músicas, diretamente do seu celular ou desktop.</p>
+      
+      <h3>Presente ideal para:</h3>
+      <ul>
+        <li>Datas especiais</li>
+        <li>Surpreender quem você ama</li>
+        <li>Homenagens inesquecíveis</li>
+      </ul>
+      
+      <p>Entre em contato com a gente e saiba mais:<br>
+      📧 comercial@codemedia.online<br>
+      📞 (00) 0000-0000<br>
+      📍 Ou preencha nosso formulário:</p>
+      
+      <p>CODELIST: Porque toda vida merece sua trilha sonora única.</p>
+      
+      <button onclick="closeCodeListPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODEPARTY -->
+  <div class="overlay" id="codeparty-overlay"></div>
+  <div class="about-popup" id="codeparty-popup">
+    <button class="close-about-btn" onclick="closeCodePartyPopup()">×</button>
+    <div class="about-color-strip"></div>
+    <div class="about-popup-content">
+      <h2>CODEPARTY</h2>
+      <p>A festa nunca termina na CODEONE. Já imaginou homenagear alguém especial com um programa de rádio ao vivo, totalmente personalizado com as músicas que marcaram sua história e mensagens de voz gravadas por amigos e familiares?</p>
+      
+      <p>Com o CODEPARTY, isso é possível.</p>
+      
+      <h3>O que é o CODEPARTY?</h3>
+      <p>Um programa de rádio exclusivo, transmitido ao vivo pela internet, criado para celebrar pessoas e momentos inesquecíveis. Ideal para aniversários, bodas, promoções, despedidas, reencontros e datas comemorativas em geral.</p>
+      
+      <p>Você escolhe:</p>
+      <ul>
+        <li>As músicas mais marcantes</li>
+        <li>Mensagens de voz de pessoas queridas</li>
+        <li>O dia e o horário da transmissão</li>
+      </ul>
+      
+      <p>A locução fica por conta de um locutor profissional com experiência nas maiores rádios do Brasil, como Rede Transamérica e Metropolitana FM.</p>
+      
+      <h3>Como funciona?</h3>
+      <ol>
+        <li><strong>Agendamento personalizado</strong><br>Você entra em contato com a nossa equipe e agendamos um bate-papo para entender sua ideia, a ocasião e a melhor data/horário para transmissão.</li>
+        <li><strong>Definição do conteúdo</strong><br>Você seleciona as músicas e envia mensagens de voz (via WhatsApp) de amigos e familiares. Nós cuidamos da montagem e da emoção.</li>
+        <li><strong>Transmissão ao vivo</strong><br>No dia e hora marcados, o programa entra no ar pela rádio CODEONE (www.codeonebrasil.com.br) e pode ser ouvido de qualquer lugar do mundo.</li>
+        <li><strong>Programa gravado como recordação</strong><br>Após a transmissão, você recebe o programa completo em formato MP3 para guardar, compartilhar ou reviver quando quiser.</li>
+      </ol>
+      
+      <h3>Para quem é o CODEPARTY?</h3>
+      <ul>
+        <li>Casais apaixonados (Dia dos Namorados, aniversários de namoro ou casamento)</li>
+        <li>Pais e mães em datas comemorativas</li>
+        <li>Amigos em aniversários, formaturas ou despedidas</li>
+        <li>Reencontros inesquecíveis (ex: turmas escolares)</li>
+        <li>Empresas que desejam homenagear colaboradores ou celebrar conquistas</li>
+      </ul>
+      
+      <h3>Pacotes disponíveis</h3>
+      
+      <h4>🥉 PACOTE BRONZE</h4>
+      <p>💵 R$ 347,00 à vista ou 12x de R$ 34,70</p>
+      <ul>
+        <li>8 músicas à sua escolha</li>
+        <li>Até 6 mensagens de voz (máx. 15s cada)</li>
+        <li>Duração: cerca de 1h15</li>
+        <li>Transmissão ao vivo via site ou app da CODEONE</li>
+        <li>Locução profissional (Rede Transamérica/Metropolitana FM)</li>
+        <li>Gravação em MP3 enviada após o programa</li>
+        <li>Agendamento de data e horário personalizado</li>
+      </ul>
+      
+      <h4>🥈 PACOTE PRATA</h4>
+      <p>💵 R$ 520,00 à vista ou 12x de R$ 52,00</p>
+      <p>Promoção: 20% de desconto por tempo limitado → R$ 416,00 à vista ou 12x de R$ 41,60</p>
+      <ul>
+        <li>12 músicas à sua escolha</li>
+        <li>Até 9 mensagens de voz (máx. 15s cada)</li>
+        <li>Duração: cerca de 1h40</li>
+        <li>Todos os benefícios do Pacote Bronze</li>
+      </ul>
+      
+      <h4>🥇 PACOTE OURO</h4>
+      <p>💵 R$ 780,00 à vista ou 12x de R$ 78,00</p>
+      <p>Promoção: 20% de desconto → R$ 624,00 à vista ou 12x de R$ 62,40</p>
+      <ul>
+        <li>18 músicas à sua escolha</li>
+        <li>Até 14 mensagens de voz (máx. 15s cada)</li>
+        <li>Duração: cerca de 2h20</li>
+        <li>Todos os benefícios dos pacotes anteriores</li>
+      </ul>
+      
+      <p><strong>📌 Importante:</strong></p>
+      <p>Para garantir sua transmissão, o agendamento deve ser feito com mínimo de 10 dias de antecedência, para que possamos preparar tudo com o cuidado que seu momento merece.</p>
+      <p>Este serviço / produto está disponível apenas em Língua Portuguesa (Brasil) e os valores estão expressos em reais.</p>
+      <p>Os valores podem sofrer variações de acordo com o tempo de transmissão, quantidade de músicas selecionadas e mensagens enviadas, porém, o valor será sempre apresentado em orçamento a ser aprovado pelo contratante.</p>
+      
+      <p>CODEPARTY é mais do que um presente.<br>
+      É uma homenagem viva, emocionante, inesquecível — e única.</p>
+      
+      <p>Entre em contato com a gente e saiba mais:<br>
+      📧 comercial@codemedia.online<br>
+      📞 (00) 0000-0000<br>
+      📍 Ou preencha nosso formulário:</p>
+      
+      <button onclick="closeCodePartyPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
   <!-- Popup de Contato -->
   <div class="overlay" id="contact-overlay"></div>
   <div class="contact-popup" id="contact-popup">
@@ -1139,161 +1726,112 @@
 
     document.getElementById('terms-overlay').addEventListener('click', closeTermsPopup);
 
-    // Popup de Serviços
-    function openServicePopup(service) {
-      let content = '';
-      
-      if (service === 'codeparty') {
-        content = `
-          <h2 style="color: #1e4a7e; margin-bottom: 20px;">🎉 CODEPARTY | A festa nunca termina na CODEONE</h2>
-          <p>Já imaginou homenagear alguém especial com um programa de rádio ao vivo, totalmente personalizado com as músicas que marcaram sua história e mensagens de voz gravadas por amigos e familiares?</p>
-          <p>Com o CODEPARTY, isso é possível.</p>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">💡 O que é o CODEPARTY?</h3>
-          <p>Um programa de rádio exclusivo, transmitido ao vivo pela internet, criado para celebrar pessoas e momentos inesquecíveis. Ideal para aniversários, bodas, promoções, despedidas, reencontros e datas comemorativas em geral.</p>
-          <p>Você escolhe:</p>
-          <ul style="padding-left: 20px; margin-bottom: 15px;">
-            <li>As músicas mais marcantes</li>
-            <li>Mensagens de voz de pessoas queridas</li>
-            <li>O dia e o horário da transmissão</li>
-          </ul>
-          <p>A locução fica por conta de um locutor profissional com experiência nas maiores rádios do Brasil, como Rede Transamérica e Metropolitana FM.</p>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">🎙️ Como funciona?</h3>
-          <ol style="padding-left: 20px; margin-bottom: 15px;">
-            <li><strong>Agendamento personalizado</strong><br>Você entra em contato com a nossa equipe e agendamos um bate-papo para entender sua ideia, a ocasião e a melhor data/horário para transmissão.</li>
-            <li><strong>Definição do conteúdo</strong><br>Você seleciona as músicas e envia mensagens de voz (via WhatsApp) de amigos e familiares. Nós cuidamos da montagem e da emoção.</li>
-            <li><strong>Transmissão ao vivo</strong><br>No dia e hora marcados, o programa entra no ar pela rádio CODEONE (www.codeonebrasil.com.br) e pode ser ouvido de qualquer lugar do mundo.</li>
-            <li><strong>Programa gravado como recordação</strong><br>Após a transmissão, você recebe o programa completo em formato MP3 para guardar, compartilhar ou reviver quando quiser.</li>
-          </ol>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">🌍 Para quem é o CODEPARTY?</h3>
-          <ul style="padding-left: 20px; margin-bottom: 15px;">
-            <li>Casais apaixonados (Dia dos Namorados, aniversários de namoro ou casamento)</li>
-            <li>Pais e mães em datas comemorativas</li>
-            <li>Amigos em aniversários, formaturas ou despedidas</li>
-            <li>Reencontros inesquecíveis (ex: turmas escolares)</li>
-            <li>Empresas que desejam homenagear colaboradores ou celebrar conquistas</li>
-          </ul>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">🎁 Pacotes disponíveis</h3>
-          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-            <h4 style="color: #cd7f32; margin-bottom: 10px;">🥉 PACOTE BRONZE</h4>
-            <p><strong>💵 R$ 347,00 à vista ou 12x de R$ 34,70</strong></p>
-            <ul style="padding-left: 20px; margin-bottom: 10px;">
-              <li>8 músicas à sua escolha</li>
-              <li>Até 6 mensagens de voz (máx. 15s cada)</li>
-              <li>Duração: cerca de 1h15</li>
-              <li>Transmissão ao vivo via site ou app da CODEONE</li>
-              <li>Locução profissional (Rede Transamérica/Metropolitana FM)</li>
-              <li>Gravação em MP3 enviada após o programa</li>
-              <li>Agendamento de data e horário personalizado</li>
-            </ul>
-          </div>
-          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-            <h4 style="color: #c0c0c0; margin-bottom: 10px;">🥈 PACOTE PRATA</h4>
-            <p><strong>💵 R$ 520,00 à vista ou 12x de R$ 52,00</strong></p>
-            <p style="color: #28a745; font-weight: bold;">🎉 Promoção: 20% de desconto por tempo limitado → R$ 416,00 à vista ou 12x de R$ 41,60</p>
-            <ul style="padding-left: 20px; margin-bottom: 10px;">
-              <li>12 músicas à sua escolha</li>
-              <li>Até 9 mensagens de voz (máx. 15s cada)</li>
-              <li>Duração: cerca de 1h40</li>
-              <li>Todos os benefícios do Pacote Bronze</li>
-            </ul>
-          </div>
-          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-            <h4 style="color: #ffd700; margin-bottom: 10px;">🥇 PACOTE OURO</h4>
-            <p><strong>💵 R$ 780,00 à vista ou 12x de R$ 78,00</strong></p>
-            <p style="color: #28a745; font-weight: bold;">🎉 Promoção: 20% de desconto → R$ 624,00 à vista ou 12x de R$ 62,40</p>
-            <ul style="padding-left: 20px; margin-bottom: 10px;">
-              <li>18 músicas à sua escolha</li>
-              <li>Até 14 mensagens de voz (máx. 15s cada)</li>
-              <li>Duração: cerca de 2h20</li>
-              <li>Todos os benefícios dos pacotes anteriores</li>
-            </ul>
-          </div>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <p><strong>📌 Importante:</strong></p>
-          <p>Para garantir sua transmissão, o agendamento deve ser feito com mínimo de 10 dias de antecedência, para que possamos preparar tudo com o cuidado que seu momento merece.</p>
-          <p>Este serviço / produto está disponível apenas em Língua Portuguesa (Brasil) e os valores estão expressos em reais.</p>
-          <p>Os valores podem sofrer variações de acordo com o tempo de transmissão, quantidade de músicas selecionadas e mensagens enviadas, porém, o valor será sempre apresentado em orçamento a ser aprovado pelo contratante.</p>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <p style="font-size: 18px; font-weight: bold; text-align: center;">✨ CODEPARTY é mais do que um presente.<br>É uma homenagem viva, emocionante, inesquecível — e única.</p>
-          <div style="text-align: center; margin-top: 20px;">
-            <p><strong>📲 Acesse:</strong> www.codeonebrasil.com.br</p>
-            <p><strong>📧 Ou entre em contato pelo WhatsApp para agendar sua transmissão.</strong></p>
-          </div>
-        `;
-      } else if (service === 'codelist') {
-        content = `
-          <h2 style="color: #1e4a7e; margin-bottom: 20px;">🎵 CODELIST | A trilha sonora da sua vida, sem interrupções</h2>
-          <p>Já imaginou ter uma playlist exclusiva, com as músicas que marcaram sua história — sem propagandas, sem interrupções e disponível para ouvir onde e quando quiser?</p>
-          <p>Com a CODELIST, isso é possível. Você escolhe:</p>
-          <ul style="padding-left: 20px; margin-bottom: 15px;">
-            <li>Seus estilos e artistas favoritos</li>
-            <li>Quantas músicas quiser</li>
-            <li>E até pode criar playlists temáticas (ex: romântica, motivacional, clássicos da infância...)</li>
-          </ul>
-          <p>🎧 Nós organizamos tudo para você!</p>
-          <p>Sua CODELIST fica armazenada em nossos servidores, em pastas personalizadas de acordo com suas preferências.</p>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">💝 Presente ideal para:</h3>
-          <ul style="padding-left: 20px; margin-bottom: 15px;">
-            <li>Datas especiais</li>
-            <li>Surpreender quem você ama</li>
-            <li>Homenagens inesquecíveis</li>
-          </ul>
-          <p style="font-size: 18px; font-weight: bold; text-align: center;">🔊 Faça agora um orçamento personalizado.</p>
-          <p style="font-size: 18px; font-weight: bold; text-align: center;">CODELIST: Porque toda vida merece sua trilha sonora única.</p>
-          <div style="text-align: center; margin-top: 20px;">
-            <p><strong>📲 www.codeonebrasil.com.br</strong></p>
-            <p><strong>📧 Ou fale com a gente pelo WhatsApp e monte a sua!</strong></p>
-          </div>
-        `;
-      } else if (service === 'codebusiness') {
-        content = `
-          <h2 style="color: #1e4a7e; margin-bottom: 20px;">📢 CODEBUSINESS | A trilha sonora da sua marca</h2>
-          <p>Transforme o ambiente da sua empresa com uma rádio online sob demanda, criada exclusivamente para fortalecer sua marca e envolver colaboradores e clientes.</p>
-          <p>Com o CODEBUSINESS, você terá:</p>
-          <ul style="padding-left: 20px; margin-bottom: 15px;">
-            <li>🎙️ Narração profissional com vinhetas exclusivas</li>
-            <li>🎶 Programação musical sob medida</li>
-            <li>📣 Espaços para divulgar promoções, campanhas e treinamentos</li>
-            <li>📡 Transmissão 24h por dia, 7 dias por semana</li>
-            <li>🛍️ Ideal para ambientes comerciais, eventos, feiras e ações corporativas</li>
-          </ul>
-          <p>🚀 Um canal moderno de comunicação interna e externa, simples de implementar e com impacto direto na percepção da sua marca.</p>
-          <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-          <h3 style="color: #1a3a6a; margin: 20px 0 10px;">💼 Excelente para:</h3>
-          <ul style="padding-left: 20px; margin-bottom: 15px;">
-            <li>Lojas físicas e franquias</li>
-            <li>Escritórios e ambientes corporativos</li>
-            <li>Treinamentos contínuos</li>
-            <li>Anúncio de metas, resultados, novidades e muito mais!</li>
-          </ul>
-          <p>📊 E mais: todos os conteúdos são personalizados com a identidade sonora da sua empresa.</p>
-          <p style="font-size: 18px; font-weight: bold; text-align: center;">📞 Entre em contato, solicite um orçamento e veja como é rápido e fácil ter uma rádio profissional na sua empresa.</p>
-          <p style="font-size: 18px; font-weight: bold; text-align: center;">CODEBUSINESS. Porque sua marca também merece ser ouvida.</p>
-          <div style="text-align: center; margin-top: 20px;">
-            <p><strong>🌐 www.codeonebrasil.com.br</strong></p>
-            <p><strong>📲 Atendimento via WhatsApp</strong></p>
-          </div>
-        `;
-      }
-
-      document.getElementById('service-content').innerHTML = content;
-      document.getElementById('service-overlay').style.display = 'block';
-      document.getElementById('service-popup').style.display = 'block';
+    // Popup Quem Somos
+    function openAboutPopup() {
+      document.getElementById('about-overlay').style.display = 'block';
+      document.getElementById('about-popup').style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
 
-    function closeServicePopup() {
-      document.getElementById('service-overlay').style.display = 'none';
-      document.getElementById('service-popup').style.display = 'none';
+    function closeAboutPopup() {
+      document.getElementById('about-overlay').style.display = 'none';
+      document.getElementById('about-popup').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
 
-    document.getElementById('service-overlay').addEventListener('click', closeServicePopup);
+    document.getElementById('about-overlay').addEventListener('click', closeAboutPopup);
+
+    // Popup Afiliadas
+    function openAffiliatesPopup() {
+      document.getElementById('affiliates-overlay').style.display = 'block';
+      document.getElementById('affiliates-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAffiliatesPopup() {
+      document.getElementById('affiliates-overlay').style.display = 'none';
+      document.getElementById('affiliates-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('affiliates-overlay').addEventListener('click', closeAffiliatesPopup);
+
+    // Popup Anuncie
+    function openAdvertisePopup() {
+      document.getElementById('advertise-overlay').style.display = 'block';
+      document.getElementById('advertise-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAdvertisePopup() {
+      document.getElementById('advertise-overlay').style.display = 'none';
+      document.getElementById('advertise-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('advertise-overlay').addEventListener('click', closeAdvertisePopup);
+
+    // Popup CODEBUSINESS
+    function openCodeBusinessPopup() {
+      document.getElementById('codebusiness-overlay').style.display = 'block';
+      document.getElementById('codebusiness-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCodeBusinessPopup() {
+      document.getElementById('codebusiness-overlay').style.display = 'none';
+      document.getElementById('codebusiness-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('codebusiness-overlay').addEventListener('click', closeCodeBusinessPopup);
+
+    // Popup CODELIST
+    function openCodeListPopup() {
+      document.getElementById('codelist-overlay').style.display = 'block';
+      document.getElementById('codelist-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCodeListPopup() {
+      document.getElementById('codelist-overlay').style.display = 'none';
+      document.getElementById('codelist-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('codelist-overlay').addEventListener('click', closeCodeListPopup);
+
+    // Popup CODEPARTY
+    function openCodePartyPopup() {
+      document.getElementById('codeparty-overlay').style.display = 'block';
+      document.getElementById('codeparty-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCodePartyPopup() {
+      document.getElementById('codeparty-overlay').style.display = 'none';
+      document.getElementById('codeparty-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('codeparty-overlay').addEventListener('click', closeCodePartyPopup);
+
+    // Popup de Serviços
+    function openServicePopup(service) {
+      if (service === 'codebusiness') {
+        openCodeBusinessPopup();
+      } else if (service === 'codelist') {
+        openCodeListPopup();
+      } else if (service === 'codeparty') {
+        openCodePartyPopup();
+      }
+    }
+
+    function closeServicePopup() {
+      closeCodeBusinessPopup();
+      closeCodeListPopup();
+      closeCodePartyPopup();
+    }
 
     // PWA Implementation
     let deferredPrompt;
