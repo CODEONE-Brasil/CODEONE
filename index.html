@@ -258,7 +258,7 @@
     .program-box[data-program="codebusiness"] .program-color-strip {
       background: linear-gradient(to bottom, #1a3a6a, #2a7a62);
     }
-    .program-box[data-program="codelist"] .program-color-strip {
+    .program-box[data-program="programas"] .program-color-strip {
       background: linear-gradient(to bottom, #1e4a7e, #3a9a4a);
     }
     .program-box[data-program="codeparty"] .program-color-strip {
@@ -449,6 +449,78 @@
       border-radius: 3px;
     }
 
+    /* POPUP PROGRAMAS */
+    .programs-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .programs-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .programs-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .programs-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .programs-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .programs-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .programs-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-programs-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .programs-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+    .programs-logo {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+
     /* POPUP AFILIADAS */
     .affiliates-popup {
       display: none;
@@ -589,7 +661,7 @@
     .site-footer {
       background: white;
       padding: 25px 20px 15px;
-      color: #1a3a6a;
+      color: #333;
     }
     .footer-content {
       display: flex;
@@ -615,7 +687,7 @@
       font-size: 14px;
       line-height: 1.4;
       margin: 3px 0;
-      color: #1a3a6a;
+      color: #333;
     }
     .footer-section {
       flex: 1;
@@ -627,13 +699,13 @@
       margin-bottom: 12px;
       letter-spacing: 0.5px;
       font-weight: normal;
-      color: #1a3a6a;
+      color: #333;
     }
     .footer-access-title {
       font-size: 16px;
       margin: 15px 0 5px;
       letter-spacing: 0.5px;
-      color: #1a3a6a;
+      color: #333;
     }
     .footer-social {
       display: flex;
@@ -647,7 +719,7 @@
       margin-top: 10px;
     }
     .footer-social-icons a {
-      color: #1a3a6a;
+      color: #333;
       font-size: 24px;
       transition: transform 0.3s;
     }
@@ -656,7 +728,7 @@
       color: #1e4a7e;
     }
     .footer-email {
-      color: #1a3a6a;
+      color: #333;
       text-decoration: none;
       font-size: 14px;
       transition: all 0.3s;
@@ -673,7 +745,7 @@
       display: block;
     }
     .clockview-logo {
-      width: 120px;
+      width: 150px;
       margin-top: 10px;
       transition: transform 0.3s;
     }
@@ -687,15 +759,17 @@
       margin-top: 20px;
       max-width: 1000px;
       margin: 20px auto 0;
-      color: #1a3a6a;
+      color: #333;
     }
     .footer-legal p {
       margin: 5px 0;
       font-size: 11px;
+      color: #333;
     }
     .footer-copyright {
       font-size: 12px;
       margin: 8px 0;
+      color: #333;
     }
     .footer-legal-link {
       color: #1e4a7e;
@@ -785,7 +859,7 @@
       top: 0;
       bottom: 0;
       width: 6px;
-      background: linear-gradient(to bottom, #1a3a6a, #3a9a4a);
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
     }
     .footer-box h3 {
       color: #333;
@@ -861,6 +935,7 @@
       .contact-popup,
       .terms-popup,
       .about-popup,
+      .programs-popup,
       .affiliates-popup,
       .advertise-popup {
         width: 95%;
@@ -885,6 +960,9 @@
       .access-text,
       .learn-more-text {
         font-size: 18px;
+      }
+      .clockview-logo {
+        width: 120px;
       }
     }
   </style>
@@ -949,7 +1027,7 @@
     <!-- GRADE DE PROGRAMAS -->
     <div class="programs-grid">
       <!-- Linha 1 -->
-      <div class="program-box">
+      <div class="program-box" data-program="programas" onclick="openProgramsPopup()">
         <div class="program-color-strip"></div>
         <div>
           <h3>PROGRAMAS</h3>
@@ -1033,13 +1111,6 @@
         <div>
           <h3>CODEBUSINESS</h3>
           <p>Rádio corporativa sob medida para sua marca</p>
-        </div>
-      </div>
-      <div class="program-box" data-program="codelist" onclick="openServicePopup('codelist')">
-        <div class="program-color-strip"></div>
-        <div>
-          <h3>CODELIST</h3>
-          <p>Playlists emocionais para presentear quem você ama</p>
         </div>
       </div>
       <div class="program-box" data-program="codeparty" onclick="openServicePopup('codeparty')">
@@ -1130,10 +1201,7 @@
         <h4>Acesse também</h4>
         <div style="display: flex; flex-direction: column; align-items: center;">
           <a href="https://www.clockview.online" target="_blank">
-            <img src="/clockview-logo.png" alt="ClockView" class="clockview-logo" style="width: 100px; margin: 5px 0;">
-          </a>
-          <a href="https://www.spinmix.online" target="_blank">
-            <img src="/spinmix-logo.png" alt="SpinMix" class="clockview-logo" style="width: 100px; margin-top: 10px;">
+            <img src="/clockview-logo.png" alt="ClockView" class="clockview-logo">
           </a>
         </div>
       </div>
@@ -1325,6 +1393,91 @@
     </div>
   </div>
 
+  <!-- Popup Programas -->
+  <div class="overlay" id="programs-overlay"></div>
+  <div class="programs-popup" id="programs-popup">
+    <button class="close-programs-btn" onclick="closeProgramsPopup()">×</button>
+    <div class="programs-color-strip"></div>
+    <div class="programs-popup-content">
+      <img src="/codeonemusicanddreams.png" alt="CODEONE" class="programs-logo">
+      <h2>CODEONE</h2>
+      <p>A CODEONE está se formando, construindo uma base tecnológica e musical para atender aos nossos mais exigentes ouvintes, por isso, durante este processo, você pode nos ouvir tocando vários estilos musicais enquanto transmitimos em CARÁTER EXPERIMENTAL, ajustando cada detalhe para que seja perfeito para você. A grade de programação também está sendo desenhada, mas podemos te mostrar a seguir, o que estamos preparando para você.</p>
+      
+      <h3>CODEMIX</h3>
+      <p>Mixagens alucinantes que não vão deixar você parado, nem por um instante.</p>
+      <p>Apresentação: Grandes DJs do Brasil e do Mundo.</p>
+      <p>Duração Aproximada: Cerca de 1h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODEMAX</h3>
+      <p>É música atrás de música, sem intervalos comerciais.</p>
+      <p>Apresentação: Sem locutores.</p>
+      <p>Duração Aproximada: Cerca de 4h a 6h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODELIVE</h3>
+      <p>Transmissões ao vivo de eventos, shows ao vivo, em tempo real.</p>
+      <p>Apresentação: De acordo com o evento.</p>
+      <p>Duração Aproximada: Cerca de 2h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODECONCERT</h3>
+      <p>Shows de grandes nomes da música nacional e internacional.</p>
+      <p>Apresentação: De acordo com o evento.</p>
+      <p>Duração Aproximada: Cerca de 2h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODEPOP</h3>
+      <p>O que toca no mundo, toca aqui também. Os maiores sucessos da música pop têm seu espaço aqui na CODEONE.</p>
+      <p>Apresentação: De acordo com o evento.</p>
+      <p>Duração Aproximada: Cerca de 4h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODE80/90</h3>
+      <p>De volta aos grandes sucessos que marcaram época e que faz muita gente dançar e se emocionar.</p>
+      <p>Apresentação: De acordo com o evento.</p>
+      <p>Duração Aproximada: Cerca de 4h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODETOP</h3>
+      <p>As mais tocadas e pedidas pelos nossos ouvintes.</p>
+      <p>Apresentação: A definir.</p>
+      <p>Duração Aproximada: Cerca de 2h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODELOVE</h3>
+      <p>O amor está no ar! Claro que a gente vai reservar um tempinho na nossa programação para embalar grandes paixões e trazer ou criar trilha sonoras especiais para casais apaixonados.</p>
+      <p>Apresentação: A definir.</p>
+      <p>Duração Aproximada: Cerca de 2h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODEDANCE</h3>
+      <p>Não tem jeito, ou você dança, ou você... dança. Um programa feito com sucessos de todos os tempos que, mesmo que você queira, não consegue parar de dançar.</p>
+      <p>Apresentação: A definir.</p>
+      <p>Duração Aproximada: Cerca de 4h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <h3>CODECLASSICS</h3>
+      <p>Reservamos um bom espaço para recordar grandes clássicos do rock, do dance e do pop neste programa especial.</p>
+      <p>Apresentação: A definir.</p>
+      <p>Duração Aproximada: Cerca de 2h.</p>
+      <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
+      
+      <p>Outros programas certamente surgirão e estamos ansiosos por isso. Em breve, estaremos juntos curtindo tudo isso. Até lá.</p>
+      
+      <button onclick="closeProgramsPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
   <!-- Popup Afiliadas -->
   <div class="overlay" id="affiliates-overlay"></div>
   <div class="affiliates-popup" id="affiliates-popup">
@@ -1471,53 +1624,6 @@
       <p>CODEBUSINESS. Sua marca merece ser ouvida.</p>
       
       <button onclick="closeCodeBusinessPopup()" style="
-        background: #1e4a7e;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin-top: 20px;
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-      ">Fechar</button>
-    </div>
-  </div>
-
-  <!-- Popup CODELIST -->
-  <div class="overlay" id="codelist-overlay"></div>
-  <div class="about-popup" id="codelist-popup">
-    <button class="close-about-btn" onclick="closeCodeListPopup()">×</button>
-    <div class="about-color-strip"></div>
-    <div class="about-popup-content">
-      <h2>CODELIST</h2>
-      <p>A trilha sonora da sua vida, sem interrupções. Já imaginou ter uma playlist exclusiva, com as músicas que marcaram sua história — sem propagandas, sem interrupções e disponível para ouvir onde e quando quiser?</p>
-      
-      <p>Com a CODELIST, isso é possível. Você escolhe:</p>
-      <ul>
-        <li>Seus estilos e artistas favoritos</li>
-        <li>Quantas músicas quiser</li>
-        <li>E até pode criar playlists temáticas (ex: romântica, motivacional, clássicos da infância...)</li>
-      </ul>
-      
-      <p>Nós organizamos tudo para você!</p>
-      
-      <p>Você acessa sua CODELIST pelo nosso APP exclusivo e pode ouvir suas músicas preferidas na ordem que quiser, podendo adicionar ou excluir músicas, diretamente do seu celular ou desktop.</p>
-      
-      <h3>Presente ideal para:</h3>
-      <ul>
-        <li>Datas especiais</li>
-        <li>Surpreender quem você ama</li>
-        <li>Homenagens inesquecíveis</li>
-      </ul>
-      
-      <p>Entre em contato com a gente e saiba mais:<br>
-      📧 comercial@codemedia.online<br>
-      📞 (00) 0000-0000<br>
-      📍 Ou preencha nosso formulário:</p>
-      
-      <p>CODELIST: Porque toda vida merece sua trilha sonora única.</p>
-      
-      <button onclick="closeCodeListPopup()" style="
         background: #1e4a7e;
         color: white;
         border: none;
@@ -1741,6 +1847,21 @@
 
     document.getElementById('about-overlay').addEventListener('click', closeAboutPopup);
 
+    // Popup Programas
+    function openProgramsPopup() {
+      document.getElementById('programs-overlay').style.display = 'block';
+      document.getElementById('programs-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProgramsPopup() {
+      document.getElementById('programs-overlay').style.display = 'none';
+      document.getElementById('programs-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('programs-overlay').addEventListener('click', closeProgramsPopup);
+
     // Popup Afiliadas
     function openAffiliatesPopup() {
       document.getElementById('affiliates-overlay').style.display = 'block';
@@ -1786,21 +1907,6 @@
 
     document.getElementById('codebusiness-overlay').addEventListener('click', closeCodeBusinessPopup);
 
-    // Popup CODELIST
-    function openCodeListPopup() {
-      document.getElementById('codelist-overlay').style.display = 'block';
-      document.getElementById('codelist-popup').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCodeListPopup() {
-      document.getElementById('codelist-overlay').style.display = 'none';
-      document.getElementById('codelist-popup').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    document.getElementById('codelist-overlay').addEventListener('click', closeCodeListPopup);
-
     // Popup CODEPARTY
     function openCodePartyPopup() {
       document.getElementById('codeparty-overlay').style.display = 'block';
@@ -1820,8 +1926,6 @@
     function openServicePopup(service) {
       if (service === 'codebusiness') {
         openCodeBusinessPopup();
-      } else if (service === 'codelist') {
-        openCodeListPopup();
       } else if (service === 'codeparty') {
         openCodePartyPopup();
       }
@@ -1829,7 +1933,6 @@
 
     function closeServicePopup() {
       closeCodeBusinessPopup();
-      closeCodeListPopup();
       closeCodePartyPopup();
     }
 
