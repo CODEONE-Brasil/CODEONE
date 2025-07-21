@@ -657,6 +657,414 @@
       border-radius: 3px;
     }
 
+    /* POPUP EQUIPE */
+    .team-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .team-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .team-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .team-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .team-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .team-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .team-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-team-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .team-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP OUVINTES */
+    .listeners-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .listeners-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .listeners-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .listeners-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .listeners-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .listeners-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .listeners-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-listeners-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .listeners-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP CODENEWS */
+    .news-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .news-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .news-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .news-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .news-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .news-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .news-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-news-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .news-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP CODETV */
+    .tv-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .tv-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .tv-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .tv-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .tv-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .tv-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .tv-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-tv-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .tv-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP CODESTORE */
+    .store-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .store-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .store-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .store-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .store-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .store-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .store-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-store-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .store-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP CODECLUB */
+    .club-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .club-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .club-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .club-popup h3 {
+      color: #1a3a6a;
+      margin: 20px 0 10px;
+    }
+    .club-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .club-popup ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    .club-popup li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .close-club-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .club-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
     /* RODAPÉ */
     .site-footer {
       background: white;
@@ -937,7 +1345,13 @@
       .about-popup,
       .programs-popup,
       .affiliates-popup,
-      .advertise-popup {
+      .advertise-popup,
+      .team-popup,
+      .listeners-popup,
+      .news-popup,
+      .tv-popup,
+      .store-popup,
+      .club-popup {
         width: 95%;
         padding: 20px;
       }
@@ -1034,18 +1448,18 @@
           <p>Conheça a programação completa e os canais da CODEONE</p>
         </div>
       </div>
-      <div class="program-box">
+      <div class="program-box" onclick="openListenersPopup()">
         <div class="program-color-strip"></div>
         <div>
           <h3>OUVINTES</h3>
           <p>Cadastre-se, peça sua música e concorra a prêmios exclusivos</p>
         </div>
       </div>
-      <div class="program-box">
+      <div class="program-box" onclick="openTeamPopup()">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CODECLUB</h3>
-          <p>Assine nosso APP e tenha acesso a conteúdos exclusivos. Saiba mais.</p>
+          <h3>EQUIPE</h3>
+          <p>Conheça nosso time e quem faz acontecer aqui na CODEONE.</p>
         </div>
       </div>
     </div>
@@ -1065,21 +1479,21 @@
 
     <!-- NOVA GRADE DE PROGRAMAS -->
     <div class="programs-grid">
-      <div class="program-box">
+      <div class="program-box" onclick="openNewsPopup()">
         <div class="program-color-strip"></div>
         <div>
           <h3>CODENEWS</h3>
           <p>Tudo o que você precisa saber em tempo real</p>
         </div>
       </div>
-      <div class="program-box">
+      <div class="program-box" onclick="openTvPopup()">
         <div class="program-color-strip"></div>
         <div>
           <h3>CODETV</h3>
           <p>Streaming & Broadcast com conteúdo imperdível.</p>
         </div>
       </div>
-      <div class="program-box">
+      <div class="program-box" onclick="openStorePopup()">
         <div class="program-color-strip"></div>
         <div>
           <h3>CODESTORE</h3>
@@ -1118,6 +1532,13 @@
         <div>
           <h3>CODEPARTY</h3>
           <p>Celebre momentos únicos com um programa só seu!</p>
+        </div>
+      </div>
+      <div class="program-box" onclick="openClubPopup()">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CODECLUB</h3>
+          <p>Assine nosso APP e tenha acesso a conteúdos exclusivos. Saiba mais.</p>
         </div>
       </div>
     </div>
@@ -1463,7 +1884,8 @@
       <p>Duração Aproximada: Cerca de 2h.</p>
       <p>Frequência: De Segunda a Domingo, a qualquer momento na programação.</p>
       
-      <p>Outros programas certamente surgirão e estamos ansiosos por isso. Em breve, estaremos juntos curtindo tudo isso. Até lá.</p>
+      <h3>NOSSOS CANAIS DE RÁDIO</h3>
+      <p>A CODEONE | Music and Dreams você já conhece; além desta, estamos desenvolvendo novos canais de rádio para atender ouvintes em várias vertentes, como por exemplo a CODEROCK, a CODEGOSPEL, a CODESAMBA e a CODEBRASIL. Cada uma delas trará uma programação musical especial e 100% dedicada a um grupo ou nicho seleto. Não temos data certa para que estes canais entrem no ar, mas acredite, estamos trabalhando para que isso aconteça o quanto antes. Duvidas e sugestões podem ser sanadas, entrando em contato com a gente pelo formulário de contato ou pela Central de Atendimento via Whatsapp.</p>
       
       <button onclick="closeProgramsPopup()" style="
         background: #1e4a7e;
@@ -1661,7 +2083,7 @@
       
       <h3>Como funciona?</h3>
       <ol>
-        <li><strong>Agendamento personalizado</strong><br>Você entra em contato com a nossa equipe e agendamos um bate-papo para entender sua ideia, a ocasião e a melhor data/horário para transmissão.</li>
+        <li><strong>Agendamento personalizado</strong><br>Você entra em contato conosco e agendamos um bate-papo para entender sua ideia, a ocasião e a melhor data/horário para transmissão.</li>
         <li><strong>Definição do conteúdo</strong><br>Você seleciona as músicas e envia mensagens de voz (via WhatsApp) de amigos e familiares. Nós cuidamos da montagem e da emoção.</li>
         <li><strong>Transmissão ao vivo</strong><br>No dia e hora marcados, o programa entra no ar pela rádio CODEONE (www.codeonebrasil.com.br) e pode ser ouvido de qualquer lugar do mundo.</li>
         <li><strong>Programa gravado como recordação</strong><br>Após a transmissão, você recebe o programa completo em formato MP3 para guardar, compartilhar ou reviver quando quiser.</li>
@@ -1718,7 +2140,7 @@
       <p>CODEPARTY é mais do que um presente.<br>
       É uma homenagem viva, emocionante, inesquecível — e única.</p>
       
-      <p>Entre em contato com a gente e saiba mais:<br>
+      <p>Entre em contato conosco e saiba mais:<br>
       📧 comercial@codemedia.online<br>
       📞 (00) 0000-0000<br>
       📍 Ou preencha nosso formulário:</p>
@@ -1751,6 +2173,162 @@
         <button type="button" onclick="closeContactPopup()" style="background:#ccc; margin-left:10px;">Cancelar</button>
       </div>
     </form>
+  </div>
+
+  <!-- Popup Equipe -->
+  <div class="overlay" id="team-overlay"></div>
+  <div class="team-popup" id="team-popup">
+    <button class="close-team-btn" onclick="closeTeamPopup()">×</button>
+    <div class="team-color-strip"></div>
+    <div class="team-popup-content">
+      <h2>EQUIPE</h2>
+      <p>A CODEONE está em constante evolução e por isso, nossa equipe está crescendo muito; novos talentos da comunicação, da tecnologia, do marketing, da gestão e de tantas outras áreas surgem entre nós, agregando mais conhecimento e novas conquistas, todos os dias.</p>
+      
+      <p>Como estamos em fase de implantação de sistemas, estruturas e procedimentos, nossos amigos, parceiros e colaboradores, ainda não aparecem aqui. Em breve, certamente esta página estará cheia de gente disposta a crescer e avançar a passos largos na CODEONE.</p>
+      
+      <p>Aguardem.</p>
+      
+      <button onclick="closeTeamPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup Ouvintes -->
+  <div class="overlay" id="listeners-overlay"></div>
+  <div class="listeners-popup" id="listeners-popup">
+    <button class="close-listeners-btn" onclick="closeListenersPopup()">×</button>
+    <div class="listeners-color-strip"></div>
+    <div class="listeners-popup-content">
+      <h2>OUVINTES</h2>
+      <p>A CODEONE existe pra você e por você. Reservamos este espaço para que você possa se inscrever e fazer parte de uma comunidade que cresce e crescerá a cada dia. Queremos saber quem é você, de onde é e qual estilo musical mais gosta.</p>
+      
+      <p>Fazendo seu cadastro no CODEONE você poderá participar de nossos programas ao vivo, enviando suas mensagens em tempo real; poderá participar das nossas promoções junto aos nossos patrocinadores e melhor, ainda pode concorrer a prêmios exclusivos.</p>
+      
+      <p>O cadastro como OUVINTE é rápido e totalmente gratuito.</p>
+      
+      <p>Preencha corretamente o formulário a seguir e em seguida clique me enviar. Você receberá um e-mail ou mensagem de confirmação no seu celular com um código numérico. Volte aqui e cole este código no campo indicado e pronto. Bem vindo a família CODEONE.</p>
+      
+      <p>Agora é só aguardar pelas oportunidades de participar com a gente, ao vivo e concorrer a prêmios exclusivos.</p>
+      
+      <button onclick="closeListenersPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODENEWS -->
+  <div class="overlay" id="news-overlay"></div>
+  <div class="news-popup" id="news-popup">
+    <button class="close-news-btn" onclick="closeNewsPopup()">×</button>
+    <div class="news-color-strip"></div>
+    <div class="news-popup-content">
+      <h2>CODENEWS</h2>
+      <p>A CODENEWS é o nosso portal de notícias, com informações seguras e verificadas para os nossos ouvintes e leitores. Em fase de desenvolvimento, a CODENEWS trará em breve, grande abrangência e cobertura nos mais diversos assuntos, sempre com transparência e muita responsabilidade.</p>
+      
+      <p>Aguarde. Em breve você vai se surpreender com o que estamos construindo pra você.</p>
+      
+      <button onclick="closeNewsPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODETV -->
+  <div class="overlay" id="tv-overlay"></div>
+  <div class="tv-popup" id="tv-popup">
+    <button class="close-tv-btn" onclick="closeTvPopup()">×</button>
+    <div class="tv-color-strip"></div>
+    <div class="tv-popup-content">
+      <h2>CODETV</h2>
+      <p>Quer ver e ouvir os programas da CODEONE ao vivo? Quer programas especiais, cheios de muita música, informação, videoclipes e muitas novidades, a hora que quiser, no seu tempo?</p>
+      
+      <p>Essa é a proposta da CODETV que será responsável também pelas transmissões da CODELIVE. Ainda em processo de desenvolvimento, a CODETV vai ampliar sua experiência na CODEONE, permitindo com que você possa assistir nossos conteúdos no nosso app/aplicativo.</p>
+      
+      <p>Em breve, nos vemos na CODETV.</p>
+      
+      <button onclick="closeTvPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODESTORE -->
+  <div class="overlay" id="store-overlay"></div>
+  <div class="store-popup" id="store-popup">
+    <button class="close-store-btn" onclick="closeStorePopup()">×</button>
+    <div class="store-color-strip"></div>
+    <div class="store-popup-content">
+      <h2>CODESTORE</h2>
+      <p>A CODESTORE é a nossa loja online oficial, com diversas ofertas especiais e, em grande parte, exclusivas. Ainda em desenvolvimento, a CODESTORE já iniciou, com sucesso, parcerias com grandes distribuidores dos mais variados segmentos do mercado de produtos físicos e infoprodutos, tudo, com condições de pagamentos facilitados e preços competitivos.</p>
+      
+      <p>Aguarde. Em breve, a CODESTORE será sua nova loja online.</p>
+      
+      <button onclick="closeStorePopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODECLUB -->
+  <div class="overlay" id="club-overlay"></div>
+  <div class="club-popup" id="club-popup">
+    <button class="close-club-btn" onclick="closeClubPopup()">×</button>
+    <div class="club-color-strip"></div>
+    <div class="club-popup-content">
+      <h2>CODECLUB</h2>
+      <p>CODECLUB é o canal de assinaturas da CODEONE que trará programas exclusivos, series especiais em áudio e muito mais. Serão vários títulos/programas dirigidos por grandes nomes da música, estudiosos que trarão conteúdos com muitas informações e até materiais gráficos para acompanhar as séries/programas com apoio visual.</p>
+      
+      <p>A história e os sucessos dos Beatles, A carreira de Michael Jackson, As grandes trilhas do Cinema, Programas com conteúdo de áudio das séries ANIME; são tantas novidades que não caberiam neste post.</p>
+      
+      <p>Fique atento, em breve disponibilizaremos todo o catálogo das produções que você encontrará no CODECLUB.</p>
+      
+      <button onclick="closeClubPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
   </div>
 
   <!-- Botão Instalar PWA -->
@@ -1935,6 +2513,96 @@
       closeCodeBusinessPopup();
       closeCodePartyPopup();
     }
+
+    // Popup Equipe
+    function openTeamPopup() {
+      document.getElementById('team-overlay').style.display = 'block';
+      document.getElementById('team-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTeamPopup() {
+      document.getElementById('team-overlay').style.display = 'none';
+      document.getElementById('team-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('team-overlay').addEventListener('click', closeTeamPopup);
+
+    // Popup Ouvintes
+    function openListenersPopup() {
+      document.getElementById('listeners-overlay').style.display = 'block';
+      document.getElementById('listeners-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeListenersPopup() {
+      document.getElementById('listeners-overlay').style.display = 'none';
+      document.getElementById('listeners-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('listeners-overlay').addEventListener('click', closeListenersPopup);
+
+    // Popup CODENEWS
+    function openNewsPopup() {
+      document.getElementById('news-overlay').style.display = 'block';
+      document.getElementById('news-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNewsPopup() {
+      document.getElementById('news-overlay').style.display = 'none';
+      document.getElementById('news-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('news-overlay').addEventListener('click', closeNewsPopup);
+
+    // Popup CODETV
+    function openTvPopup() {
+      document.getElementById('tv-overlay').style.display = 'block';
+      document.getElementById('tv-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTvPopup() {
+      document.getElementById('tv-overlay').style.display = 'none';
+      document.getElementById('tv-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('tv-overlay').addEventListener('click', closeTvPopup);
+
+    // Popup CODESTORE
+    function openStorePopup() {
+      document.getElementById('store-overlay').style.display = 'block';
+      document.getElementById('store-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStorePopup() {
+      document.getElementById('store-overlay').style.display = 'none';
+      document.getElementById('store-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('store-overlay').addEventListener('click', closeStorePopup);
+
+    // Popup CODECLUB
+    function openClubPopup() {
+      document.getElementById('club-overlay').style.display = 'block';
+      document.getElementById('club-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeClubPopup() {
+      document.getElementById('club-overlay').style.display = 'none';
+      document.getElementById('club-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('club-overlay').addEventListener('click', closeClubPopup);
 
     // PWA Implementation
     let deferredPrompt;
