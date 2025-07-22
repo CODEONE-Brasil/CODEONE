@@ -1,8 +1,5 @@
-{
-  "noticias": [
-    "CODEONE Music and Dreams",
-    "Transmitindo em caráter experimental",
-    "Descubra as novidades da CODEONE no Instagram!",
-    "Vem aí o personagem CODEC com interações incríveis!"
-  ]
-}
+[
+  { "texto": "🎧 A CODEONE está no ar com programação especial!" },
+  { "texto": "📰 Lançamento do personagem CODEC agita a comunidade!" },
+  { "texto": "📢 Anuncie sua marca na CODEONE e alcance milhares de ouvintes." }
+]
