@@ -1111,7 +1111,7 @@
       align-items: center;
       background-color: #fff;
       color: #000;
-      height: 50px;
+      height: 40px;
       overflow: hidden;
       width: 70%;
       margin: 0 auto 20px;
@@ -1124,6 +1124,7 @@
       height: 100%;
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .codonews-label img {
@@ -1136,11 +1137,15 @@
       white-space: nowrap;
       flex: 1;
       padding-left: 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
 
     .news-items {
       display: inline-block;
       animation: scrollNews 30s linear infinite;
+      line-height: 1.2;
     }
 
     @keyframes scrollNews {
@@ -1223,17 +1228,18 @@
       }
       /* CODENEWS Responsive */
       .codonews-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
         width: 90%;
+        height: 35px;
       }
       .codonews-label img {
-        height: 30px;
-        margin: 5px;
+        height: 25px;
+        margin: 0 8px;
       }
       .news-marquee {
         padding: 5px;
+      }
+      .news-items {
+        font-size: 14px;
       }
     }
   </style>
@@ -1523,7 +1529,7 @@
       A CSG pode ocasionalmente conduzir pesquisas com os usuários para melhor direcionar nosso conteúdo ao nosso público. Às vezes, compartilhamos as informações demográficas agregadas nessas pesquisas com nossos patrocinadores, anunciantes e parceiros. Nunca compartilhamos nenhuma dessas informações sobre indivíduos específicos com terceiros.</p>
       
       <h4 style="color: #1e4a7e; margin: 15px 0 5px;">Crianças</h4>
-      <p>De acordo com a Lei Federal de Proteção à Privacidade Online das Crianças de 1998 (COPPA), nunca solicitaremos intencionalmente informações pessoalmente identificáveis de menores de 13 anos sem solicitar o consentimento dos pais.</p>
+      <p>De acordo com a Lei Federal de Proteção à Privacidade Online das Crianças de 1998 (COPPA), nunca solicitaremos intencionalmente informações pessoalmente identificáveis de menores de 13 anos sans solicitar o consentimento dos pais.</p>
       
       <h4 style="color: #1e4a7e; margin: 15px 0 5px;">Rastreamento de uso</h4>
       <p>A CSG rastreia padrões de tráfego do usuário em todos os nossos sites. No entanto, não correlacionamos essas informações com dados sobre usuários individuais. A CSG divide estatísticas gerais de uso de acordo com o nome de domínio de um usuário, tipo de navegador e tipo MIME, lendo essas informações a partir da string do navegador (informações contidas em todos os navegadores de usuários).</p>
@@ -2319,23 +2325,40 @@
       installBtn.style.display = 'none';
     }
 
-    // CODENEWS Script
-    fetch('noticias.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('news-items');
-        container.innerHTML = data.noticias.map(n => `<span style="margin-right: 50px;">${n}</span>`).join('');
-      })
-      .catch(error => {
-        console.error('Error loading news:', error);
-        document.getElementById('news-items').textContent = 'Não foi possível carregar as notícias.';
-      });
+    // CODENEWS Script - Versão corrigida
+    function loadNews() {
+      fetch('noticias.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao carregar notícias');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const container = document.getElementById('news-items');
+          if (data && data.noticias && Array.isArray(data.noticias)) {
+            container.innerHTML = data.noticias.map(n => 
+              `<span style="margin-right: 50px;">${n}</span>`
+            ).join('');
+          } else {
+            container.textContent = 'Formato de notícias inválido';
+          }
+        })
+        .catch(error => {
+          console.error('Erro ao carregar notícias:', error);
+          document.getElementById('news-items').textContent = 'Erro ao carregar notícias';
+        });
+    }
 
     // Inicialização
     window.onload = function() {
       player.volume = 0.7;
       setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 2000);
+      loadNews(); // Carrega as notícias quando a página é carregada
     };
+
+    // Opcional: Recarregar notícias periodicamente (a cada 5 minutos)
+    setInterval(loadNews, 300000);
   </script>
 </body>
 </html>
