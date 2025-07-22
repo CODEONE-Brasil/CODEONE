@@ -1105,7 +1105,47 @@
       gap: 5px;
     }
 
-    /* RESPONSIVO */
+    /* CODENEWS */
+    .codonews-bar {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      color: #000;
+      height: 50px;
+      overflow: hidden;
+      width: 70%;
+      margin: 0 auto 20px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .codonews-label img {
+      height: 100%;
+    }
+
+    .news-marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+      padding-left: 10px;
+    }
+
+    .news-items {
+      display: inline-block;
+      animation: scrollNews 30s linear infinite;
+    }
+
+    @keyframes scrollNews {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Responsivo */
     @media (max-width: 768px) {
       .logo, .logo-title img {
         max-width: 90%;
@@ -1174,6 +1214,20 @@
       .clockview-logo {
         width: 120px;
       }
+      /* CODENEWS Responsive */
+      .codonews-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        width: 90%;
+      }
+      .codonews-label img {
+        height: 30px;
+        margin: 5px;
+      }
+      .news-marquee {
+        padding: 5px;
+      }
     }
   </style>
 </head>
@@ -1206,6 +1260,16 @@
         <audio id="radioPlayer" src="https://stream.zeno.fm/hp8pymswhrhvv" type="audio/mpeg"></audio>
       </div>
       <p class="audio-experience">Use fones de ouvidos. <i class="ri-headphone-line"></i></p>
+    </div>
+
+    <!-- FAIXA DE NOTÍCIAS - CODENEWS -->
+    <div class="codonews-bar">
+      <div class="codonews-label">
+        <img src="TARJACODENEWS.jpg" alt="CODE NEWS">
+      </div>
+      <div class="news-marquee" id="news-container">
+        <div class="news-items" id="news-items">Carregando notícias...</div>
+      </div>
     </div>
 
     <!-- BANNER DE EVENTOS -->
@@ -1524,38 +1588,38 @@
     <div class="about-color-strip"></div>
     <div class="about-popup-content">
       <h2>QUEM SOMOS</h2>
-      <p>A CODEONE é uma webradio diferente, dinâmica, viva. Mais do que tocar música ou informar, ela conecta pessoas, histórias e experiências. Gerenciada pela CODEMEDIA e pela SPDTECH Digital Asset Management, a CODEONE é a primeira marca de um ecossistema que não para de crescer — um verdadeiro ponto de partida para tudo o que estamos construindo.</p>
+      <p>A CODEONE é uma webradio diferente, dinâmica, viva. More than just playing music or informing, it connects people, stories and experiences. Managed by CODEMEDIA and SPDTECH Digital Asset Management, CODEONE is the first brand in an ecosystem that keeps growing - a true starting point for everything we're building.</p>
       
-      <p>Com o selo CODEONE Music and Dreams, nossa rádio vai além da programação musical: oferece uma curadoria sonora envolvente e conteúdos que emocionam, informam e inspiram.</p>
+      <p>With the CODEONE Music and Dreams label, our radio goes beyond musical programming: it offers an engaging sound curation and content that moves, informs and inspires.</p>
       
-      <p>Ao mesmo tempo, damos força a outras marcas, produtos e serviços da nossa rede de ativos, expandindo nossa presença e consolidando uma visão integrada de mídia e inovação.</p>
+      <p>At the same time, we give strength to other brands, products and services in our asset network, expanding our presence and consolidating an integrated vision of media and innovation.</p>
       
-      <p>A CODEONE é só o começo. Estamos construindo uma nova forma de consumir conteúdo, de ouvir, ver e viver.</p>
-      <p>E o mais importante: estamos fazendo isso para você, por você.</p>
+      <p>CODEONE is just the beginning. We're building a new way to consume content, to hear, see and live.</p>
+      <p>And most importantly: we're doing it for you, by you.</p>
       
       <p>CODEONE | Music and Dreams.</p>
       
-      <h3>Missão</h3>
-      <p>Oferecer entretenimento inteligente, informação segura e experiências sonoras marcantes, por meio de uma webradio inovadora, conectada com o seu tempo, agregando valor à vida das pessoas e fortalecendo o ecossistema de marcas, produtos e serviços que compõem nossa rede.</p>
+      <h3>Mission</h3>
+      <p>Offer intelligent entertainment, reliable information and memorable sound experiences, through an innovative webradio, connected with its time, adding value to people's lives and strengthening the ecosystem of brands, products and services that make up our network.</p>
       
-      <h3>Valores</h3>
-      <p><strong>Inovação com Propósito</strong><br>
-      Criamos e evoluímos com responsabilidade, sempre buscando novas formas de conectar e encantar.</p>
+      <h3>Values</h3>
+      <p><strong>Innovation with Purpose</strong><br>
+      We create and evolve with responsibility, always seeking new ways to connect and delight.</p>
       
-      <p><strong>Clareza e Credibilidade</strong><br>
-      Nosso compromisso com a verdade e a informação segura é inegociável. Comunicar é respeitar.</p>
+      <p><strong>Clarity and Credibility</strong><br>
+      Our commitment to truth and reliable information is non-negotiable. To communicate is to respect.</p>
       
-      <p><strong>Conexão Humana</strong><br>
-      Tecnologia sem empatia não nos serve. Valorizamos as pessoas, seus sonhos e suas histórias.</p>
+      <p><strong>Human Connection</strong><br>
+      Technology without empathy doesn't serve us. We value people, their dreams and their stories.</p>
       
-      <p><strong>Integração e Colaboração</strong><br>
-      A CODEONE faz parte de uma rede. Acreditamos na força da união entre marcas, projetos e talentos.</p>
+      <p><strong>Integration and Collaboration</strong><br>
+      CODEONE is part of a network. We believe in the strength of union between brands, projects and talents.</p>
       
-      <p><strong>Respeito ao Tempo</strong><br>
-      Nosso conteúdo deve ser consumido no tempo de cada um. Sem pressa, sem ruído. Com significado.</p>
+      <p><strong>Respect for Time</strong><br>
+      Our content should be consumed in each one's own time. Without rush, without noise. With meaning.</p>
       
-      <p><strong>Criatividade com Identidade</strong><br>
-      Somos originais, mas com raízes sólidas. Criamos experiências únicas, com nosso rosto e essência.</p>
+      <p><strong>Creativity with Identity</strong><br>
+      We are original, but with solid roots. We create unique experiences, with our face and essence.</p>
       
       <button onclick="closeAboutPopup()" style="
         background: #1e4a7e;
@@ -1577,11 +1641,11 @@
     <div class="programs-color-strip"></div>
     <div class="programs-popup-content">
       <h2>PROGRAMAS</h2>
-      <p>A CODEONE tá nascendo, e estamos montando uma base tecnológica e musical de respeito pra atender você, que curte música de verdade! Enquanto a gente vai ajeitando tudo por aqui nos bastidores, você já pode ir curtindo os vários estilos musicais que marcarão a nossa programação – afinal, estamos no ar em caráter experimental, afinando cada detalhe pra deixar tudo no ponto.</p>
+      <p>CODEONE is being born, and we're setting up a solid technological and musical foundation to serve you, who appreciates real music! While we're arranging everything backstage, you can already enjoy the various musical styles that will mark our programming - after all, we're on air experimentally, fine-tuning every detail to get everything just right.</p>
       
-      <p>A grade de programas também tá sendo desenhada com muito carinho, e olha, precisamos te falar: Tem muita coisa legal vindo por ai. Tá ficando top demais!</p>
+      <p>The programming grid is also being carefully designed, and look, we need to tell you: There's a lot of cool stuff coming up. It's getting really awesome!</p>
       
-      <p>Por isso, aumente o volume; você está no CODEONE | Music and Dreams.</p>
+      <p>So turn up the volume; you're on CODEONE | Music and Dreams.</p>
       
       <button onclick="closeProgramsPopup()" style="
         background: #1e4a7e;
@@ -1603,40 +1667,40 @@
     <div class="affiliates-color-strip"></div>
     <div class="affiliates-popup-content">
       <h2>AFILIADAS</h2>
-      <p>A CODEONE acredita no poder da conexão. Por isso, abrimos espaço para estações afiliadas que compartilham nossa visão de conteúdo inteligente, musicalmente relevante e tecnicamente impecável.</p>
+      <p>CODEONE believes in the power of connection. That's why we open space for affiliate stations that share our vision of intelligent content, musically relevant and technically impeccable.</p>
       
-      <p>Ser uma estação afiliada CODEONE é fazer parte de um ecossistema vibrante, inovador e em constante expansão, com acesso a conteúdos exclusivos, programação de alta qualidade e suporte técnico e criativo para fortalecer sua presença local — com uma identidade nacional.</p>
+      <p>Being a CODEONE affiliate station is being part of a vibrant, innovative and constantly expanding ecosystem, with access to exclusive content, high-quality programming and technical and creative support to strengthen your local presence - with a national identity.</p>
       
-      <h3>O que é uma Estação Afiliada CODEONE?</h3>
-      <p>Uma estação afiliada CODEONE mantém sua autonomia local, mas passa a integrar nossa rede de distribuição de conteúdo, podendo:</p>
+      <h3>What is a CODEONE Affiliate Station?</h3>
+      <p>A CODEONE affiliate station maintains its local autonomy, but becomes part of our content distribution network, being able to:</p>
       <ul>
-        <li>Reproduzir partes da programação oficial da CODEONE (parcial ou integralmente);</li>
-        <li>Ter acesso a playlists prontas para transmissão, programas, vinhetas e blocos temáticos;</li>
-        <li>Participar de campanhas, eventos e ações promocionais conjuntas;</li>
-        <li>Receber suporte editorial, artístico e técnico;</li>
-        <li>Integrar seu próprio conteúdo à rede, desde que aprovado pela curadoria da CODEMEDIA.</li>
+        <li>Reproduce parts of CODEONE's official programming (partially or fully);</li>
+        <li>Have access to ready-to-broadcast playlists, programs, jingles and thematic blocks;</li>
+        <li>Participate in joint campaigns, events and promotional actions;</li>
+        <li>Receive editorial, artistic and technical support;</li>
+        <li>Integrate your own content into the network, as long as approved by CODEMEDIA's curation.</li>
       </ul>
       
-      <h3>Para quem é?</h3>
-      <p>Ideal para:</p>
+      <h3>For whom?</h3>
+      <p>Ideal for:</p>
       <ul>
-        <li>Web rádios regionais que querem fortalecer sua programação;</li>
-        <li>Estações FM ou AM que buscam digitalização e atualização sonora;</li>
-        <li>Projetos locais que desejam manter sua identidade, mas com um "upgrade" em qualidade, padrão e suporte.</li>
+        <li>Regional web radios that want to strengthen their programming;</li>
+        <li>FM or AM stations seeking digitization and sound updating;</li>
+        <li>Local projects that want to maintain their identity, but with an "upgrade" in quality, standard and support.</li>
       </ul>
       
-      <h3>Benefícios de ser um Afiliado CODEONE:</h3>
+      <h3>Benefits of being a CODEONE Affiliate:</h3>
       <ul>
-        <li>Conteúdo musical e editorial de alta qualidade</li>
-        <li>Acesso à identidade CODEONE (vinhetas, visuais, marca)</li>
-        <li>Possibilidade de monetização conjunta via publicidade cooperada</li>
-        <li>Participação em projetos e lançamentos da rede</li>
-        <li>Parceria com uma marca que valoriza inovação e respeito ao tempo de cada ouvinte</li>
+        <li>High-quality musical and editorial content</li>
+        <li>Access to CODEONE identity (jingles, visuals, brand)</li>
+        <li>Possibility of joint monetization through cooperative advertising</li>
+        <li>Participation in network projects and launches</li>
+        <li>Partnership with a brand that values innovation and respect for each listener's time</li>
       </ul>
       
-      <h3>Como se tornar um Afiliado CODEONE?</h3>
-      <p>Os interessados podem entrar em contato diretamente com nossa equipe através do formulário de afiliação.</p>
-      <p>Vamos construir juntos uma rede forte, sonora e conectada.</p>
+      <h3>How to become a CODEONE Affiliate?</h3>
+      <p>Interested parties can contact our team directly through the affiliation form.</p>
+      <p>Let's build together a strong, sound and connected network.</p>
       
       <p>CODEONE | Music and Dreams</p>
       
@@ -1660,33 +1724,33 @@
     <div class="advertise-color-strip"></div>
     <div class="advertise-popup-content">
       <h2>ANUNCIE</h2>
-      <p>Sua marca no ritmo certo.</p>
+      <p>Your brand in the right rhythm.</p>
       
-      <p>A CODEONE é muito mais que uma webradio. Somos uma plataforma viva de entretenimento e informação, conectando milhares de ouvintes apaixonados por música, conteúdo de qualidade e experiências sonoras intensas.</p>
+      <p>CODEONE is much more than a webradio. We are a living platform of entertainment and information, connecting thousands of listeners passionate about music, quality content and intense sound experiences.</p>
       
-      <p>Anunciar na CODEONE é colocar sua marca em sintonia com um público segmentado, engajado e pronto para consumir. Aqui, sua mensagem toca — literalmente.</p>
+      <p>Advertising on CODEONE is putting your brand in tune with a segmented, engaged audience ready to consume. Here, your message plays - literally.</p>
       
-      <h3>Por que anunciar na CODEONE?</h3>
+      <h3>Why advertise on CODEONE?</h3>
       <ul>
-        <li><strong>Alcance qualificado:</strong> ouvintes fiéis, conectados e com alto tempo de permanência.</li>
-        <li><strong>Segmentação inteligente:</strong> entregamos sua campanha de forma estratégica e eficiente.</li>
-        <li><strong>Formatos variados:</strong> spots comerciais, jingles personalizados, inserções em programas, banners no site e muito mais.</li>
-        <li><strong>Conteúdo 24/7:</strong> sua marca presente o tempo todo.</li>
-        <li><strong>Ambiente moderno e confiável,</strong> com curadoria musical e editorial de alto padrão.</li>
+        <li><strong>Qualified reach:</strong> loyal listeners, connected and with high permanence time.</li>
+        <li><strong>Smart segmentation:</strong> we deliver your campaign strategically and efficiently.</li>
+        <li><strong>Varied formats:</strong> commercial spots, personalized jingles, program insertions, website banners and much more.</li>
+        <li><strong>24/7 content:</strong> your brand present all the time.</li>
+        <li><strong>Modern and reliable environment,</strong> with high standard musical and editorial curation.</li>
       </ul>
       
-      <h3>Para quem é?</h3>
+      <h3>For whom?</h3>
       <ul>
-        <li>Marcas que querem se comunicar com um público conectado e de bom gosto;</li>
-        <li>Negócios locais que desejam ampliar seu alcance;</li>
-        <li>Agências em busca de veículos digitais com credibilidade e impacto real.</li>
+        <li>Brands that want to communicate with a connected and good taste audience;</li>
+        <li>Local businesses that want to expand their reach;</li>
+        <li>Agencies looking for digital vehicles with credibility and real impact.</li>
       </ul>
       
-      <h3>Fale conosco!</h3>
-      <p>Entre em contato com nossa equipe comercial e descubra como levar sua marca para o universo CODEONE:</p>
+      <h3>Contact us!</h3>
+      <p>Get in touch with our commercial team and discover how to take your brand to the CODEONE universe:</p>
       <p>📧 comercial@codemedia.online</p>
       <p>📞 (00) 0000-0000</p>
-      <p>📍 Ou preencha nosso formulário:</p>
+      <p>📍 Or fill out our form:</p>
       
       <button onclick="closeAdvertisePopup()" style="
         background: #1e4a7e;
@@ -1708,40 +1772,40 @@
     <div class="about-color-strip"></div>
     <div class="about-popup-content">
       <h2>CODEBUSINESS</h2>
-      <p>A trilha sonora da sua marca. Dê voz à sua empresa com uma rádio exclusiva, feita sob medida para fortalecer sua marca, engajar colaboradores e encantar seus clientes.</p>
+      <p>The soundtrack of your brand. Give voice to your company with an exclusive radio, tailor-made to strengthen your brand, engage employees and delight your customers.</p>
       
-      <p>O CODEBUSINESS transforma o ambiente da sua empresa com uma experiência sonora personalizada e profissional, disponível online, 24 horas por dia, 7 dias por semana.</p>
+      <p>CODEBUSINESS transforms your company's environment with a personalized and professional sound experience, available online, 24 hours a day, 7 days a week.</p>
       
-      <h3>Com o CODEBUSINESS, você conta com:</h3>
+      <h3>With CODEBUSINESS, you have:</h3>
       <ul>
-        <li>🎙️ Narrações profissionais e vinhetas com a identidade da sua marca</li>
-        <li>🎶 Programação musical personalizada, alinhada ao perfil do seu público e do seu ambiente</li>
-        <li>📣 Espaços para divulgar campanhas, treinamentos, metas e promoções</li>
-        <li>📡 Transmissão contínua via streaming, sem complicação técnica</li>
+        <li>🎙️ Professional narrations and jingles with your brand identity</li>
+        <li>🎶 Personalized musical programming, aligned with your audience's profile and your environment</li>
+        <li>📣 Spaces to advertise campaigns, trainings, goals and promotions</li>
+        <li>📡 Continuous transmission via streaming, without technical complication</li>
       </ul>
       
-      <p>Perfeito para:</p>
-      <p>Lojas, franquias, escritórios, eventos, feiras e ações corporativas.</p>
+      <p>Perfect for:</p>
+      <p>Stores, franchises, offices, events, fairs and corporate actions.</p>
       
-      <p>Um canal moderno de comunicação interna e externa, fácil de implementar e com alto impacto na percepção da sua marca.</p>
+      <p>A modern channel for internal and external communication, easy to implement and with high impact on your brand perception.</p>
       
-      <h3>Ideal para:</h3>
+      <h3>Ideal for:</h3>
       <ul>
-        <li>🏪 Lojas físicas e redes de franquias</li>
-        <li>🏢 Ambientes corporativos e escritórios</li>
-        <li>🎯 Treinamentos, metas e campanhas internas</li>
-        <li>📢 Divulgação institucional, lançamentos e novidades</li>
+        <li>🏪 Physical stores and franchise networks</li>
+        <li>🏢 Corporate environments and offices</li>
+        <li>🎯 Trainings, goals and internal campaigns</li>
+        <li>📢 Institutional advertising, launches and news</li>
       </ul>
       
-      <h3>Tudo com a identidade sonora da sua marca</h3>
-      <p>Cada detalhe é personalizado: da seleção musical às vinhetas, do tom da narração à frequência das mensagens. Sua marca com uma sonoridade própria, profissional e inesquecível.</p>
+      <h3>Everything with your brand's sound identity</h3>
+      <p>Every detail is customized: from music selection to jingles, from narration tone to message frequency. Your brand with its own sound, professional and unforgettable.</p>
       
-      <p>Entre em contato para saber mais:</p>
+      <p>Contact us to learn more:</p>
       <p>📧 comercial@codemedia.online</p>
       <p>📞 (00) 0000-0000</p>
-      <p>📍 Ou preencha nosso formulário:</p>
+      <p>📍 Or fill out our form:</p>
       
-      <p>CODEBUSINESS. Sua marca merece ser ouvida.</p>
+      <p>CODEBUSINESS. Your brand deserves to be heard.</p>
       
       <button onclick="closeCodeBusinessPopup()" style="
         background: #1e4a7e;
@@ -1763,85 +1827,85 @@
     <div class="about-color-strip"></div>
     <div class="about-popup-content">
       <h2>CODEPARTY</h2>
-      <p>A festa não para na CODEONE! Já imaginou homenagear alguém especial com um programa de rádio ao vivo, totalmente personalizado com as músicas que marcaram a história dessa pessoa e mensagens de voz gravadas por amigos e familiares?</p>
+      <p>The party never stops at CODEONE! Have you ever imagined honoring someone special with a live radio show, fully personalized with the songs that marked that person's history and voice messages recorded by friends and family?</p>
       
-      <p>Com o CODEPARTY, isso é possível.</p>
+      <p>With CODEPARTY, this is possible.</p>
       
-      <h3>O que é o CODEPARTY?</h3>
-      <p>Um programa de rádio exclusivo, transmitido ao vivo pela internet, criado para celebrar pessoas e momentos inesquecíveis. Ideal para aniversários, casamentos, promoções, despedidas, reencontros e datas comemorativas em geral.</p>
+      <h3>What is CODEPARTY?</h3>
+      <p>An exclusive radio show, broadcast live on the internet, created to celebrate people and unforgettable moments. Ideal for birthdays, weddings, promotions, farewells, reunions and commemorative dates in general.</p>
       
-      <p>Você escolhe:</p>
+      <p>You choose:</p>
       <ul>
-        <li>🎶 As músicas mais marcantes</li>
-        <li>🎤 Mensagens de voz de pessoas queridas</li>
-        <li>🗓️ O dia e horário da transmissão</li>
+        <li>🎶 The most striking songs</li>
+        <li>🎤 Voice messages from loved ones</li>
+        <li>🗓️ The day and time of transmission</li>
       </ul>
       
-      <p>A narração é feita por um locutor profissional com experiência nas maiores rádios do Brasil, como a Rede Transamérica e a Metropolitana FM.</p>
+      <p>The narration is done by a professional announcer with experience in Brazil's biggest radio stations, such as Rede Transamérica and Metropolitana FM.</p>
       
-      <h3>Como funciona?</h3>
+      <h3>How does it work?</h3>
       <ol>
-        <li><strong>Agendamento personalizado</strong><br>Você entra em contato com a gente e agendamos uma conversa para entender sua ideia, a ocasião e o melhor dia/horário para a transmissão.</li>
-        <li><strong>Definição do conteúdo</strong><br>Você seleciona as músicas e envia mensagens de voz (via WhatsApp) de amigos e familiares. Nós cuidamos da montagem e da emoção.</li>
-        <li><strong>Transmissão ao vivo</strong><br>No dia e horário agendados, o programa vai ao ar pela rádio CODEONE (www.codeonebrasil.com.br) e pode ser ouvido de qualquer lugar do mundo.</li>
-        <li><strong>Programa gravado como lembrança</strong><br>Após a transmissão, você recebe o programa completo em formato MP3 para guardar, compartilhar ou reviver quando quiser.</li>
+        <li><strong>Personalized scheduling</strong><br>You contact us and we schedule a conversation to understand your idea, the occasion and the best day/time for transmission.</li>
+        <li><strong>Content definition</strong><br>You select the songs and send voice messages (via WhatsApp) from friends and family. We take care of the assembly and emotion.</li>
+        <li><strong>Live broadcast</strong><br>On the scheduled day and time, the show airs on CODEONE radio (www.codeonebrasil.com.br) and can be heard from anywhere in the world.</li>
+        <li><strong>Recorded show as a souvenir</strong><br>After transmission, you receive the complete show in MP3 format to keep, share or relive whenever you want.</li>
       </ol>
       
-      <h3>Para quem é o CODEPARTY?</h3>
+      <h3>For whom is CODEPARTY?</h3>
       <ul>
-        <li>❤️ Casais apaixonados (Dia dos Namorados, aniversários de namoro ou casamento)</li>
-        <li>👨‍👩‍👧 Pais em datas comemorativas</li>
-        <li>🎉 Amigos em aniversários, formaturas ou despedidas</li>
-        <li>📚 Reencontros inesquecíveis (ex: grupos de escola)</li>
-        <li>🏢 Empresas que queiram homenagear colaboradores ou comemorar conquistas</li>
+        <li>❤️ Couples in love (Valentine's Day, dating or marriage anniversaries)</li>
+        <li>👨‍👩‍👧 Parents on commemorative dates</li>
+        <li>🎉 Friends on birthdays, graduations or farewells</li>
+        <li>📚 Unforgettable reunions (ex: school groups)</li>
+        <li>🏢 Companies that want to honor employees or celebrate achievements</li>
       </ul>
       
-      <h3>Pacotes disponíveis</h3>
+      <h3>Available packages</h3>
       
-      <h4>🥉 PACOTE BRONZE</h4>
-      <p>💵 R$ 347,00 à vista ou 12x de R$ 34,70</p>
+      <h4>🥉 BRONZE PACKAGE</h4>
+      <p>💵 R$ 347.00 in cash or 12x of R$ 34.70</p>
       <ul>
-        <li>8 músicas à sua escolha</li>
-        <li>Até 6 mensagens de voz (máx. 15s cada)</li>
-        <li>Duração: aprox. 1h15</li>
-        <li>Transmissão ao vivo via site ou app da CODEONE</li>
-        <li>Narração profissional (Rede Transamérica/Metropolitana FM)</li>
-        <li>Gravação em MP3 enviada após o programa</li>
-        <li>Agendamento com data e horário personalizados</li>
+        <li>8 songs of your choice</li>
+        <li>Up to 6 voice messages (max. 15s each)</li>
+        <li>Duration: approx. 1h15</li>
+        <li>Live broadcast via CODEONE website or app</li>
+        <li>Professional narration (Rede Transamérica/Metropolitana FM)</li>
+        <li>MP3 recording sent after the show</li>
+        <li>Scheduling with personalized date and time</li>
       </ul>
       
-      <h4>🥈 PACOTE PRATA</h4>
-      <p>💵 R$ 520,00 à vista ou 12x de R$ 52,00</p>
-      <p>Promoção: 20% de desconto por tempo limitado → R$ 416,00 à vista ou 12x de R$ 41,60</p>
+      <h4>🥈 SILVER PACKAGE</h4>
+      <p>💵 R$ 520.00 in cash or 12x of R$ 52.00</p>
+      <p>Promotion: 20% discount for a limited time → R$ 416.00 in cash or 12x of R$ 41.60</p>
       <ul>
-        <li>12 músicas à sua escolha</li>
-        <li>Até 9 mensagens de voz (máx. 15s cada)</li>
-        <li>Duração: aprox. 1h40</li>
-        <li>Todos os benefícios do Pacote Bronze</li>
+        <li>12 songs of your choice</li>
+        <li>Up to 9 voice messages (max. 15s each)</li>
+        <li>Duration: approx. 1h40</li>
+        <li>All benefits of Bronze Package</li>
       </ul>
       
-      <h4>🥇 PACOTE OURO</h4>
-      <p>💵 R$ 780,00 à vista ou 12x de R$ 78,00</p>
-      <p>Promoção: 20% de desconto → R$ 624,00 à vista ou 12x de R$ 62,40</p>
+      <h4>🥇 GOLD PACKAGE</h4>
+      <p>💵 R$ 780.00 in cash or 12x of R$ 78.00</p>
+      <p>Promotion: 20% discount → R$ 624.00 in cash or 12x of R$ 62.40</p>
       <ul>
-        <li>18 músicas à sua escolha</li>
-        <li>Até 14 mensagens de voz (máx. 15s cada)</li>
-        <li>Duração: aprox. 2h20</li>
-        <li>Todos os benefícios dos pacotes anteriores</li>
+        <li>18 songs of your choice</li>
+        <li>Up to 14 voice messages (max. 15s each)</li>
+        <li>Duration: approx. 2h20</li>
+        <li>All benefits of previous packages</li>
       </ul>
       
-      <p><strong>📌 Importante:</strong></p>
-      <p>Para garantir sua transmissão, o agendamento deve ser feito com no mínimo 10 dias de antecedência, assim conseguimos preparar tudo com o cuidado que o seu momento merece.</p>
-      <p>Este serviço/produto está disponível somente em português (Brasil) e os valores são expressos em reais (R$).</p>
-      <p>Os valores podem variar conforme o tempo da transmissão, o número de músicas e mensagens selecionadas, porém, o orçamento sempre será apresentado previamente para aprovação.</p>
+      <p><strong>📌 Important:</strong></p>
+      <p>To guarantee your transmission, scheduling must be done at least 10 days in advance, so we can prepare everything with the care your moment deserves.</p>
+      <p>This service/product is only available in Portuguese (Brazil) and values are expressed in reais (R$).</p>
+      <p>Values may vary according to transmission time, number of songs and messages selected, however, the budget will always be presented previously for approval.</p>
       
-      <p>CODEPARTY é mais que um presente.<br>
-      É uma homenagem viva, emocionante, inesquecível — e única.</p>
+      <p>CODEPARTY is more than a gift.<br>
+      It's a living, moving, unforgettable tribute - and unique.</p>
       
-      <p>Entre em contato para saber mais:<br>
+      <p>Contact us to learn more:<br>
       📧 comercial@codemedia.online<br>
       📞 (00) 0000-0000<br>
-      📍 Ou preencha nosso formulário:</p>
+      📍 Or fill out our form:</p>
       
       <button onclick="closeCodePartyPopup()" style="
         background: #1e4a7e;
@@ -1880,11 +1944,11 @@
     <div class="team-color-strip"></div>
     <div class="team-popup-content">
       <h2>EQUIPE</h2>
-      <p>A CODEONE está em constante transformação — e com ela, nosso time também cresce! Novos talentos nas áreas de comunicação, tecnologia, marketing, gestão e muito mais vêm se juntando a nós, somando conhecimento, energia e conquistas todos os dias.</p>
+      <p>CODEONE is in constant transformation - and with it, our team also grows! New talents in the areas of communication, technology, marketing, management and much more are joining us, adding knowledge, energy and achievements every day.</p>
       
-      <p>Como ainda estamos na fase de construção dos nossos sistemas, estruturas e processos, nossos amigos, parceiros e colaboradores ainda não aparecem por aqui. Mas pode ter certeza: em breve, esta página estará cheia de gente talentosa, criativa e com vontade de fazer a diferença junto com a CODEONE.</p>
+      <p>As we are still in the phase of building our systems, structures and processes, our friends, partners and collaborators do not appear here yet. But rest assured: soon, this page will be full of talented, creative people with the will to make a difference together with CODEONE.</p>
       
-      <p>Fica de olho… vem muita gente boa por aqui!</p>
+      <p>Keep an eye out... a lot of good people are coming!</p>
       
       <button onclick="closeTeamPopup()" style="
         background: #1e4a7e;
@@ -1906,15 +1970,15 @@
     <div class="listeners-color-strip"></div>
     <div class="listeners-popup-content">
       <h2>OUVINTES</h2>
-      <p>A CODEONE existe por você e para você.</p>
+      <p>CODEONE exists by you and for you.</p>
       
-      <p>Reservamos este espaço para que você se cadastre e faça parte de uma comunidade que vai crescer muito. Queremos saber quem é você, de onde você vem e qual estilo musical mais curte.</p>
+      <p>We reserve this space for you to register and be part of a community that will grow a lot. We want to know who you are, where you come from and what musical style you like most.</p>
       
-      <p>Ao se cadastrar na CODEONE, você poderá participar dos nossos programas ao vivo, enviando suas mensagens em tempo real; poderá participar de promoções com nossos patrocinadores e, melhor ainda, concorrer a prêmios exclusivos. O cadastro como OUVINTE é rápido e totalmente gratuito.</p>
+      <p>By registering at CODEONE, you can participate in our live programs, sending your messages in real time; you can participate in promotions with our sponsors and, even better, compete for exclusive prizes. Registration as a LISTENER is quick and completely free.</p>
       
-      <p>Preencha corretamente o formulário abaixo e, em seguida, clique em enviar.</p>
+      <p>Fill out the form below correctly and then click send.</p>
       
-      <p>Seja bem-vindo à família CODEONE!</p>
+      <p>Welcome to the CODEONE family!</p>
       
       <button onclick="closeListenersPopup()" style="
         background: #1e4a7e;
@@ -1936,22 +2000,22 @@
     <div class="club-color-strip"></div>
     <div class="club-popup-content">
       <h2>CODECLUB</h2>
-      <p>O CODECLUB é o canal de assinaturas da CODEONE, criado para quem busca uma experiência sonora ainda mais rica e exclusiva. Aqui, você encontrará programas inéditos, séries especiais em áudio e conteúdos que vão muito além da música.</p>
+      <p>CODECLUB is CODEONE's subscription channel, created for those looking for an even richer and more exclusive sound experience. Here you will find original programs, special audio series and content that goes far beyond music.</p>
       
-      <p>Grandes nomes da música e pesquisadores especializados conduzem produções cheias de informação, curiosidades e emoção. E para completar a imersão, você também terá acesso a materiais gráficos que acompanham os episódios, oferecendo um suporte visual único para cada série ou programa.</p>
+      <p>Big names in music and specialized researchers conduct productions full of information, curiosities and emotion. And to complete the immersion, you will also have access to graphic materials that accompany the episodes, offering unique visual support for each series or program.</p>
       
-      <p>Prepare-se para explorar:</p>
+      <p>Get ready to explore:</p>
       <ul>
-        <li>🎸 A trajetória e os sucessos dos Beatles</li>
-        <li>🌟 A carreira brilhante de Michael Jackson</li>
-        <li>🎬 As trilhas sonoras mais marcantes do cinema</li>
-        <li>🎧 Conteúdos em áudio sobre séries de ANIME</li>
+        <li>🎸 The trajectory and successes of the Beatles</li>
+        <li>🌟 Michael Jackson's brilliant career</li>
+        <li>🎬 The most striking soundtracks in cinema</li>
+        <li>🎧 Audio content about ANIME series</li>
       </ul>
-      <p>...e muito mais!</p>
+      <p>...and much more!</p>
       
-      <p>São tantas novidades que seria impossível listar tudo aqui.</p>
+      <p>There are so many news that it would be impossible to list everything here.</p>
       
-      <p>Fique ligado! Em breve, você poderá acessar todo o catálogo de produções disponíveis no CODECLUB — e mergulhar em uma nova forma de ouvir, aprender e sentir.</p>
+      <p>Stay tuned! Soon, you will be able to access the entire catalog of productions available at CODECLUB - and dive into a new way of listening, learning and feeling.</p>
       
       <button onclick="closeClubPopup()" style="
         background: #1e4a7e;
@@ -2247,6 +2311,18 @@
       console.log('Running as PWA');
       installBtn.style.display = 'none';
     }
+
+    // CODENEWS Script
+    fetch('noticias.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('news-items');
+        container.innerHTML = data.noticias.map(n => `<span style="margin-right: 50px;">${n}</span>`).join('');
+      })
+      .catch(error => {
+        console.error('Error loading news:', error);
+        document.getElementById('news-items').textContent = 'Could not load news.';
+      });
 
     // Inicialização
     window.onload = function() {
