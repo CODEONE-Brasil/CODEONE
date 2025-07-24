@@ -126,19 +126,32 @@
 
     .compact-player .controls {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     .compact-player .controls button {
       background: none;
       border: none;
       color: #666;
-      font-size: 1.6rem;
       cursor: pointer;
       transition: color 0.2s;
+    }
+
+    .compact-player .controls button.refresh {
+      font-size: 1.2rem;
+      order: 1;
+    }
+
+    .compact-player .controls button.play {
+      font-size: 2.4rem;
+      order: 2;
+    }
+
+    .compact-player .controls button.share {
+      font-size: 1.2rem;
+      order: 3;
     }
 
     .compact-player .controls button:hover {
@@ -346,25 +359,35 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: white;
-      padding: 25px;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 25px rgba(0,0,0,0.2);
       z-index: 1001;
       width: 90%;
       max-width: 700px;
       max-height: 80vh;
-      overflow: hidden;
+      overflow-y: auto;
       font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .terms-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .terms-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
     }
     .terms-popup h3 {
-      font-size: 18px;
       color: #1a3a6a;
+      margin: 20px 0 10px;
     }
     .terms-popup p, .terms-popup li {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.6;
       margin-bottom: 10px;
-      color: #333;
+      color: #555;
     }
     .terms-popup ol {
       padding-left: 20px;
@@ -379,6 +402,15 @@
       font-size: 20px;
       cursor: pointer;
       color: #555;
+    }
+    .terms-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
     }
 
     /* POPUP QUEM SOMOS */
@@ -861,6 +893,168 @@
       border-radius: 3px;
     }
 
+    /* POPUP CADASTRE-SE */
+    .register-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .register-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .register-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .register-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .close-register-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .register-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP ASSINE */
+    .subscribe-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .subscribe-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .subscribe-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .subscribe-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .close-subscribe-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .subscribe-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
+    /* POPUP PARCEIROS */
+    .partners-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      z-index: 1001;
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+    }
+    .partners-popup-content {
+      position: relative;
+      padding-left: 25px;
+    }
+    .partners-popup h2 {
+      color: #1e4a7e;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .partners-popup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .close-partners-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .partners-color-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #1a3a6a, #1e4a7e, #2a7a62, #3a9a4a);
+      border-radius: 3px;
+    }
+
     /* RODAPÉ */
     .site-footer {
       background: white;
@@ -1105,7 +1299,14 @@
       gap: 5px;
     }
 
-    /* CODENEWS */
+    /* CODENEWS - VERSÃO CORRIGIDA */
+    .codonews-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
     .codonews-bar {
       display: flex;
       align-items: center;
@@ -1113,46 +1314,52 @@
       color: #000;
       height: 40px;
       overflow: hidden;
-      width: 70%;
-      margin: 0 auto 20px;
+      width: 80%;
       border: 1px solid #eee;
       border-radius: 4px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: relative;
     }
 
     .codonews-label {
       height: 100%;
       display: flex;
       align-items: center;
-      flex-shrink: 0;
+      background-color: #f5f5f5;
+      padding: 0 10px;
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      border-right: 1px solid #eee;
     }
 
     .codonews-label img {
       height: 30px;
-      margin: 0 10px;
+      width: auto;
     }
 
     .news-marquee {
+      flex: 1;
       overflow: hidden;
       white-space: nowrap;
-      flex: 1;
-      padding-left: 10px;
       height: 100%;
       display: flex;
       align-items: center;
+      margin-left: 120px; /* Espaço para a logo */
     }
 
     .news-items {
       display: inline-block;
+      padding-left: 100%; /* Começa fora da tela */
       animation: scrollNews 30s linear infinite;
       line-height: 1.2;
     }
 
     @keyframes scrollNews {
-      from {
-        transform: translateX(100%);
+      0% {
+        transform: translateX(0);
       }
-      to {
+      100% {
         transform: translateX(-100%);
       }
     }
@@ -1199,7 +1406,10 @@
       .news-popup,
       .tv-popup,
       .store-popup,
-      .club-popup {
+      .club-popup,
+      .register-popup,
+      .subscribe-popup,
+      .partners-popup {
         width: 95%;
         padding: 20px;
       }
@@ -1228,18 +1438,30 @@
       }
       /* CODENEWS Responsive */
       .codonews-bar {
-        width: 90%;
+        width: 95%;
         height: 35px;
       }
+      
       .codonews-label img {
         height: 25px;
-        margin: 0 8px;
       }
+      
       .news-marquee {
-        padding: 5px;
+        margin-left: 100px; /* Reduz o espaço para a logo em mobile */
       }
+      
       .news-items {
         font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .codonews-label {
+        padding: 0 5px;
+      }
+      
+      .news-marquee {
+        margin-left: 90px; /* Ajuste fino para telas muito pequenas */
       }
     }
   </style>
@@ -1259,11 +1481,9 @@
       <div class="compact-player">
         <h3>AO VIVO</h3>
         <div class="controls">
-          <button onclick="playAudio()" title="Play"><i class="ri-play-circle-line"></i></button>
-          <button onclick="pauseAudio()" title="Pause"><i class="ri-pause-circle-line"></i></button>
-          <button onclick="stopAudio()" title="Stop"><i class="ri-stop-circle-line"></i></button>
-          <button onclick="reloadAudio()" title="Atualizar"><i class="ri-refresh-line"></i></button>
-          <button onclick="shareAudio()" title="Compartilhar"><i class="ri-share-line"></i></button>
+          <button class="refresh" onclick="reloadAudio()" title="Atualizar"><i class="ri-refresh-line"></i></button>
+          <button class="play" onclick="playAudio()" title="Play"><i class="ri-play-circle-line"></i></button>
+          <button class="share" onclick="shareAudio()" title="Compartilhar"><i class="ri-share-line"></i></button>
         </div>
         <div class="volume-container">
           <i class="ri-volume-down-line"></i>
@@ -1276,12 +1496,14 @@
     </div>
 
     <!-- FAIXA DE NOTÍCIAS - CODENEWS -->
-    <div class="codonews-bar">
-      <div class="codonews-label">
-        <img src="TARJACODENEWS.jpg" alt="CODE NEWS">
-      </div>
-      <div class="news-marquee" id="news-container">
-        <div class="news-items" id="news-items">Carregando notícias...</div>
+    <div class="codonews-container">
+      <div class="codonews-bar">
+        <div class="codonews-label">
+          <img src="TARJACODENEWS.jpg" alt="CODE NEWS">
+        </div>
+        <div class="news-marquee" id="news-container">
+          <div class="news-items" id="news-items">Carregando notícias ...</div>
+        </div>
       </div>
     </div>
 
@@ -1325,14 +1547,14 @@
         <div class="program-color-strip"></div>
         <div>
           <h3>OUVINTES</h3>
-          <p>Cadastre-se, peça sua música e concorra a prêmios exclusivos</p>
+          <p>Conheça os benefícios de ser um ouvinte CODEONE</p>
         </div>
       </div>
-      <div class="program-box" onclick="openTeamPopup()">
+      <div class="program-box" onclick="openRegisterPopup()">
         <div class="program-color-strip"></div>
         <div>
-          <h3>EQUIPE</h3>
-          <p>Conheça nosso time e quem faz acontecer aqui na CODEONE.</p>
+          <h3>CADASTRE-SE</h3>
+          <p>Cadastre-se, peça sua música e concorra a prêmios exclusivos.</p>
         </div>
       </div>
     </div>
@@ -1411,6 +1633,13 @@
           <p>Conheça-nos melhor, nossos planos e visões.</p>
         </div>
       </div>
+      <div class="footer-box" onclick="openTeamPopup()">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>EQUIPE</h3>
+          <p>Conheça nosso time e quem faz acontecer aqui na CODEONE.</p>
+        </div>
+      </div>
       <div class="footer-box" onclick="openAffiliatesPopup()">
         <div class="footer-box-color-strip"></div>
         <div>
@@ -1418,11 +1647,25 @@
           <p>Conheça a nossa de rede de emissoras e afiliadas parceiras.</p>
         </div>
       </div>
+      <div class="footer-box" onclick="openSubscribePopup()">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>ASSINE</h3>
+          <p>Assine nossos produtos digitais e acesse conteúdos exclusivos.</p>
+        </div>
+      </div>
       <div class="footer-box" onclick="openAdvertisePopup()">
         <div class="footer-box-color-strip"></div>
         <div>
           <h3>ANUNCIE</h3>
           <p>Conheça todas as possibilidades comerciais que nossa rede de ativos oferece.</p>
+        </div>
+      </div>
+      <div class="footer-box" onclick="openPartnersPopup()">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>PARCEIROS</h3>
+          <p>Quem faz a diferença, acredita e aposta na CODEONE.</p>
         </div>
       </div>
     </div>
@@ -1463,7 +1706,7 @@
       </div>
     </div>
     <div class="footer-legal">
-      <p><a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Termos de Uso e Privacidade</a> | <a href="#" class="footer-legal-link">Contato</a></p>
+      <p><a href="#" class="footer-legal-link" onclick="openTermsPopup(); return false;">Termos de Uso e Privacidade</a> | <a href="#" class="footer-legal-link" onclick="openContactPopup(); return false;">Contato</a></p>
       <p class="footer-copyright">© 2025 CODEONE Music and Dreams</p>
       <p class="footer-copyright">© 2025 CODEMEDIA Comunicação</p>
       <p>by © 2025 SPDTECH Digital Asset Management</p>
@@ -1478,86 +1721,53 @@
   <div class="overlay" id="terms-overlay"></div>
   <div class="terms-popup" id="terms-popup">
     <button class="close-terms-btn" onclick="closeTermsPopup()">×</button>
-    <div class="header-border" style="margin-bottom: 15px;"></div>
-    <h2 style="color: #1e4a7e; margin-bottom: 20px;">TERMOS E CONDIÇÕES E POLÍTICA DE PRIVACIDADE</h2>
-    <div style="text-align: right; margin-bottom: 10px; font-size: 12px; color: #555;">Última Atualização: Julho de 2025</div>
-    
-    <div style="max-height: 60vh; overflow-y: auto; padding-right: 10px; text-align: left;">
-      <p>Os presentes Termos e Condições (doravante denominados "Termos e Condições"), que incluem a Política de Privacidade deste site (doravante denominado "Site"), constituem um acordo legalmente vinculativo entre o usuário (doravante denominado "Usuário", "você" ou "seu") e SPDTECH Digital Asset Management, CODEMEDIA Comunicação e CODEONE Music and Dreams (doravante, de forma conjunta e simplificada, "SPDTECH").</p>
-
-      <h3 style="color: #1a3a6a; margin: 20px 0 10px;">1. TERMOS E CONDIÇÕES DE USO DO SITE</h3>
-      <ol style="padding-left: 20px; margin-bottom: 20px;">
-        <li>Os conteúdos disponíveis neste Site poderão ser compartilhados, redistribuídos, incorporados e copiados, desde que seja incluído um link de referência para este Site.</li>
-        <li>É vedada a modificação ou comercialização dos conteúdos aqui disponibilizados sem a autorização expressa e por escrito da SPDTECH.</li>
-        <li>A SPDTECH não se responsabiliza, em hipótese alguma, pelos conteúdos de sites de terceiros vinculados ou anunciados neste Site, tampouco por efeitos adversos decorrentes da utilização deste Site.</li>
-        <li>A SPDTECH também não se responsabiliza pelos conteúdos de sites que contenham links para este Site, ou que façam uso dos conteúdos aqui disponibilizados.</li>
-        <li>Ao acessar e utilizar este Site, o Usuário concorda integralmente com estes Termos e Condições.</li>
-        <li>A SPDTECH não garante que este Site esteja permanentemente livre de erros, interrupções, omissões ou defeitos, nem que eventuais problemas serão corrigidos. O Usuário assume integralmente quaisquer custos decorrentes do uso do Site.</li>
-        <li>Em nenhuma hipótese a SPDTECH, suas afiliadas, diretores, funcionários, licenciadores, fornecedores ou distribuidores serão responsáveis por quaisquer danos diretos, indiretos, especiais, incidentais, econômicos ou consequenciais decorrentes do uso deste Site, mesmo se previamente avisados sobre a possibilidade desses danos. A responsabilidade máxima da SPDTECH não excederá, em qualquer caso, o valor pago pelo Usuário por produtos ou serviços adquiridos da SPDTECH, quando aplicável.</li>
-        <li>A SPDTECH reserva-se o direito de modificar estes Termos e Condições a qualquer momento, sem necessidade de aviso prévio. As alterações passarão a vigorar imediatamente após sua publicação neste Site.</li>
-      </ol>
-
-      <h3 style="color: #1a3a6a; margin: 20px 0 10px;">2. POLÍTICA DE PRIVACIDADE</h3>
-      <p>2.1. Este Site é de propriedade e operado pela SPDTECH Digital Asset Management, CODEMEDIA Comunicação e CODEONE Music and Dreams (doravante referida como "SPDTECH"). A proteção da privacidade e dos dados pessoais dos Usuários é de suma importância para a SPDTECH, que visa proporcionar uma experiência online segura e satisfatória.</p>
+    <div class="terms-color-strip"></div>
+    <div class="terms-popup-content">
+      <h2>QUEM SOMOS</h2>
+      <p>A CODEONE é uma webradio diferente, dinâmica, viva. More than just playing music or informing, it connects people, stories and experiences. Managed by CODEMEDIA and SPDTECH Digital Asset Management, CODEONE is the first brand in an ecosystem that keeps growing - a true starting point for everything we're building.</p>
       
-      <p>2.2. A presente Política de Privacidade detalha quais informações são coletadas, como são utilizadas, armazenadas, protegidas e compartilhadas, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD), assegurando os direitos dos Usuários e estabelecendo as responsabilidades da SPDTECH.</p>
+      <p>With the CODEONE Music and Dreams seal, our radio goes beyond musical programming: it offers an engaging sound curation and content that moves, informs and inspires.</p>
       
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">3. INFORMAÇÕES COLETADAS PELA SPDTECH</h4>
-      <p>3.1. A SPDTECH coleta informações dos Usuários por meio de duas formas principais:</p>
-      <ul style="padding-left: 20px; margin-bottom: 15px;">
-        <li>Informações fornecidas voluntariamente pelos Usuários, como no cadastro para recebimento de boletins eletrônicos, participação em fóruns, enquetes e pesquisas, envio de e-mails, entre outros.</li>
-        <li>Informações coletadas por meio de tecnologias de rastreamento agregado, como contagem de visualizações de páginas e análise de navegação, que possibilitam o aprimoramento dos conteúdos e a análise de perfil demográfico dos Usuários, sem identificar individualmente cada Usuário.</li>
-      </ul>
+      <p>At the same time, we give strength to other brands, products and services in our network of assets, expanding our presence and consolidating an integrated vision of media and innovation.</p>
       
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">4. FORMAS DE COLETA DE INFORMAÇÕES</h4>
-      <p>4.1. Serviços Gratuitos que exigem envio voluntário de informações pessoais:</p>
+      <p>CODEONE is just the beginning. We're building a new way to consume content, to hear, see and live.</p>
+      <p>And most importantly: we're doing it for you, for you.</p>
       
-      <p><strong>Boletins eletrônicos:</strong> Os Usuários que se inscrevem voluntariamente fornecem seus endereços de e-mail, podendo cancelar a inscrição a qualquer momento por meio de link disponibilizado em cada boletim.</p>
+      <p>CODEONE | Music and Dreams.</p>
       
-      <p><strong>Quadros de mensagens e fóruns:</strong> O registro é facultativo e gratuito, requerendo nome de usuário, senha e endereço de e-mail para postagem de mensagens.</p>
+      <h3>Mission</h3>
+      <p>Offer intelligent entertainment, reliable information and memorable sound experiences, through an innovative webradio, connected with its time, adding value to people's lives and strengthening the ecosystem of brands, products and services that make up our network.</p>
       
-      <p><strong>Envio por e-mail para terceiros:</strong> O Usuário pode encaminhar links ou documentos a terceiros, fornecendo os endereços de e-mail próprios e do destinatário. Essas informações são utilizadas exclusivamente para fins de transmissão e identificação do remetente, não sendo usadas para quaisquer outras finalidades.</p>
+      <h3>Values</h3>
+      <p><strong>Innovation with Purpose</strong><br>
+      We create and evolve with responsibility, always seeking new ways to connect and delight.</p>
       
-      <p><strong>Enquetes e pesquisas:</strong> As respostas são agregadas e anônimas, não identificando usuários específicos. A SPDTECH pode utilizar sistemas para limitar votos múltiplos sem associar esses dados a informações pessoais.</p>
+      <p><strong>Clarity and Credibility</strong><br>
+      Our commitment to truth and reliable information is non-negotiable. Communicating is respecting.</p>
       
-      <p>4.2. Rastreamento de uso: A SPDTECH utiliza ferramentas que analisam padrões de tráfego e termos de busca no Site, sem vinculação a dados pessoais individuais, para melhorar a experiência e adequar o conteúdo às preferências dos Usuários.</p>
+      <p><strong>Human Connection</strong><br>
+      Technology without empathy doesn't serve us. We value people, their dreams and their stories.</p>
       
-      <p>4.3. Cookies: São utilizados cookies para registrar preferências e analisar o uso do Site, sem acesso a dados pessoais além daqueles fornecidos voluntariamente. O Usuário pode optar por desativar os cookies no navegador, porém algumas funcionalidades poderão ficar limitadas.</p>
+      <p><strong>Integration and Collaboration</strong><br>
+      CODEONE is part of a network. We believe in the strength of union between brands, projects and talents.</p>
       
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">5. USO DAS INFORMAÇÕES</h4>
-      <p>5.1. As informações coletadas são utilizadas para melhorar os serviços oferecidos, personalizar a experiência do Usuário, enviar comunicações informativas e realizar análises internas.</p>
+      <p><strong>Respect for Time</strong><br>
+      Our content should be consumed in each one's own time. Without rush, without noise. With meaning.</p>
       
-      <p>5.2. A SPDTECH compromete-se a não compartilhar dados pessoais identificáveis com terceiros, exceto quando necessário para cumprimento de obrigação legal, ordem judicial ou para proteger direitos, segurança e propriedade da SPDTECH e de seus Usuários.</p>
+      <p><strong>Creativity with Identity</strong><br>
+      We are original, but with solid roots. We create unique experiences, with our face and essence.</p>
       
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">6. COMPARTILHAMENTO E SEGURANÇA DAS INFORMAÇÕES</h4>
-      <p>6.1. A SPDTECH adota medidas técnicas e administrativas para proteger os dados pessoais contra acesso não autorizado, perda, alteração ou divulgação indevida, em conformidade com as melhores práticas do setor.</p>
-      
-      <p>6.2. O compartilhamento de informações com terceiros ocorre somente nas hipóteses legais ou contratuais necessárias para a prestação de serviços e é sempre acompanhado de cláusulas de confidencialidade.</p>
-      
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">7. DIREITOS DO USUÁRIO</h4>
-      <p>7.1. Em conformidade com a LGPD, o Usuário tem o direito de acessar, corrigir, atualizar e solicitar a exclusão de seus dados pessoais, bem como revogar consentimentos concedidos, mediante solicitação à SPDTECH.</p>
-      
-      <p>7.2. O Usuário poderá exercer seus direitos através dos canais de comunicação disponibilizados no Site.</p>
-      
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">8. POLÍTICA DE OPT-OUT</h4>
-      <p>8.1. O Usuário poderá optar por não receber comunicações de marketing, boletins eletrônicos e participar ou não de determinadas funcionalidades interativas, sem prejuízo ao acesso às informações públicas do Site.</p>
-      
-      <h4 style="color: #1e4a7e; margin: 15px 0 5px;">9. CONSENTIMENTO</h4>
-      <p>9.1. Ao utilizar este Site, o Usuário manifesta seu consentimento para a coleta e utilização das informações nos termos desta Política de Privacidade e em conformidade com a LGPD.</p>
-      
-      <p>9.2. Caso haja alteração desta Política, a SPDTECH informará os Usuários mediante publicação atualizada nesta página, assegurando a transparência quanto ao tratamento dos dados pessoais.</p>
+      <button onclick="closeTermsPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
     </div>
-
-    <button onclick="closeTermsPopup()" style="
-      background: #1e4a7e;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      margin-top: 20px;
-      cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
-    ">Fechar</button>
   </div>
 
   <!-- Popup de Serviços -->
@@ -2026,6 +2236,72 @@
     </div>
   </div>
 
+  <!-- Popup CADASTRE-SE -->
+  <div class="overlay" id="register-overlay"></div>
+  <div class="register-popup" id="register-popup">
+    <button class="close-register-btn" onclick="closeRegisterPopup()">×</button>
+    <div class="register-color-strip"></div>
+    <div class="register-popup-content">
+      <h2>CADASTRE-SE</h2>
+      <p>Ao se cadastrar na CODEONE, você poderá participar de nossos programas ao vivo, enviando suas mensagens em tempo real; poderá participar de promoções com nossos patrocinadores e ainda, concorrer a prêmios exclusivos. O cadastro como OUVINTE é rápido e totalmente gratuito. Preencha o formulário abaixo corretamente e clique em enviar. Dúvidas? Entre em contato com gente pelo e-mail.</p>
+      
+      <button onclick="closeRegisterPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup ASSINE -->
+  <div class="overlay" id="subscribe-overlay"></div>
+  <div class="subscribe-popup" id="subscribe-popup">
+    <button class="close-subscribe-btn" onclick="closeSubscribePopup()">×</button>
+    <div class="subscribe-color-strip"></div>
+    <div class="subscribe-popup-content">
+      <h2>ASSINE</h2>
+      <p>Conteúdo em desenvolvimento. Em breve você poderá assinar nossos produtos digitais e acessar conteúdos exclusivos.</p>
+      
+      <button onclick="closeSubscribePopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup PARCEIROS -->
+  <div class="overlay" id="partners-overlay"></div>
+  <div class="partners-popup" id="partners-popup">
+    <button class="close-partners-btn" onclick="closePartnersPopup()">×</button>
+    <div class="partners-color-strip"></div>
+    <div class="partners-popup-content">
+      <h2>PARCEIROS</h2>
+      <p>Conteúdo em desenvolvimento. Em breve você conhecerá nossos parceiros que fazem a diferença e acreditam na CODEONE.</p>
+      
+      <button onclick="closePartnersPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
   <!-- Botão Instalar PWA -->
   <button id="installBtn" style="display:none; position:fixed; bottom:20px; right:20px; background:#1e4a7e; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-family:'Montserrat',sans-serif; font-weight:600; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:100;">
     Instalar CODEONE
@@ -2038,15 +2314,6 @@
 
     function playAudio() {
       player.play();
-    }
-
-    function pauseAudio() {
-      player.pause();
-    }
-
-    function stopAudio() {
-      player.pause();
-      player.currentTime = 0;
     }
 
     function reloadAudio() {
@@ -2075,12 +2342,11 @@
     }
 
     // Popup de Contato
-    document.getElementById('open-contact').addEventListener('click', function(e) {
-      e.preventDefault();
+    function openContactPopup() {
       document.getElementById('contact-overlay').style.display = 'block';
       document.getElementById('contact-popup').style.display = 'block';
       document.body.style.overflow = 'hidden';
-    });
+    }
 
     function closeContactPopup() {
       document.getElementById('contact-overlay').style.display = 'none';
@@ -2254,6 +2520,51 @@
 
     document.getElementById('club-overlay').addEventListener('click', closeClubPopup);
 
+    // Popup CADASTRE-SE
+    function openRegisterPopup() {
+      document.getElementById('register-overlay').style.display = 'block';
+      document.getElementById('register-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRegisterPopup() {
+      document.getElementById('register-overlay').style.display = 'none';
+      document.getElementById('register-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('register-overlay').addEventListener('click', closeRegisterPopup);
+
+    // Popup ASSINE
+    function openSubscribePopup() {
+      document.getElementById('subscribe-overlay').style.display = 'block';
+      document.getElementById('subscribe-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSubscribePopup() {
+      document.getElementById('subscribe-overlay').style.display = 'none';
+      document.getElementById('subscribe-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('subscribe-overlay').addEventListener('click', closeSubscribePopup);
+
+    // Popup PARCEIROS
+    function openPartnersPopup() {
+      document.getElementById('partners-overlay').style.display = 'block';
+      document.getElementById('partners-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePartnersPopup() {
+      document.getElementById('partners-overlay').style.display = 'none';
+      document.getElementById('partners-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('partners-overlay').addEventListener('click', closePartnersPopup);
+
     // PWA Implementation
     let deferredPrompt;
     const installBtn = document.getElementById('installBtn');
@@ -2308,7 +2619,7 @@
       installBtn.style.display = 'none';
     }
 
-    // CODENEWS Script - Versão definitiva
+    // CODENEWS Script - Versão definitiva corrigida
     function loadNews() {
       const newsContainer = document.getElementById('news-items');
       const newsUrl = 'https://raw.githubusercontent.com/CODEONE-Brasil/CODEONE/main/noticias.json';
@@ -2328,22 +2639,18 @@
         .catch(error => {
           console.error('Erro ao carregar notícias:', error);
           displayFallbackNews();
-          
-          // Tenta novamente após 30 segundos em caso de erro
           setTimeout(loadNews, 30000);
         });
     }
 
     function displayNews(newsArray) {
       const container = document.getElementById('news-items');
-      // Filtra itens vazios e adiciona formatação
       container.innerHTML = newsArray
-        .filter(item => item && item.trim().length > 0) // Filtra itens vazios ou nulos
+        .filter(item => item && item.trim().length > 0)
         .map(news => `<span class="news-item">${news}</span>`)
-        .join('');
+        .join(' • ');
       
-      // Otimiza a animação
-      restartMarqueeAnimation();
+      adjustMarqueeSpeed();
     }
 
     function displayFallbackNews() {
@@ -2351,57 +2658,28 @@
         "CODEONE | Music and Dreams - Webradio experimental",
         "Siga-nos: @codeonebrasil nas redes sociais",
         "Em breve: Novos programas e atrações exclusivas",
-        "Nosso site está em constante evolução - Volte sempre!"
       ];
       displayNews(fallbackNews);
     }
 
-    function restartMarqueeAnimation() {
+    function adjustMarqueeSpeed() {
       const marquee = document.querySelector('.news-marquee');
-      const items = document.querySelectorAll('.news-item');
+      const items = document.querySelector('.news-items');
+      const containerWidth = document.querySelector('.codonews-bar').offsetWidth;
+      const logoWidth = document.querySelector('.codonews-label').offsetWidth;
+      const availableWidth = containerWidth - logoWidth;
       
-      // Calcula a largura total do conteúdo
-      let totalWidth = 0;
-      items.forEach(item => {
-        totalWidth += item.offsetWidth + 50; // 50px de margem entre itens
-      });
+      const totalWidth = items.scrollWidth;
+      const duration = Math.max(30, totalWidth / (availableWidth / 5)); // Ajuste dinâmico
       
-      // Ajusta a duração da animação baseada no tamanho do conteúdo
-      const duration = Math.max(30, totalWidth / 50); // Mínimo de 30s
-      
-      // Reinicia a animação
-      marquee.style.animation = 'none';
-      void marquee.offsetWidth; // Trigger reflow
-      marquee.style.animation = `scrollNews ${duration}s linear infinite`;
-    }
-
-    // Atualiza o keyframes da animação dinamicamente
-    function updateMarqueeAnimation() {
-      const style = document.createElement('style');
-      style.id = 'marquee-animation';
-      style.textContent = `
-        @keyframes scrollNews {
-          from { transform: translateX(100%); }
-          to { transform: translateX(-100%); }
-        }
-      `;
-      
-      // Remove o estilo antigo se existir
-      const oldStyle = document.getElementById('marquee-animation');
-      if (oldStyle) {
-        document.head.removeChild(oldStyle);
-      }
-      
-      document.head.appendChild(style);
+      items.style.animationDuration = `${duration}s`;
     }
 
     // Inicialização otimizada
     document.addEventListener('DOMContentLoaded', () => {
       player.volume = 0.7;
-      updateMarqueeAnimation();
       loadNews();
-      
-      // Verifica atualizações a cada 5 minutos
+      window.addEventListener('resize', adjustMarqueeSpeed);
       setInterval(loadNews, 300000);
     });
   </script>
