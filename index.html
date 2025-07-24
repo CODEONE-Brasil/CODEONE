@@ -1549,7 +1549,7 @@
       <p>Quando usamos informações de rastreamento para determinar quais áreas de nossos sites os usuários gostam e não gostam com base no tráfego para essas áreas. Não rastreamos o que os usuários individuais leem, mas sim o desempenho geral de cada página. Isso nos ajuda a continuar construindo um serviço melhor para você. Rastreamos termos de pesquisa inseridos na função de Pesquisa como uma das muitas medidas do que interessa aos nossos usuários. Mas não rastreamos quais termos um usuário específico insere.</p>
       
       <h4 style="color: #1e4a7e; margin: 15px 0 5px;">COMPARTILHAMENTO DAS INFORMAÇÕES</h4>
-      <p>A CSG usa as informações descritas acima para adaptar nosso conteúdo às suas necessidades e ajudar nossos anunciantes a entender melhor a demografia de nosso público. Isso é essencial para manter nosso serviço gratuito. Não compartilharemos informações sobre usuários individuais com terceiros, exceto para cumprir a lei aplicável ou processo legal válido ou para proteger a segurança pessoal de nossos usuários ou do público.</p>
+      <p>A CSG usa as informações descritas acima para adaptar nosso conteúdo às suas necessidades e ajudar nossos anunciantes a entender melhor a demografia de nosso público. Isso es essencial para manter nosso serviço gratuito. Não compartilharemos informações sobre usuários individuais com terceiros, exceto para cumprir a lei aplicável ou processo legal válido ou para proteger a segurança pessoal de nossos usuários ou do público.</p>
       
       <h4 style="color: #1e4a7e; margin: 15px 0 5px;">SEGURANÇA</h4>
       <p>A CSG opera redes seguras protegidas por sistemas padrão do setor de firewall e proteção por senha. Nossas políticas de segurança e privacidade são periodicamente revisadas e aprimoradas conforme necessário e apenas indivíduos autorizados têm acesso às informações fornecidas por nossos clientes.</p>
@@ -1616,7 +1616,7 @@
       <p>Oferecer entretenimento inteligente, informação confiável e experiências sonoras memoráveis, através de uma webradio inovadora, conectada com seu tempo, agregando valor à vida das pessoas e fortalecendo o ecossistema de marcas, produtos e serviços que compõem nossa rede.</p>
       
       <h3>Valores</h3>
-      <p><strong>Inovação com Propósito</strong><br>
+      <p><strong>Inovacao com Propósito</strong><br>
       Criamos e evoluímos com responsabilidade, sempre buscando novas formas de conectar e encantar.</p>
       
       <p><strong>Clareza e Credibilidade</strong><br>
@@ -2355,7 +2355,7 @@
       const container = document.getElementById('news-items');
       // Filtra itens vazios e adiciona formatação
       container.innerHTML = newsArray
-        .filter(item => item.trim().length > 0)
+        .filter(item => item && item.trim().length > 0) // Filtra itens vazios ou nulos
         .map(news => `<span class="news-item">${news}</span>`)
         .join('');
       
@@ -2375,22 +2375,52 @@
 
     function restartMarqueeAnimation() {
       const marquee = document.querySelector('.news-marquee');
+      const items = document.querySelectorAll('.news-item');
+      
+      // Calcula a largura total do conteúdo
+      let totalWidth = 0;
+      items.forEach(item => {
+        totalWidth += item.offsetWidth + 50; // 50px de margem entre itens
+      });
+      
+      // Ajusta a duração da animação baseada no tamanho do conteúdo
+      const duration = Math.max(30, totalWidth / 50); // Mínimo de 30s
+      
+      // Reinicia a animação
       marquee.style.animation = 'none';
       void marquee.offsetWidth; // Trigger reflow
-      marquee.style.animation = 'scrollNews 30s linear infinite';
+      marquee.style.animation = `scrollNews ${duration}s linear infinite`;
+    }
+
+    // Atualiza o keyframes da animação dinamicamente
+    function updateMarqueeAnimation() {
+      const style = document.createElement('style');
+      style.id = 'marquee-animation';
+      style.textContent = `
+        @keyframes scrollNews {
+          from { transform: translateX(100%); }
+          to { transform: translateX(-100%); }
+        }
+      `;
+      
+      // Remove o estilo antigo se existir
+      const oldStyle = document.getElementById('marquee-animation');
+      if (oldStyle) {
+        document.head.removeChild(oldStyle);
+      }
+      
+      document.head.appendChild(style);
     }
 
     // Inicialização otimizada
     document.addEventListener('DOMContentLoaded', () => {
       player.volume = 0.7;
+      updateMarqueeAnimation();
       loadNews();
       
       // Verifica atualizações a cada 5 minutos
       setInterval(loadNews, 300000);
     });
-
-    // Adicione este estilo no seu CSS:
-    // .news-item { margin-right: 50px; display: inline-block; }
   </script>
 </body>
 </html>
