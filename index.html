@@ -1351,7 +1351,7 @@
     .news-items {
       display: inline-block;
       padding-left: 100%; /* Começa fora da tela */
-      animation: scrollNews 30s linear infinite;
+      animation: scrollNews 60s linear infinite; /* Alterado para 60s (reduzido em 50%) */
       line-height: 1.2;
     }
 
@@ -1533,14 +1533,34 @@
       Aumente o volume, você está na CODEONE
     </div>
 
-    <!-- GRADE DE PROGRAMAS -->
+    <!-- GRADE DE PROGRAMAS - REORGANIZADA -->
     <div class="programs-grid">
-      <!-- Linha 1 -->
       <div class="program-box" data-program="programas" onclick="openProgramsPopup()">
         <div class="program-color-strip"></div>
         <div>
           <h3>PROGRAMAS</h3>
           <p>Conheça a programação completa e os canais da CODEONE</p>
+        </div>
+      </div>
+      <div class="program-box" onclick="window.open('https://clockview.online', '_blank')">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CLOCKVIEW</h3>
+          <p>Patrocinadora oficial da CODEONE, informa a hora certa: <span id="current-time">00h00m00s</span></p>
+        </div>
+      </div>
+      <div class="program-box" onclick="openChooseNamePopup()">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>ESCOLHA MEU NOME</h3>
+          <p>Ajude-nos a escolher o nome do nosso amiguinho.</p>
+        </div>
+      </div>
+      <div class="program-box" onclick="openRegisterPopup()">
+        <div class="program-color-strip"></div>
+        <div>
+          <h3>CADASTRE-SE</h3>
+          <p>Cadastre-se, peça sua música e concorra a prêmios exclusivos.</p>
         </div>
       </div>
       <div class="program-box" onclick="openListenersPopup()">
@@ -1550,11 +1570,11 @@
           <p>Conheça os benefícios de ser um ouvinte CODEONE</p>
         </div>
       </div>
-      <div class="program-box" onclick="openRegisterPopup()">
+      <div class="program-box" onclick="openCodeblogPopup()">
         <div class="program-color-strip"></div>
         <div>
-          <h3>CADASTRE-SE</h3>
-          <p>Cadastre-se, peça sua música e concorra a prêmios exclusivos.</p>
+          <h3>CODEBLOG</h3>
+          <p>Nosso blog com notícias e bastidores da CODEONE.</p>
         </div>
       </div>
     </div>
@@ -1575,7 +1595,7 @@
       Programação personalizada para a sua empresa, para você ou para quem você ama
     </div>
 
-    <!-- GRADE DE SERVIÇOS -->
+    <!-- GRADE DE SERVIÇOS - REORGANIZADA -->
     <div class="programs-grid">
       <div class="program-box" data-program="codebusiness" onclick="openServicePopup('codebusiness')">
         <div class="program-color-strip"></div>
@@ -1624,7 +1644,7 @@
 
     <div class="learn-more-text">Saiba mais sobre a CODEONE</div>
 
-    <!-- NOVOS BOXES ANTES DO RODAPÉ -->
+    <!-- NOVOS BOXES ANTES DO RODAPÉ - REORGANIZADOS -->
     <div class="footer-boxes">
       <div class="footer-box" onclick="openAboutPopup()">
         <div class="footer-box-color-strip"></div>
@@ -1640,18 +1660,18 @@
           <p>Conheça nosso time e quem faz acontecer aqui na CODEONE.</p>
         </div>
       </div>
-      <div class="footer-box" onclick="openAffiliatesPopup()">
-        <div class="footer-box-color-strip"></div>
-        <div>
-          <h3>AFILIADAS</h3>
-          <p>Conheça a nossa de rede de emissoras e afiliadas parceiras.</p>
-        </div>
-      </div>
       <div class="footer-box" onclick="openSubscribePopup()">
         <div class="footer-box-color-strip"></div>
         <div>
           <h3>ASSINE</h3>
           <p>Assine nossos produtos digitais e acesse conteúdos exclusivos.</p>
+        </div>
+      </div>
+      <div class="footer-box" onclick="openAffiliatesPopup()">
+        <div class="footer-box-color-strip"></div>
+        <div>
+          <h3>AFILIADAS</h3>
+          <p>Conheça a nossa de rede de emissoras e afiliadas parceiras.</p>
         </div>
       </div>
       <div class="footer-box" onclick="openAdvertisePopup()">
@@ -1762,7 +1782,7 @@
 
       <p>Boletins eletrônicos: Os Usuários que se inscrevem voluntariamente fornecem seus endereços de e-mail, podendo cancelar a inscrição a qualquer momento por meio de link disponibilizado em cada boletim.</p>
 
-      <p>Quadros de mensagens e fóruns: O registro é facultativo e gratuito, requerendo nome de usuário, senha e endereço de e-mail para postagem de mensagens.</p>
+      <p>Quadros de mensagens e fóruns: O registro é facultativo e gratuito, requerendo nome de usuário, senha and endereço de e-mail para postagem de mensagens.</p>
 
       <p>Envio por e-mail para terceiros: O Usuário pode encaminhar links ou documentos a terceiros, fornecendo os endereços de e-mail próprios e do destinatário. Essas informações são utilizadas exclusivamente para fins de transmissão e identificação do remetente, não sendo usadas para quaisquer outras finalidades.</p>
 
@@ -2340,6 +2360,52 @@
     </div>
   </div>
 
+  <!-- Popup ESCOLHA MEU NOME -->
+  <div class="overlay" id="choose-name-overlay"></div>
+  <div class="terms-popup" id="choose-name-popup">
+    <button class="close-terms-btn" onclick="closeChooseNamePopup()">×</button>
+    <div class="terms-color-strip"></div>
+    <div class="terms-popup-content">
+      <h2>ESCOLHA MEU NOME</h2>
+      <p>Ajude-nos a escolher o nome do nosso amiguinho.</p>
+      <p>Conteúdo em desenvolvimento. Em breve você poderá participar desta votação.</p>
+      
+      <button onclick="closeChooseNamePopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Popup CODEBLOG -->
+  <div class="overlay" id="codeblog-overlay"></div>
+  <div class="terms-popup" id="codeblog-popup">
+    <button class="close-terms-btn" onclick="closeCodeblogPopup()">×</button>
+    <div class="terms-color-strip"></div>
+    <div class="terms-popup-content">
+      <h2>CODEBLOG</h2>
+      <p>Nosso blog com notícias e bastidores da CODEONE.</p>
+      <p>Conteúdo em desenvolvimento. Em breve você poderá acessar nosso blog.</p>
+      
+      <button onclick="closeCodeblogPopup()" style="
+        background: #1e4a7e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+      ">Fechar</button>
+    </div>
+  </div>
+
   <!-- Botão Instalar PWA -->
   <button id="installBtn" style="display:none; position:fixed; bottom:20px; right:20px; background:#1e4a7e; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-family:'Montserrat',sans-serif; font-weight:600; box-shadow:0 2px 10px rgba(0,0,0,0.2); z-index:100;">
     Instalar CODEONE
@@ -2603,6 +2669,36 @@
 
     document.getElementById('partners-overlay').addEventListener('click', closePartnersPopup);
 
+    // Popup ESCOLHA MEU NOME
+    function openChooseNamePopup() {
+      document.getElementById('choose-name-overlay').style.display = 'block';
+      document.getElementById('choose-name-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeChooseNamePopup() {
+      document.getElementById('choose-name-overlay').style.display = 'none';
+      document.getElementById('choose-name-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('choose-name-overlay').addEventListener('click', closeChooseNamePopup);
+
+    // Popup CODEBLOG
+    function openCodeblogPopup() {
+      document.getElementById('codeblog-overlay').style.display = 'block';
+      document.getElementById('codeblog-popup').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCodeblogPopup() {
+      document.getElementById('codeblog-overlay').style.display = 'none';
+      document.getElementById('codeblog-popup').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('codeblog-overlay').addEventListener('click', closeCodeblogPopup);
+
     // PWA Implementation
     let deferredPrompt;
     const installBtn = document.getElementById('installBtn');
@@ -2711,12 +2807,23 @@
       items.style.animationDuration = `${duration}s`;
     }
 
+    // Atualizar relógio
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      document.getElementById('current-time').textContent = `${hours}h${minutes}m${seconds}s`;
+    }
+
     // Inicialização otimizada
     document.addEventListener('DOMContentLoaded', () => {
       player.volume = 0.7;
       loadNews();
       window.addEventListener('resize', adjustMarqueeSpeed);
       setInterval(loadNews, 300000);
+      updateClock();
+      setInterval(updateClock, 1000);
     });
   </script>
 </body>
